@@ -31,5 +31,5 @@ rc/
 
 coverage/
 
-dist/
+dist/**/*
 .gulp-scss-cache/**/*
