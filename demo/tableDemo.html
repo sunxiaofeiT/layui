@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Layui Demo</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../dist/css/layui.css">
+</head>
+
+<body>
+    <div style="padding: 20px">
+        <table class="layui-hide" id="test"></table>
+    </div>
+    <script type="text/javascript" src="../dist/layui.js"></script>
+    <script type="text/html" id="switchTpl">
+        <!-- 这里的 checked 的状态只是演示 -->
+        <input type="checkbox" name="sex" value="{{d.id}}" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo" {{ d.id==10003 ?
+            'checked' : '' }}>
+    </script>
+
+    <script type="text/html" id="checkboxTpl">
+        <!-- 这里的 checked 的状态只是演示 -->
+        <input type="checkbox" name="lock" value="{{d.id}}" title="锁定" lay-filter="lockDemo" {{ d.id==10006 ? 'checked' : '' }}>
+    </script>
+    <script type="text/javascript">
+        layui.use('table', function () {
+            var table = layui.table,
+                form = layui.form;
+
+            table.render({
+                elem: '#test',
+                url: '/demo/table/user/',
+                cellMinWidth: 80,
+                cols: [
+                    [{
+                        title: '序号',
+                        type: 'numbers'
+                    }, {
+                        type: 'checkbox'
+                    }, {
+                        field: 'id',
+                        title: 'ID',
+                        width: 100,
+                        unresize: true,
+                        sort: true
+                    }, {
+                        field: 'username',
+                        title: '用户名',
+                        align: 'right'
+                    }, {
+                        field: 'city',
+                        title: '城市',
+                        align: 'left'
+                    }, {
+                        field: 'wealth',
+                        title: '财富',
+                        minWidth: 120,
+                        sort: true
+                    }, {
+                        field: 'sex',
+                        title: '性别',
+                        width: 85,
+                        templet: '#switchTpl',
+                        unresize: true
+                    }, {
+                        field: 'lock',
+                        title: '是否锁定',
+                        width: 110,
+                        templet: '#checkboxTpl',
+                        unresize: true
+                    }]
+                ],
+                page: {
+                    layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'],
+                    groups: 6,
+                    limits: [10, 20, 50, 100],
+                    prev: '上一页',
+                    next: '下一页'
+                }
+            });
+
+            //监听性别操作
+            form.on('switch(sexDemo)', function (obj) {
+                layer.tips(this.value + ' ' + this.name + '：' + obj.elem.checked, obj.othis);
+            });
+
+            //监听锁定操作
+            form.on('checkbox(lockDemo)', function (obj) {
+                layer.tips(this.value + ' ' + this.name + '：' + obj.elem.checked, obj.othis);
+            });
+        });
+    </script>
+</body>
+
+</html>
