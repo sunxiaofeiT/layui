@@ -15,6 +15,7 @@ var del = require('del');
 var gulpif = require('gulp-if');
 var minimist = require('minimist');
 var zip = require('gulp-zip');
+var scss = require('gulp-scss');
 
 //获取参数
 var argv = require('minimist')(process.argv.slice(2), {
@@ -117,22 +118,40 @@ var argv = require('minimist')(process.argv.slice(2), {
     ver = ver === 'open';
     
     var src = [
-      './src/css/**/*.css'
-      ,'!./src/css/**/font.css'
+        '!./src/css/**/style.scss',
+        './src/css/**/*.scss'
     ]
     ,dir = destDir(ver)
     ,noteNew = JSON.parse(JSON.stringify(note));
-    
-    if(ver || argv.open){
-      src.push('!./src/css/**/layim.css');
-    }
-    
     noteNew[1].js = '';
     
-    return gulp.src(src).pipe(minify({
+    return gulp.src(src)
+    .pipe(scss())
+    .pipe(minify({
       compatibility: 'ie7'
-    })).pipe(header.apply(null, noteNew))
+    }))
+    .pipe(header.apply(null, noteNew))
     .pipe(gulp.dest('./'+ dir +'/css'));
+
+    // ver = ver === 'open';
+    
+    // var src = [
+    //   './src/css/**/*.css'
+    //   ,'!./src/css/**/font.css'
+    // ]
+    // ,dir = destDir(ver)
+    // ,noteNew = JSON.parse(JSON.stringify(note));
+    
+    // if(ver || argv.open){
+    //   src.push('!./src/css/**/layim.css');
+    // }
+    
+    // noteNew[1].js = '';
+    
+    // return gulp.src(src).pipe(minify({
+    //   compatibility: 'ie7'
+    // })).pipe(header.apply(null, noteNew))
+    // .pipe(gulp.dest('./'+ dir +'/css'));
   }
   
   //复制iconfont文件
