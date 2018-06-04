@@ -147,19 +147,20 @@ layui.define(function(exports){
       }()
       
       //数据总数
-      ,count: '<span class="layui-laypage-count">共 '+ config.count +' 条</span>'
+    //   ,count: '<span class="layui-laypage-count">共 '+ config.count +' 条</span>'
+    ,count: '<span class="layui-laypage-count">共 '+ Math.ceil(config.count / config.limit) +' 页</span>'
       
       //每页条数
       ,limit: function(){
-        var options = ['<span class="layui-laypage-limits"><select lay-ignore>'];
+        var options = ['<span class="layui-laypage-limits">每页显示 <select lay-ignore>'];
         layui.each(config.limits, function(index, item){
           options.push(
             '<option value="'+ item +'"'
             +(item === config.limit ? 'selected' : '') 
-            +'>'+ item +' 条/页</option>'
+            +'>'+ item +'</option>'
           );
         });
-        return options.join('') +'</select></span>';
+        return options.join('') +'</select> 条 </span>';
       }()
       
       //刷新当前页
