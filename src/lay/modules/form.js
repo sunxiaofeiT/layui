@@ -388,9 +388,14 @@ layui.define('layer', function(exports){
           var check = $(this);
           
           //勾选
-          reElem.on('click', function(){
+          reElem.on('click', function(e){
             var filter = check.attr('lay-filter') //获取过滤器
             ,text = (check.attr('lay-text')||'').split('|');
+
+            // 除了表格checkbox，阻止事件冒泡
+            if (typeof filter !== 'undefined' && filter !== 'layTableAllChoose') {
+                e.stopPropagation();
+            }
 
             if(check[0].disabled) return;
             

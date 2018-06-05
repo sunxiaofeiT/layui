@@ -978,13 +978,14 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function(exports){
     });
     
     //复选框选择
-    that.elem.on('click', 'input[name="layTableCheckbox"]+', function(){
+    that.elem.on('click', 'input[name="layTableCheckbox"]+', function(e){
+      e.stopPropagation();
       var checkbox = $(this).prev()
       ,childs = that.layBody.find('input[name="layTableCheckbox"]')
       ,index = checkbox.parents('tr').eq(0).data('index')
       ,checked = checkbox[0].checked
       ,isAll = checkbox.attr('lay-filter') === 'layTableAllChoose';
-      
+
       //全选
       if(isAll){
         childs.each(function(i, item){
@@ -1014,6 +1015,55 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function(exports){
       ,index = othis.index();
       that.layBody.find('tr:eq('+ index +')').removeClass(ELEM_HOVER)
     });
+    
+    //行点击事件
+    that.layBody.on('click', 'tr', function(e){
+        var othis = $(this)
+        ,index = othis.index()
+        ,data = table.cache[that.key][index];
+
+        if (e.target.className == 'layui-icon layui-icon-ok') return;
+
+        // 判断表格内是否有复选框，如果有，则更改其选择方式
+        var options = that.config
+        ,thisData = table.cache[that.key]
+        ,checked = !thisData[index][options.checkName];
+        if(!thisData[index]) return;
+        if(thisData[index].constructor === Array) return;
+        thisData[index][options.checkName] = checked;
+        that.syncCheckAll();
+
+        // TODO: 改变选中的checkbox的同时修改DOM样式
+        var nodes = e.currentTarget.childNodes
+            ,node = null;
+        for (var i = 0; i < nodes.length; i++) {
+            if (nodes[i].innerHTML.indexOf('layTableCheckbox') != -1) {
+                node = nodes[i].childNodes[0];
+                break;
+            }
+        }
+        if (node) {
+            node.childNodes[0].checked = checked
+            var className = node.childNodes[1].className.split(' ')
+            if (checked) {
+                className.push('layui-form-checked')
+                className = className.join(' ')
+            }
+            else {
+                var ind = className.indexOf('layui-form-checked');
+                if (ind > -1) {
+                    className.splice(ind, 1);
+                }
+                className = className.join(' ')
+            }
+            node.childNodes[1].className = className
+        }
+
+        layui.event.call(this, MOD_NAME, 'click('+ filter +')', {
+            data: data,
+            index: index
+        });
+      });
     
     //单元格编辑
     that.layBody.on('change', '.'+ELEM_EDIT, function(){
@@ -1106,7 +1156,8 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function(exports){
     });
     
     //工具条操作事件
-    that.layBody.on('click', '*[lay-event]', function(){
+    that.layBody.on('click', '*[lay-event]', function(e){
+      e.stopPropagation();
       var othis = $(this)
       ,index = othis.parents('tr').eq(0).data('index')
       ,tr = that.layBody.find('tr[data-index="'+ index +'"]')
