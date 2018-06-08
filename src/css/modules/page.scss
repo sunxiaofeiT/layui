@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import '../style.scss';
 
 /** 分页 **/
@@ -12,16 +13,16 @@
 .layui-laypage span,
 .layui-laypage input, 
 .layui-laypage button,
-.layui-laypage select{border: 1px solid #e2e2e2;}
+.layui-laypage select{border: 1px solid $borderColor;}
 .layui-laypage a,
-.layui-laypage span{display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; padding: 0 15px; height: 28px; line-height: 28px; margin: 0 -1px 5px 0; background-color: #fff; color: #333; font-size: 12px;}
-.layui-laypage a:hover{color: #009688;}
+.layui-laypage span{display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; padding: 0 15px; height: 28px; line-height: 28px; margin: 0 -1px 5px 0; background-color: $containerBackgroundColor; color: $secondFontColor; font-size: 12px;}
+.layui-laypage a:hover{color: $hoverColor;}
 .layui-laypage em{font-style: normal;}
-.layui-laypage .layui-laypage-spr{color:#999; font-weight: 700;}
+.layui-laypage .layui-laypage-spr{color:$secondFontColor; font-weight: 700;}
 .layui-laypage a{ text-decoration: none;}
 .layui-laypage .layui-laypage-curr{position: relative;}
-.layui-laypage .layui-laypage-curr em{position: relative; color: #fff;}
-.layui-laypage .layui-laypage-curr .layui-laypage-em{position: absolute; left: -1px; top: -1px; padding: 1px; width: 100%; height: 100%; background-color: #009688; }
+.layui-laypage .layui-laypage-curr em{position: relative; color: $backgroundFontColor;}
+.layui-laypage .layui-laypage-curr .layui-laypage-em{position: absolute; left: -1px; top: -1px; padding: 1px; width: 100%; height: 100%; background-color: $hoverColor; }
 .layui-laypage-em{border-radius: 2px;}
 .layui-laypage-prev em,
 .layui-laypage-next em{font-family: Sim sun; font-size: 16px;}
@@ -34,9 +35,24 @@
 .layui-laypage .layui-laypage-refresh{vertical-align: top;}
 .layui-laypage .layui-laypage-refresh i{font-size: 18px; cursor: pointer;}
 .layui-laypage select{height: 22px; padding: 3px; border-radius: 2px; cursor: pointer;}
-.layui-laypage .layui-laypage-skip{height: 30px; line-height: 30px; color: #999;}
-.layui-laypage input, .layui-laypage button{height: 30px; line-height: 30px; border-radius: 2px; vertical-align: top;  background-color: #fff; box-sizing: border-box;}
+.layui-laypage .layui-laypage-skip{height: 30px; line-height: 30px; color: $secondFontColor;}
+.layui-laypage input, .layui-laypage button{height: 30px; line-height: 30px; border-radius: 2px; vertical-align: top;  background-color: $containerBackgroundColor; box-sizing: border-box;}
 .layui-laypage input{display: inline-block; width: 40px; margin: 0 10px; padding: 0 3px; text-align: center;}
 .layui-laypage input:focus,
-.layui-laypage select:focus{border-color: #009688!important;}
+.layui-laypage select:focus{border-color: $hoverColor!important;}
 .layui-laypage button{margin-left: 10px; padding: 0 10px; cursor: pointer;}
+
+/* 分页信息在左 */
+
+.layui-laypage {
+    width: 100%;
+}
+
+.layui-laypage .layui-laypage-count,
+.layui-laypage .layui-laypage-limits {
+    float: left;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    color: $secondFontColor;
+}
