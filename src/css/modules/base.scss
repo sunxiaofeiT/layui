@@ -15,7 +15,7 @@ pre{white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; w
 
 // 基础标签
 .body-container{padding: $bodyPadding;background-color: $backgroundColor;}
-.layui-container-field{padding: $containerPadding;background-color: $containerBackgroundColor;}
+.layui-container-field{padding: $containerPadding;background-color: $containerBackgroundColor;position: relative;}
 
 /** 初始化全局标签 **/
 body{line-height: 24px; font: 14px Helvetica Neue,Helvetica,PingFang SC,\5FAE\8F6F\96C5\9ED1,Tahoma,Arial,sans-serif;}

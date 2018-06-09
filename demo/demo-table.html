@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Layui Table Group Demo</title>
+    <title>表格 | Layui Table</title>
     <meta charset="utf-8">
 
     <!-- CSS 文件：基础样式、字体和布局 -->
@@ -21,13 +21,13 @@
 </head>
 
 <body class="body-container">
-    <!-- 使用 layui 栅格系统布局 -->
+    <!-- 使用 layui 栅格系统布局，容器为 100% 宽度 -->
     <div class="layui-container-field">
-        <!-- 具体列宽由输入框数量和按钮数量自行决定 -->
         <div class="layui-row">
+            <!-- 具体列宽由输入框数量和按钮数量自行决定 -->
             <div class="layui-col-xs12 layui-col-sm6 layui-col-md6 table-input-control">
                 <div class="layui-form-item">
-                    <!-- 左侧输入框和相关按钮，每组由 layui-inline 类名包裹 -->
+                    <!-- 左侧输入框和相关按钮，每组由 layui-inline 类名容器包裹 -->
                     <div class="layui-inline">
                         <label class="layui-form-label">搜索名称</label>
                         <div class="layui-input-inline">
@@ -35,28 +35,29 @@
                         </div>
                     </div>
                     <div class="layui-inline">
-                        <button class="layui-btn layui-btn-sm layui-btn-normal">搜索</button>
-                        <button class="layui-btn layui-btn-sm layui-btn-primary">重置</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-normal" id="_btn_search">搜索</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_reset">重置</button>
                     </div>
-                    <!-- ... -->
+                    <!-- ... 可自行增加/删除输入框和按钮 -->
                 </div>
             </div>
+            <!-- 具体列宽由输入框数量和按钮数量自行决定 -->
             <div class="layui-col-xs12 layui-col-sm6 layui-col-md6 table-form-control">
                 <div class="layui-inline">
                     <!-- 右侧功能按钮 -->
                     <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_add">
                         <i class="layui-icon">&#xe654;</i> 新增
                     </button>
-                    <button class="layui-btn layui-btn-sm layui-btn-primary">
+                    <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_edit">
                         <i class="layui-icon">&#xe642;</i> 编辑
                     </button>
-                    <button class="layui-btn layui-btn-sm layui-btn-primary">
+                    <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_del">
                         <i class="layui-icon">&#xe640;</i> 删除
                     </button>
-                    <button class="layui-btn layui-btn-sm layui-btn-primary">
+                    <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_view">
                         <i class="layui-icon">&#xe615;</i> 查看
                     </button>
-                    <!-- ... -->
+                    <!-- ... 可自行增加/删除按钮 -->
                 </div>
             </div>
         </div>
@@ -73,25 +74,6 @@
     <!-- 引入 layui 入口文件 -->
     <script type="text/javascript" src="../dist/layui.js"></script>
 
-    <!-- 表格内容模版 -->
-    <script type="text/html" id="switchTpl">
-        <!-- 这里的 checked 的状态只是演示 -->
-        <input type="checkbox" name="sex" value="{{d.id}}" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo" {{ d.id==10003 ?
-            'checked' : '' }}>
-    </script>
-    <script type="text/html" id="checkboxTpl">
-        <!-- 这里的 checked 的状态只是演示 -->
-        <input type="checkbox" name="lock" value="{{d.id}}" title="锁定" lay-filter="lockDemo" {{ d.id==10006 ? 'checked' : '' }}>
-    </script>
-    <script type="text/html" id="iconTpl">
-        <i class="layui-icon layui-icon-picture" lay-event="viewPic"></i>
-        <i class="layui-icon layui-icon-file" lay-event="downFile"></i>
-        <i class="layui-icon layui-icon-delete" lay-event="del"></i>
-    </script>
-    <script type="text/html" id="textTpl">
-        <a href="javascript:;" lay-event="add">添加配置</a>
-    </script>
-
     <!-- 表格部分 JS -->
     <script type="text/javascript">
         layui.use('table', function () {
@@ -103,7 +85,13 @@
                 elem: '#demo',
                 url: './data/table.json',
                 id: 'demo',
-                cellMinWidth: 80,
+                response: {
+                    statusName: 'code', // 状态码
+                    statusCode: 0, // 成功状态码
+                    msgName: 'msg', // 消息提示
+                    dataName: 'data', // 数据字段
+                    countName: 'count' // 数据总数
+                },
                 cols: [
                     [{
                         // 序号列
@@ -160,7 +148,6 @@
                         templet: '#textTpl',
                         unresize: true
                     }]
-                    // 行点击事件
                 ],
                 // 分页配置可以自定义
                 // layout 可以指定在分页中展现不同的功能
@@ -225,12 +212,58 @@
                 var target = e.currentTarget.id;
                 switch (target) {
                     case '_btn_add':
+                        // 新增
                         var checkStatus = table.checkStatus('demo');
-                        console.log(checkStatus);
+                        layer.msg('新增1项');
+                        table.reload('demo');
+                        break;
+                    case '_btn_edit':
+                        // 编辑
+                        var checkStatus = table.checkStatus('demo');
+                        layer.msg('编辑 ' + checkStatus.data.length + ' 项');
+                        break;
+                    case '_btn_del':
+                        // 删除
+                        var checkStatus = table.checkStatus('demo');
+                        layer.msg('删除 ' + checkStatus.data.length + ' 项');
+                        break;
+                    case '_btn_view':
+                        // 查看
+                        var checkStatus = table.checkStatus('demo');
+                        layer.msg('查看 ' + checkStatus.data.length + ' 项');
+                        break;
+                    case '_btn_search':
+                        // 搜索
+                        var val = $('input[name="search"]').val();
+                        if (!val) return layer.msg('请输入搜索内容');
+                        layer.msg('搜索：' + val);
+                        break;
+                    case '_btn_reset':
+                        // 重置
+                        $('input[name="search"]').val('');
                         break;
                 }
             });
         });
+    </script>
+
+    <!-- 表格内容模版 -->
+    <script type="text/html" id="switchTpl">
+        <!-- 这里的 checked 的状态只是演示 -->
+        <input type="checkbox" name="sex" value="{{d.id}}" lay-skin="switch" lay-text="女|男" lay-filter="sexDemo" {{ d.id==10003 ?
+            'checked' : '' }}>
+    </script>
+    <script type="text/html" id="checkboxTpl">
+        <!-- 这里的 checked 的状态只是演示 -->
+        <input type="checkbox" name="lock" value="{{d.id}}" title="锁定" lay-filter="lockDemo" {{ d.id==10006 ? 'checked' : '' }}>
+    </script>
+    <script type="text/html" id="iconTpl">
+        <i class="layui-icon layui-icon-picture" lay-event="viewPic"></i>
+        <i class="layui-icon layui-icon-file" lay-event="downFile"></i>
+        <i class="layui-icon layui-icon-delete" lay-event="del"></i>
+    </script>
+    <script type="text/html" id="textTpl">
+        <a href="javascript:;" lay-event="add">添加配置</a>
     </script>
 </body>
 

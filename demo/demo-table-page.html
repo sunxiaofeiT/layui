@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Layui Table Group Demo</title>
+    <meta charset="utf-8">
+
+    <!-- CSS 文件：基础样式、字体和布局 -->
+    <link rel="stylesheet" href="../dist/css/modules/base.css">
+    <link rel="stylesheet" href="../dist/css/modules/layout.css">
+    <link rel="stylesheet" href="../dist/css/modules/font-layui.css">
+
+    <!-- CSS 文件：分页和表单按钮，注意引用顺序 -->
+    <link rel="stylesheet" href="../dist/css/modules/page.css">
+    <link rel="stylesheet" href="../dist/css/modules/form.css">
+    <link rel="stylesheet" href="../dist/css/modules/button.css">
+
+    <!-- CSS 文件：数据表格 -->
+    <link rel="stylesheet" href="../dist/css/modules/table.css">
+
+</head>
+
+<body class="body-container">
+    <!-- 使用 layui 栅格系统布局 -->
+    <div class="layui-container-field">
+        <!-- 具体列宽由输入框数量和按钮数量自行决定 -->
+        <div class="layui-row">
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md6 table-input-control">
+                <div class="layui-form-item">
+                    <!-- 左侧输入框和相关按钮，每组由 layui-inline 类名包裹 -->
+                    <div class="layui-inline">
+                        <label class="layui-form-label">搜索名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="search" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn layui-btn-sm layui-btn-normal" id="_btn_search">搜索</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_reset">重置</button>
+                    </div>
+                    <!-- ... 可自行增加输入框和按钮 -->
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md6 table-form-control">
+                <div class="layui-inline">
+                    <!-- 右侧功能按钮 -->
+                    <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_add">
+                        <i class="layui-icon">&#xe654;</i> 新增
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_edit">
+                        <i class="layui-icon">&#xe642;</i> 编辑
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_del">
+                        <i class="layui-icon">&#xe640;</i> 删除
+                    </button>
+                    <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_view">
+                        <i class="layui-icon">&#xe615;</i> 查看
+                    </button>
+                    <!-- ... 可自行增加按钮 -->
+                </div>
+            </div>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <!-- 数据表格，id 和 lay-filter 自行更改 -->
+                <table class="layui-hide" id="demo" lay-filter="demo"></table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- 引入 layui 入口文件 -->
+    <script type="text/javascript" src="../dist/layui.js"></script>
+
+    <!-- 表格部分 JS -->
+    <script type="text/javascript">
+        layui.use('table', function () {
+            var table = layui.table,
+                form = layui.form,
+                $ = layui.$;
+
+            table.render({
+                elem: '#demo',
+                url: '/api/car/notice/page',
+                id: 'demo',
+                request: {
+                    pageName: 'page', // 当前页数
+                    limitName: 'pageSize' // 每页容量
+                },
+                response: {
+                    statusName: 'respCode', // 状态码字段名
+                    statusCode: '0', // 成功的状态码
+                    msgName: 'message', // 消息提示字段名
+                    dataName: 'data.list', // 数据列表字段名
+                    countName: 'data.count' // 数据总数字段名
+                },
+                cols: [
+                    [{
+                        title: '序号',
+                        type: 'numbers',
+                        fixed: 'left'
+                    }, {
+                        type: 'checkbox'
+                    }, {
+                        field: 'title',
+                        title: '公告内容'
+                    }, {
+                        field: 'guid',
+                        title: 'guid'
+                    }, {
+                        field: 'createTime',
+                        title: '创建时间'
+                    }]
+                ],
+                page: true
+            });
+
+            //监听行点击
+            table.on('click(demo)', function (obj) {
+                var data = obj.data;
+                console.log(obj)
+                layer.msg('点击了 ID 为 ' + data.title + ' 的一行');
+            });
+
+            $('button').on('click', function (e) {
+                var target = e.currentTarget.id;
+                switch (target) {
+                    case '_btn_add':
+                        // 新增
+                        var checkStatus = table.checkStatus('demo');
+                        layer.msg('新增1项')
+                        break;
+                    case '_btn_edit':
+                        // 编辑
+                        var checkStatus = table.checkStatus('demo');
+                        layer.msg('编辑 ' + checkStatus.data.length + ' 项')
+                        break;
+                    case '_btn_del':
+                        // 删除
+                        var checkStatus = table.checkStatus('demo');
+                        layer.msg('删除 ' + checkStatus.data.length + ' 项')
+                        break;
+                    case '_btn_view':
+                        // 查看
+                        var checkStatus = table.checkStatus('demo');
+                        layer.msg('查看 ' + checkStatus.data.length + ' 项')
+                        break;
+                    case '_btn_search':
+                        // 搜索
+                        var val = $('input[name="search"]').val();
+                        if (!val) return layer.msg('请输入搜索内容');
+                        layer.msg('搜索：' + val);
+                        break;
+                    case '_btn_reset':
+                        // 重置
+                        $('input[name="search"]').val('');
+                        break
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
