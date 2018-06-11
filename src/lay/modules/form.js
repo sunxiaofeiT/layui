@@ -564,7 +564,12 @@ layui.define('layer', function(exports){
             } else if(verType === 'alert') {
               layer.alert(errorText, {title: '提示', shadeClose: true});
             } else {
-              layer.msg(errorText, {icon: 5, shift: 6});
+              layer.msg(errorText, {
+                skin: "layui-layer-red",
+                shift: 5,
+                //time:100000,
+                offset:"20px"
+              });
             }
             if(!device.android && !device.ios) item.focus(); //非移动设备自动定位焦点
             othis.addClass(DANGER);

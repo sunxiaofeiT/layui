@@ -88,6 +88,8 @@ html #layuicss-layer{display: none; position: absolute; width: 1989px;}
 .layui-layer-msg{min-width:180px; border:1px solid #D3D4D3; box-shadow: none;}
 .layui-layer-hui{min-width:100px;  background-color: #000; filter:alpha(opacity=60); background-color: rgba(0,0,0,0.6); color: #fff; border:none;}
 .layui-layer-hui .layui-layer-content{padding:12px 25px; text-align:center;}
+.layui-layer-red{min-width:100px;  background-color: #FF5252; filter:alpha(opacity=60);color: #fff; border:none; border-radius: 4px;}
+.layui-layer-red .layui-layer-content{line-height: 40px; padding: 0 20px; text-align:center;}
 .layui-layer-dialog .layui-layer-padding{padding: 20px 20px 20px 55px; text-align: left;}
 .layui-layer-page .layui-layer-content{position:relative; overflow:auto;}
 .layui-layer-page .layui-layer-btn,.layui-layer-iframe .layui-layer-btn{padding-top:10px;}
