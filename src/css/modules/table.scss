@@ -544,10 +544,15 @@ body .layui-table-tips .layui-layer-content {
     text-align: left;
     width: auto;
     line-height: 30px;
+    height: 30px;
 }
 
 .table-input-control .layui-input {
     height: 30px;
+}
+
+.table-input-control .layui-input-inline {
+    width: 160px;
 }
 
 /* 超小屏幕(手机) */
