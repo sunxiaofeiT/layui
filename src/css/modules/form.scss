@@ -285,6 +285,10 @@ button, input, optgroup, option, select, textarea {
     text-overflow: ellipsis;
 }
 
+.layui-form-checked span {
+    color: $backgroundFontColor;
+}
+
 .layui-form-checkbox {
     position: relative;
     height: 30px;
@@ -326,7 +330,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-form-checked span,.layui-form-checked:hover span{
-	background-color: $selectHoverColor;
+	background-color: $inputBorderHoverColor;
 }
 
 .layui-form-checkbox:hover i{
@@ -338,8 +342,8 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-form-checked i{
-    color: $selectHoverColor;
-    border-color: $selectHoverColor;
+    color: $inputBorderFocusColor;
+    border-color: $inputBorderFocusColor;
 }
 
 .layui-form-checked i:hover{
@@ -385,7 +389,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-form-checkbox[lay-skin=primary] span {
-	border-color: #fff;
+	border-color: $inputBorderColor;
 	background-color: #fff;
     float: right;
     padding-right: 15px;
@@ -407,7 +411,7 @@ button, input, optgroup, option, select, textarea {
     border: 1px solid $inputBorderColor;
     font-size: 12px;
     border-radius: 2px;
-    background-color: $selectInitBackground;
+    background-color: $backgroundFontColor;
     color:$selectInitBackground;
     -webkit-transition: .1s linear;
     transition: .1s linear;
@@ -421,7 +425,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-form-checked[lay-skin=primary] i {
-	background-color: $selectHoverColor;
+	background-color: $inputBorderFocusColor;
 	border-color: $inputBorderColor;
     color: #fff;
 }
@@ -485,7 +489,7 @@ button, input, optgroup, option, select, textarea {
 
 .layui-form-onswitch {
     border-color: $baseColor;
-    background-color: $selectHoverColor;
+    background-color: $inputBorderFocusColor;
     border: 1px solid $selectHoverColor;
 }
 
@@ -555,7 +559,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-form-radio>i:hover, .layui-form-radioed>i{
-	color:$selectHoverColor;
+	color:$inputBorderFocusColor;
 }
 
 .layui-form-radio{
@@ -636,7 +640,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-anim-upbit dd:hover{
-    background-color: $inputBorderHoverColor;
+    background-color: $inputBackgroundColor;
     color: $fontColor; 
 }
 
