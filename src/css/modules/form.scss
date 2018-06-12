@@ -421,7 +421,7 @@ button, input, optgroup, option, select, textarea {
 
 .layui-form-checkbox[lay-skin=primary]:hover i {
     border-color: $inputBorderHoverColor;
-    color: $inputBorderColor;
+    color: $backgroundFontColor;
 }
 
 .layui-form-checked[lay-skin=primary] i {
