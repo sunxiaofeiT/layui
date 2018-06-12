@@ -347,7 +347,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-form-checked i:hover{
-    color: $selectHoverColor;
+    color: $inputBorderFocusColor;
 }
 
 .layui-form-item .layui-form-checkbox{
@@ -412,7 +412,7 @@ button, input, optgroup, option, select, textarea {
     font-size: 12px;
     border-radius: 2px;
     background-color: $backgroundFontColor;
-    color:$selectInitBackground;
+    color:#fff;
     -webkit-transition: .1s linear;
     transition: .1s linear;
 }
