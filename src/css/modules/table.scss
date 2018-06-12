@@ -523,13 +523,17 @@ body .layui-table-tips .layui-layer-content {
     margin-left: 10px;
 }
 
-.layui-table-cell .layui-icon:hover {
+.layui-table-cell .layui-icon:hover:not(.layui-icon-ok) {
     color: $hoverColor;
 }
 
 /* 文字按钮样式 */
 
 .layui-table-cell a {
+    color: $baseColor;
+}
+
+.layui-table-cell a:hover {
     color: $hoverColor;
 }
 
