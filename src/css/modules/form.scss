@@ -338,7 +338,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-form-checked span:hover~i{
-	color: $selectHoverColor;
+	color: $inputBorderHoverColor;
 }
 
 .layui-form-checked i{
