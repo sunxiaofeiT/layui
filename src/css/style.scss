@@ -53,16 +53,19 @@ $selectHoverColor: #E6F7FF; // Select 选择框下拉选中颜色
 $selectBackground:#FFFFFF; // Select 选中后颜色
 $selectInitBackground: #D2D2D2; // Select 未选中的颜色
 // 表格
-$tableBorderColor: #D3D3D3; // 表格边框颜色
+$tableBorderColor: #D3D3D3; // 表格边框颜色 //同分割线颜色 暗色#415764
 $tableBackgroundColor: #FFFFFF; // 表格背景颜色
 $tableThColor: #ECF9FF; // 表格中表头的背景颜色
 $tableThFontColor: #226596; // 表格中表头的文字颜色
 $tableTrColor: #F9F9F9; // 表格中隔行显示的背景颜色
 $tableHoverColor: #E6F7FF; // 表格中行选中时的背景颜色
-//进度条
-$progressNotDone:#E2E2E2; //进度条未进行时的颜色
+// 进度条
+$progressNotDone:#E2E2E2; // 进度条未进行时的颜色 //绿色暗色一样
+// 日期与时间选择
+$timeNow:#FDE19A; // 鼠标选择其他时间时，当前时间的颜色 //绿色一样，暗色#263841
 // 弹层
-$layerTitleBackgroundColor: rgba(0, 0, 0, 0.22); //弹层标题背景颜色
+$layerTitleBackgroundColor: #ECF9FF; // 弹层标题背景颜色
+$maskBackgroundColor: rgba(0, 0, 0, 0.22); // 遮罩层颜色
 /*
  * 尺寸
 */

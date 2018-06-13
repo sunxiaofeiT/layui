@@ -193,7 +193,7 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 
 /*部分样式覆盖*/
 .tab-nor-scr,.tab-nor-auto,.tab2,.tab3{
-    background-color: backgroundColor;
+    background-color:$containerBackgroundColor;
     color: $firstFontColor;
 }
 /*滚动条*/
