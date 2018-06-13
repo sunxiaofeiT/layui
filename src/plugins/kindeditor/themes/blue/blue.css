@@ -1,0 +1,221 @@
+/*
+ * @Author: pengfei.SUN 
+ * @Date: 2018-06-07 14:22:09 
+ * @Last Modified by: pengfei.SUN
+ * @Last Modified time: 2018-06-10 09:24:42
+ * 修改kindeditor中default.css文件为less文件
+ * 工具 [lessc] 
+ * 根据需求修改参数，编译输出到对应主题颜色样式文件即可。
+ */
+body {
+  background-color: #F2F6F8;
+}
+/* container */
+.ke-container {
+  display: block;
+  border: 1px solid #D3D3D3;
+  background-color: #FFF;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+/* toolbar */
+.ke-toolbar {
+  border-bottom: 1px solid #D3D3D3;
+  background-color: #FFFFFF;
+  padding: 2px 5px;
+  text-align: left;
+  overflow: hidden;
+  zoom: 1;
+}
+.ke-toolbar-icon-url {
+  background-image: url('../default/default.png');
+}
+.ke-toolbar-icon-url:hover {
+  background-image: url('../default/default_hover.png');
+}
+.ke-toolbar-icon-url:active {
+  background-image: url('../default/default_active.png');
+}
+.ke-toolbar .ke-outline {
+  border: 1px solid transparent;
+  margin: 1px;
+  padding: 1px 2px;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+  float: left;
+}
+.ke-toolbar .ke-on {
+  border: 1px solid transparent;
+}
+.ke-toolbar .ke-selected {
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+.ke-toolbar .ke-selected .ke-toolbar-icon-url {
+  background-image: url('../default/default_active.png');
+}
+/* edit */
+.ke-edit {
+  padding: 0;
+  background-color: #F3F8FC;
+}
+/* statusbar */
+.ke-statusbar {
+  position: relative;
+  background-color: #F3F8FC;
+  border-top: 1px solid transparent;
+  font-size: 0;
+  line-height: 0;
+  *height: 12px;
+  overflow: hidden;
+  text-align: center;
+  cursor: s-resize;
+}
+.ke-statusbar-center-icon {
+  background-position: 0px -754px;
+  width: 15px;
+  height: 11px;
+  background-image: url('../default/default.png');
+}
+.ke-statusbar-right-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: se-resize;
+  background-position: -5px -741px;
+  width: 11px;
+  height: 11px;
+  background-image: url('../default/default.png');
+}
+/* menu */
+.ke-menu {
+  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;
+  color: #222222;
+  padding: 2px;
+  font-family: "sans serif", tahoma, verdana, helvetica;
+  font-size: 12px;
+  text-align: left;
+  overflow: hidden;
+}
+.ke-menu-item {
+  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;
+  color: #222222;
+  height: 24px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ke-dialog-header {
+  border: 0;
+  margin: 0;
+  padding: 0 10px;
+  background-color: #FFFFFF;
+  border-bottom: none;
+  height: 24px;
+  font: 12px/24px "sans serif", tahoma, verdana, helvetica;
+  text-align: left;
+  color: #222;
+  cursor: move;
+}
+.ke-dialog-icon-close {
+  display: block;
+  background: url('../default/default.png') no-repeat scroll 0px -688px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  cursor: pointer;
+}
+.ke-button-common {
+  background-color: #1E9FFF;
+  height: 23px;
+  line-height: 23px;
+  overflow: visible;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.ke-button {
+  margin: 0 0 0 2px;
+  font-family: "sans serif", tahoma, verdana, helvetica;
+  border: 0 none;
+  color: #FFFFFF;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 0 10px;
+  background-color: #1E9FFF;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+.ke-swfupload-body .ke-delete {
+  display: block;
+  background: url('../default/default.png') no-repeat scroll 0px -688px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+.ke-dialog-header {
+  border: 0;
+  margin: 0;
+  padding: 0 10px;
+  background-color: #F2F6F8;
+  border-bottom: none;
+  height: 24px;
+  font: 12px/24px "sans serif", tahoma, verdana, helvetica;
+  text-align: left;
+  color: #2A2A2A;
+  cursor: move;
+}
+.ke-dialog-content {
+  background-color: #F2F6F8;
+  width: 100%;
+  height: 100%;
+  color: #2A2A2A;
+  border: 1px solid #D3D3D3;
+}
+.ke-dialog-body input {
+  border: 1px solid #EBEBEB;
+  background-color: #F3F8FC;
+  color: #2A2A2A;
+}
+.ke-dialog-body select {
+  border: 1px solid #EBEBEB;
+  background-color: #F3F8FC;
+  color: #2A2A2A;
+  height: 23px;
+}
+.ke-dialog-footer {
+  font: 12px/1 "sans serif", tahoma, verdana, helvetica;
+  text-align: right;
+  padding: 0 0 5px 0;
+  background-color: #F2F6F8;
+  width: 100%;
+}
+.ke-colorpicker {
+  border: 1px solid #EBEBEB;
+  background-color: #F2F6F8;
+  color: #2A2A2A;
+  padding: 2px;
+}
+.ke-colorpicker-cell {
+  font-size: 0;
+  line-height: 0;
+  border: 1px solid #EBEBEB;
+  cursor: pointer;
+  margin: 3px;
+  padding: 0;
+}

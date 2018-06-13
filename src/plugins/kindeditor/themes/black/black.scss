@@ -1,0 +1,268 @@
+/*
+ * @Author: pengfei.SUN 
+ * @Date: 2018-06-07 14:22:09 
+ * @Last Modified by: pengfei.SUN
+ * @Last Modified time: 2018-06-13 15:42:22
+ * 修改kindeditor中default.css文件为less文件
+ * 工具 [lessc] 
+ * 根据需求修改参数，编译输出到对应主题颜色样式文件即可。
+ */
+
+// 图标栏整体背景颜色(弹出层同样的颜色）
+$title-background-color: #303F47; //black
+$body-background-color: #2a2a2a;
+
+// 编辑区颜色
+$edit-content-background-color: #303F47;
+$edit-content-color: #FFFFFF;
+
+// 图标栏下边框
+$title-border-bottom: 1px solid #415764;
+// 下拉栏的背景颜色
+$bar-background-color: #303F47;
+// 下拉栏的上边框颜色
+$bar-boder-top: 1px solid transparent;
+// 整体的边框
+$content-border: 1px solid #415764;
+
+// 图标icon边框样式
+$icon-border: 1px solid transparent;
+
+// 图标icon悬浮样式
+$icon-hover-boder: 1px solid transparent; //边框样式
+
+// 图标icon选中边框样式
+$icon-selected-border: 1px solid transparent; //边框
+$icon-selected-background-color: transparent; //背景
+
+// 背景图
+$default-icon: url('./black.png');
+$icon-hover: url('../default/default_hover.png');
+$icon-active: url('../default/default_active.png');
+
+// 按钮颜色
+$button-bgcolor: #55B7FF;
+$button-color: #FFFFFF;
+
+// 弹出层的样式
+$input-border: 1px solid #415764;
+// 弹出层字体颜色
+$ke-menu-item-color: #FFFFFF;
+
+/* container */
+.ke-container {
+	display: block;
+	border: $content-border;
+	background-color: #FFF;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+/* toolbar */
+.ke-toolbar {
+	border-bottom: $title-border-bottom;
+	background-color: $title-background-color;
+	padding: 2px 5px;
+	text-align: left;
+	overflow: hidden;
+	zoom: 1;
+}
+.ke-toolbar-icon-url {
+	background-image: $default-icon;
+}
+.ke-toolbar-icon-url:hover {
+	background-image: $icon-hover;
+}
+.ke-toolbar-icon-url:active {
+	background-image: $icon-active
+}
+.ke-toolbar .ke-outline {
+	border: $icon-border;
+	margin: 1px;
+	padding: 1px 2px;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	cursor: pointer;
+	display: block;
+	float: left;
+}
+.ke-toolbar .ke-on {
+	border: $icon-hover-boder;
+}
+.ke-toolbar .ke-selected {
+	border: $icon-selected-border;
+	background-color: $icon-selected-background-color;
+}
+.ke-toolbar .ke-selected .ke-toolbar-icon-url {
+	background-image: $icon-active;
+}
+/* edit */
+.ke-edit {
+	padding: 0;
+	background-color: $edit-content-background-color;
+}
+/* statusbar */
+.ke-statusbar {
+	position: relative;
+	background-color: $bar-background-color;
+	border-top: $bar-boder-top;
+	font-size: 0;
+	line-height: 0;
+	*height: 12px;
+	overflow: hidden;
+	text-align: center;
+	cursor: s-resize;
+}
+.ke-statusbar-center-icon {
+	background-position: -0px -754px;
+	width: 15px;
+	height: 11px;
+	background-image: $default-icon;
+}
+.ke-statusbar-right-icon {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	cursor: se-resize;
+	background-position: -5px -741px;
+	width: 11px;
+	height: 11px;
+	background-image: $default-icon;
+}
+/* menu */
+.ke-menu {
+	border: 1px solid $title-background-color;
+	background-color: $title-background-color;
+	color: #222222;
+	padding: 2px;
+	font-family: "sans serif",tahoma,verdana,helvetica;
+	font-size: 12px;
+	text-align: left;
+	overflow: hidden;
+}
+.ke-menu-item {
+	border: 1px solid $title-background-color;
+	background-color: $title-background-color;
+	color: #222222;
+	height: 24px;
+	overflow: hidden;
+	cursor: pointer;
+	color: $ke-menu-item-color;
+}
+.ke-dialog-header {
+	border:0;
+	margin:0;
+	padding: 0 10px;
+	// background: url(background.png) repeat scroll 0 0 #F0F0EE;
+	background-color: $title-background-color;
+	// border-bottom: 1px solid #CFCFCF;
+	border-bottom: none;
+	height: 24px;
+	font: 12px/24px "sans serif",tahoma,verdana,helvetica;
+	text-align: left;
+	color: #222;
+	cursor: move;
+}
+.ke-dialog-icon-close {
+	display: block;
+	background: $default-icon no-repeat scroll 0px -688px;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 6px;
+	top: 6px;
+	cursor: pointer;
+}
+.ke-button-common {
+	// background: url(background.png) no-repeat;
+	background-color: $button-bgcolor;
+	cursor: pointer;
+	height: 23px;
+	line-height: 23px;
+	overflow: visible;
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+	border-radius: 2px;
+}
+.ke-button {
+	// background-position: right -25px;
+	// padding: 0 14px 0 12px;
+	margin: 0 0 0 2px;
+	font-family: "sans serif",tahoma,verdana,helvetica;
+	border: 0 none;
+	color: $button-color;
+	font-size: 12px;
+	text-decoration: none;
+    padding: 0 10px;
+    background-color: $button-bgcolor;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+    border: none;
+    cursor: pointer
+}
+.ke-swfupload-body .ke-delete {
+	display: block;
+	background: $default-icon no-repeat scroll 0px -688px;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+.ke-dialog-header {
+    border: 0;
+    margin: 0;
+    padding: 0 10px;
+    background-color: $body-background-color;
+    border-bottom: none;
+    height: 24px;
+    font: 12px/24px "sans serif", tahoma, verdana, helvetica;
+    text-align: left;
+    color: $edit-content-color;
+    cursor: move;
+}
+.ke-dialog-content {
+    background-color: $body-background-color;
+    width: 100%;
+    height: 100%;
+    color: $edit-content-color;
+    border: $content-border;
+}
+.ke-dialog-body input {
+	border: $input-border;
+	background-color: $edit-content-background-color;
+	color: $edit-content-color;
+}
+.ke-dialog-body select {
+	border: $input-border;
+	background-color: $edit-content-background-color;
+	color: $edit-content-color;
+	height: 23px;
+}
+.ke-dialog-footer {
+    font: 12px/1 "sans serif", tahoma, verdana, helvetica;
+    text-align: right;
+    padding: 0 0 5px 0;
+    background-color: $body-background-color;
+    width: 100%;
+}
+.ke-colorpicker {
+    border: $input-border;
+    background-color: $body-background-color;
+    color: $edit-content-color;
+    padding: 2px;
+}
+.ke-colorpicker-cell {
+    font-size: 0;
+    line-height: 0;
+    border: $input-border;
+    cursor: pointer;
+    margin: 3px;
+    padding: 0;
+}
