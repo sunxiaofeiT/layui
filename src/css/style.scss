@@ -56,7 +56,7 @@ $adapInputRight: 15px; // 自适应input距离右侧距离
 $selectBackground:#fff;
 $selectInitBackground: #d2d2d2;
 // 表格
-$tableBorderColor: #D3D3D3; // 表格边框颜色
+$tableBorderColor: #D3D3D3; // 表格边框颜色 //同分割线颜色 暗色#415764
 $tableBackgroundColor: #FFFFFF; // 表格背景颜色
 $tableThColor: #ECF9FF; // 表格中表头的背景颜色
 $tableThFontColor: #226596; // 表格中表头的文字颜色
@@ -64,7 +64,10 @@ $tableTrColor: #F9F9F9; // 表格中隔行显示的背景颜色
 $tableHoverColor: #E6F7FF; // 表格中行选中时的背景颜色
 
 //进度条
-$progressNotDone:#e2e2e2; //进度条未进行时的颜色
+$progressNotDone:#e2e2e2; //进度条未进行时的颜色 //绿色暗色一样
+
+//日期与时间选择
+$timeNow:#fde19a; //鼠标选择其他时间时，当前时间的颜色 //绿色一样，暗色#263841
 
 $layerTitleBackgroundColor: #ECF9FF; //弹层标题背景颜色
 /*
