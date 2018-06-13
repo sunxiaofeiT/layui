@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="../dist/css/layui.css">
+    <title>弹层DEMO</title>
+</head>
+
+<body>
+    <div style="width:60%; margin-left: 20%">
+        <hr>
+        <p>说明:弹层中的button从右侧顺序排列.</p>
+        <p>点击每个按钮可查看每个按钮对应的弹层样式</p>
+        <hr>
+        <div>
+            <button id="remind" class="layui-btn layui-btn-normal">提示弹层</button>
+        </div>
+        <hr>
+        <div>
+            <button id="tipsButton" class="layui-btn layui-btn-normal ">Tips层</button>
+            <p>多用悬停提示,可改变方向,改变颜色</p>
+        </div>
+        <hr>
+        <div>
+            <button id="remindButton" class="layui-btn layui-btn-normal">普通弹层</button>
+            <p>一行文字的提示弹层,带有下方的按钮</p>
+        </div>
+        <hr>
+        <div>
+            <button id="oneInput" class="layui-btn layui-btn-normal">输入弹层</button>
+        </div>
+        <hr>
+        <div>
+            <button id="twoInput" class="layui-btn layui-btn-normal">两个input</button>
+        </div>
+        <hr>
+        <div>
+            <button id="sevenInput" class="layui-btn layui-btn-normal">多个input</button>
+        </div>
+        <!-- <hr>
+        <div>
+            <button id="moreInput" class="layui-btn layui-btn-normal">两列input</button>
+            <p>每列 Input 宽 260px, 两列之间间距为 20px.</p>
+        </div> -->
+        <hr>
+        <div>
+            <button id="dropdownInput" class="layui-btn layui-btn-normal">复杂表单弹层</button>
+            <p>其余与其它弹层类似</p>
+            <p>每个表单项的上下间距为20px</p>
+        </div>
+    </div>
+
+    <!-- 两个input的弹出层 -->
+    <div id="oneInputLayer" class="layerDiv layer-box">
+        <input class="layui-input" placeholder="第一个Input">
+    </div>
+    <!-- 两个input的弹出层 -->
+    <div id="twoInputLayer" class="layerDiv layer-box">
+        <input class="layui-input" placeholder="第一个Input">
+        <input class="layui-input" placeholder="第二个Input">
+    </div>
+    <!-- 7-10个input的弹出层 -->
+    <div id="sevenInputLayer" class="layerDiv layer-box">
+        <input class="layui-input" placeholder="第一个Input">
+        <input class="layui-input" placeholder="第二个Input">
+        <input class="layui-input" placeholder="第三个Input">
+        <input class="layui-input" placeholder="第四个Input">
+        <input class="layui-input" placeholder="第五个Input">
+        <input class="layui-input" placeholder="第六个Input">
+        <input class="layui-input" placeholder="第七个Input">
+        <input class="layui-input" placeholder="第八个Input">
+        <input class="layui-input" placeholder="第九个Input">
+        <input class="layui-input" placeholder="第十个Input">
+        <input class="layui-input" placeholder="第十个Input">
+        <input class="layui-input" placeholder="第十个Input">
+        <input class="layui-input" placeholder="第十个Input">
+        <input class="layui-input" placeholder="第十个Input">
+        <input class="layui-input" placeholder="第十个Input">
+        <input class="layui-input" placeholder="第十个Input">
+        <input class="layui-input" placeholder="第十个Input">
+    </div>
+    <!-- >10个input的弹出层 -->
+    <div id="moreInputLayer" class="layerDiv layer-box">
+        <div class="layer-content-left">
+            <input class="layui-input" placeholder="第一个Input">
+            <input class="layui-input" placeholder="第二个Input">
+            <input class="layui-input" placeholder="第三个Input">
+            <input class="layui-input" placeholder="第四个Input">
+            <input class="layui-input" placeholder="第五个Input">
+            <input class="layui-input" placeholder="第六个Input">
+            <input class="layui-input" placeholder="第七个Input">
+            <input class="layui-input" placeholder="第八个Input">
+            <input class="layui-input" placeholder="第九个Input">
+            <input class="layui-input" placeholder="第十个Input">
+        </div>
+        <div class="layer-content-right">
+            <input class="layui-input" placeholder="第十一个Input">
+            <input class="layui-input" placeholder="第十二个Input">
+            <input class="layui-input" placeholder="第十三个Input">
+            <input class="layui-input" placeholder="第十四个Input">
+            <input class="layui-input" placeholder="第十五个Input">
+        </div>
+    </div>
+    <!-- 带有下拉框的弹出层 -->
+    <div id="dropdownLayer" class="layer-box">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">输入框</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码框</label>
+                <div class="layui-input-inline">
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">辅助文字</div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">选择框</label>
+                <div class="layui-input-block">
+                    <select name="city" lay-verify="required">
+                        <option value=""></option>
+                        <option value="0">选项一</option>
+                        <option value="1">选项二</option>
+                        <option value="2">选项三</option>
+                        <option value="3">选项四</option>
+                        <option value="4">选项五</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">复选框</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="like[write]" title="写作">
+                    <input type="checkbox" name="like[read]" title="阅读" checked>
+                    <input type="checkbox" name="like[dai]" title="发呆">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">开关</label>
+                <div class="layui-input-block">
+                    <input type="checkbox" name="switch" lay-skin="switch">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">单选框</label>
+                <div class="layui-input-block">
+                    <input type="radio" name="sex" value="男" title="男">
+                    <input type="radio" name="sex" value="女" title="女" checked>
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">文本域</label>
+                <div class="layui-input-block">
+                    <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script src="../dist/layui.js"></script>
+
+<script>
+    // 提示弹层,不带按钮
+    layui.use(['layer', 'form'], function () {
+        var layer = layui.layer;
+        var form = layui.form;
+        $ = layui.jquery;
+        var bodyHeight = $(document.body).height();
+        var bodyWidth = $(document.body).width();
+        console.log(bodyHeight * 0.8);
+        layer.config({ // 默认配置（不需修改）
+            anim: 0,
+            offset: 'auto',
+            shade: false,
+            area: 'auto',
+            maxWidth: (bodyWidth * 0.8),
+            maxHeight: (bodyHeight * 0.8),
+            btnAlign: 'c',
+        })
+
+        // 不同情况下的实现方法
+
+        // 提示
+        $('#remind').on('click', function () {
+            layer.msg('提示内容', {
+                time: '1000', //停留时间，0为不自动关闭
+                // btn: ['a','b','c'], // 添加按钮
+            })
+        })
+
+        // tips弹层
+        $('#tipsButton').on('click', function () {
+            layer.tips('ssss', '#tipsButton', {
+                // 第一个参数为方向,1上,2右(默认),3下,4左
+                // 第二个参数为颜色,默认黑色
+                tips: [2, 'rgba(0,0,0,0.9'],
+            });
+        })
+
+        // 普通弹层
+        $('#remindButton').on('click', function () {
+            layer.open({
+                type: "1",
+                shade: false, //空白处是否变黑
+                title: '提示', //弹层标题,false为不显示标题
+                area: ['350px'], // 宽
+                // content => 可以为捕获的元素,例如:$('#idName'),最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响       
+                content: '提示信息',
+                btn: ['确认', '取消'], // 定义按钮(可多个)
+                btnAlign: 'c', // l => 居左, c => 居中, r => 居右, 默认居右
+                cancel: function () {
+                    console.log('you click close ico');
+                }, // 点击右上角叉号触发事件
+                btn1: function (index) { // 每个按钮触发的事件
+                    layer.close(index); // 关闭当前弹层,index是传入的参数
+                }
+            })
+        })
+
+        // 输入弹层
+        $('#oneInput').on('click', function () {
+            layer.open({
+                type: "1",
+                shade: false, //空白处是否变黑
+                title: '两个输入框', //弹层标题,false为不显示标题
+                area: ['350px'], // 宽高
+                // content => 可以为捕获的元素,例如:$('#idName'),最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响       
+                content: $('#oneInputLayer'),
+                btn: ['确认', '取消'], // 定义按钮(可多个)
+                btnAlign: 'c', // l => 居左, c => 居中, r => 居右, 默认居右
+                cancel: function () {
+                    console.log('you click close ico');
+                }, // 点击右上角叉号触发事件
+                btn1: function (index) { // 每个按钮触发的事件
+                    layer.close(index); // 关闭当前弹层,index是传入的参数
+                }
+            })
+        })
+
+        // 两个input
+        $('#twoInput').on('click', function () {
+            layer.open({
+                type: "1",
+                shade: false, //空白处是否变黑
+                title: '两个输入框', //弹层标题,false为不显示标题
+                area: ['350px'], // 宽高
+                // content => 可以为捕获的元素,例如:$('#idName'),最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响       
+                content: $('#twoInputLayer'),
+                btn: ['确认', '取消', ], // 定义按钮(可多个)
+                btnAlign: 'c', // l => 居左, c => 居中, r => 居右, 默认居右
+                cancel: function () {
+                    console.log('you click close ico');
+                }, // 点击右上角叉号触发事件
+                btn1: function (index) { // 每个按钮触发的事件
+                    layer.close(index); // 关闭当前弹层,index是传入的参数
+                }
+            })
+        })
+
+        // 多个input
+        $('#sevenInput').on('click', function () {
+            layer.open({
+                type: "1",
+                shade: false,
+                title: '多个输入框', //弹层标题,false为不显示标题
+                area: ['400px', '700px'], // 宽高  
+                content: $('#sevenInputLayer'),
+                btn: ['确认', '取消'],
+                cancel: function () {
+                    console.log('you click close ico');
+                },
+                btn1: function (index) {
+                    layer.close(index);
+                }
+            })
+        })
+
+        // >10个input
+        $('#moreInput').on('click', function () {
+            layer.open({
+                type: "1",
+                shade: false, //空白处是否变黑
+                title: '多个输入框', //弹层标题,false为不显示标题
+                area: ['650px', '550px'], // 宽高
+                // content => 可以为捕获的元素,例如:$('#idName'),最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响       
+                content: $('#moreInputLayer'),
+                btn: ['确认', '取消'], // 定义按钮(可多个)
+                cancel: function () {
+                    console.log('you click close ico');
+                }, // 点击右上角叉号触发事件
+                btn1: function (index) { // 每个按钮触发的事件
+                    layer.close(index); // 关闭当前弹层,index是传入的参数
+                }
+            })
+        })
+
+        // 下拉框的弹出层
+        $('#dropdownInput').on('click', function () {
+            layer.open({
+                type: 1,
+                shade: false,
+                title: '下拉框的弹出层',
+                area: ['600px'],
+                content: $('#dropdownLayer'),
+                btn: ['确认', '重置', '取消'],
+                btn1: function (index) {
+                    layer.close(index);
+                },
+                btn2: function (index) {
+                    layer.close(index);
+                }
+            })
+        })
+
+    })
+</script>
+
+</html>
