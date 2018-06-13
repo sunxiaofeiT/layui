@@ -5,21 +5,6 @@
   按钮 
 */
 
-// layui-icon
-@font-face {
-    font-family: layui-icon;
-    src: url(../../font/iconfont.eot?v=226_rc2);
-    src: url(../../font/iconfont.eot?v=226_rc2#iefix) format('embedded-opentype'), url(../../font/iconfont.svg?v=226_rc2#iconfont) format('svg'), url(../../font/iconfont.woff?v=226_rc2) format('woff'), url(../../font/iconfont.ttf?v=226_rc2) format('truetype')
-}
-
-.layui-icon {
-    font-family: layui-icon !important;
-    font-size: 16px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}
-
 //基本樣式
 .layui-btn{display: inline-block; vertical-align: middle; height: 38px; line-height: 38px; padding: 0 18px; background-color: $baseColor; color: $backgroundFontColor; white-space: nowrap; text-align: center; font-size: 14px; border: none; border-radius: 2px; cursor: pointer; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
 .layui-btn:hover{opacity: 0.8; filter:alpha(opacity=80); color: #fff;}
@@ -68,7 +53,7 @@
 .btnDiv{
     height: 60px;
 }
-span{
+.btnDiv span{
     display: block;
     float: left;
     vertical-align: middle;

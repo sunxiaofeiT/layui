@@ -7,6 +7,18 @@
  
 */
 
+body {
+    line-height: 24px;
+    font: 14px Helvetica Neue, Helvetica, PingFang SC, \5FAE\8F6F\96C5\9ED1, Tahoma, Arial, sans-serif
+}
+blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+.layui-show {
+    display: block !important
+}
 
 /* 折叠面板 */
 .layui-collapse{border-width: 1px; border-style: solid; border-radius: 2px;}
@@ -69,3 +81,101 @@
 .layui-tab-card > .layui-tab-title .layui-tab-bar{height: 40px; line-height: 40px; border-radius: 0; border-top: none; border-right: none;}
 .layui-tab-card > .layui-tab-more .layui-this{background: none; color: #5FB878;}
 .layui-tab-card > .layui-tab-more .layui-this:after{border: none;}
+
+/*部分样式覆盖*/
+/*主题通用样式*/
+/*关于面板*/
+.card{
+    padding: 20px;
+}
+.collapse{
+    padding: 20px;
+}
+.layui-card{
+    height: 200px;
+}
+
+/*卡片面板标题*/
+.layui-card-header {
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+}
+
+/*调整图标*/
+.layui-icon {
+    font-family: layui-icon !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+/*折叠面板宽高*/
+.layui-collapse {
+    /*width: 500px;*/
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px
+}
+
+/*调整分割线类型*/
+.layui-colla-content, .layui-colla-item {
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+/*面板小标题*/
+.layui-colla-title {
+    height: 42px;
+    line-height: 42px;
+    color: $aFontColor;
+    font-size: 14px;
+}
+
+/*面板内容区域*/
+.layui-colla-content {
+    display: none;
+    padding: 10px 15px;
+    line-height: 22px;
+}
+
+/*
+主体颜色
+*/
+.container{
+    /*整体的背景颜色*/
+    background-color:$containerBackgroundColor;
+    /*字的颜色*/
+    color:$firstFontColor;
+}
+
+/*卡片面板底色*/
+.layui-card{
+    background-color:$tableBackgroundColor;
+}
+
+.layui-card-header {
+    /*卡片面板标题颜色*/
+    color: $firstFontColor;
+    /*卡片面板分割线颜色*/
+    border-bottom: 1px solid $borderColor;
+}
+
+/*折叠面板分割线颜色*/
+.layui-badge-rim, .layui-colla-content, .layui-colla-item, .layui-collapse, .layui-elem-field, .layui-form-pane .layui-form-item[pane], .layui-form-pane .layui-form-label, .layui-input, .layui-layedit, .layui-layedit-tool, .layui-quote-nm, .layui-select, .layui-tab-bar, .layui-tab-card, .layui-tab-title, .layui-tab-title .layui-this:after, .layui-textarea {
+    border-color: $borderColor;
+}
+
+/*面板小标题*/
+.layui-colla-title {
+    /*面板小标题颜色*/
+    background-color:$tableBackgroundColor;
+    /*字的颜色*/
+    color: $firstFontColor;
+}
+
+/*面板内容区域*/
+.layui-colla-content {
+    color: $secondFontColor;
+}
