@@ -27,14 +27,12 @@
         target.getChildNodes = function (data, parentNode, parentIndex, tbody) {
             $.each(data, function (i, item) {
                 if (item[options.parentColumn] == parentNode[options.id]) {
-                    // console.log(item)
                     var tr = $('<tr></tr>');
-                    var nowParentIndex = (parentIndex + (j++) + 10000);
-                    // console.log('pid', parentIndex)
-                    // console.log('id', nowParentIndex)
+                    var nowParentIndex = (parentIndex + (j++) + 10000); // FIX: 防止节点过多 id 重复
                     tr.addClass('treegrid-' + nowParentIndex);
                     tr.addClass('treegrid-parent-' + parentIndex);
                     $.each(options.columns, function (index, column) {
+                        // CHANGE 增加模版内容
                         var td = $('<td></td>');
                         td.text(item[column.field]);
                         tr.append(td);
@@ -73,7 +71,9 @@
                         }
                     }
                     // 判断是否为数组
-                    // if ()
+                    if (!(data instanceof Array)) {
+                        return alert('返回数据不是 Array，请检查返回数据，或设置dataName字段');
+                    }
                     //构造表头
                     var thr = $('<tr></tr>');
                     $.each(options.columns, function (i, item) {
@@ -88,13 +88,11 @@
                     //构造表体
                     var tbody = $('<tbody></tbody>');
                     var rootNode = target.getRootNodes(data);
-                    // console.log(rootNode)
                     $.each(rootNode, function (i, item) {
                         var tr = $('<tr></tr>');
-                        // console.log(j + i)
-                        // console.log(item)
                         tr.addClass('treegrid-' + (j + i));
                         $.each(options.columns, function (index, column) {
+                            // CHANGE 增加模版内容
                             var td = $('<td></td>');
                             td.text(item[column.field]);
                             tr.append(td);

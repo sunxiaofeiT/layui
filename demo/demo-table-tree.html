@@ -35,12 +35,9 @@
             $('#tb').treegridData({
                 id: 'id', // 当前节点 ID
                 parentColumn: 'parentId', // 当前节点的父节点的 ID
-                dataName: '',
+                dataName: 'data', // 返回数据中的数据字段名
                 url: '/api/sys/menu', //请求数据的ajax的url
                 ajaxParams: {}, //请求数据的ajax的data属性
-                expandColumn: null, //在哪一列上面显示展开按钮
-                striped: true, //是否各行渐变色
-                bordered: true, //是否显示边框
                 rootId: '0', // 根节点ID
                 expandAll: false, //是否全部展开
                 columns: [{
