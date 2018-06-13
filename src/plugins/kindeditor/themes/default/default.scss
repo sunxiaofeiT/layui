@@ -23,9 +23,12 @@ $bar-background-color: $inputBackgroundColor;
 $content-border: 1px solid $borderColor;
 
 // 背景图
-$default-icon: url('default.png');
-$icon-hover: url('default_hover.png');
-$icon-active: url('default_active.png');
+// $default-icon: url('default.png');
+// $icon-hover: url('default_hover.png');
+// $icon-active: url('default_active.png');
+$default-icon: $editIcon;
+$icon-hover: $editHover;
+$icon-active: $editActive;
 
 // 按钮颜色
 $button-bgcolor: $baseColor;
