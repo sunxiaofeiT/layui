@@ -84,3 +84,13 @@ $adapInputRight: 15px; // 自适应input距离右侧距离
 @import './theme-blue.scss';
 // @import './theme-green.scss';
 // @import './theme-dark.scss';
+
+/*
+ * 编辑器图标ICON（通过替换文件改变图标）
+ * 默认蓝色主题
+ * 绿色主题； icon: green.png, hover: green_hover.png, active: green_active.png
+ * 暗色主题： icon: black.png, hover: default_hover.png, active: default_active.png
+*/
+$editIcon: url('default.png');
+$editHover: url('default_hover.png');
+$editActive: url('default_active.png');
