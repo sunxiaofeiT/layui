@@ -1,0 +1,76 @@
+$baseColor: #55B7FF; // 主题色
+$hoverColor: #3EC5FA; // 主题色悬浮色
+$activeColor: #55B7FF; // 主题色点击色
+$backgroundColor: #303F47; // 页面背景色
+$containerBackgroundColor: #303F47; // 容器背景颜色
+// 按钮如果没有悬浮和点击效果，悬浮时将透明度设置为 0.8，点击时将透明度设置为1.0
+$successColor: #4AA45D; // 成功色
+$warningColor: #F6C042; // 警告色
+$failedColor: #DF4F3F; // 失败色
+$disabledColor: #F5F5F5; // 禁用色
+// 常用颜色
+$redColor: #FF5722; // 红色
+$orangeColor: #FFB800; // 橘黄色
+$greenColor: #009688; // 绿色
+$cyanColor: #2F4056; // 青色
+$blueColor: #1E9FFF; // 蓝色
+$blackColor: #393D49; // 黑色
+$grayColor: #EEEEEE; // 灰色
+// 文字
+$firstFontColor: #FFFFFF; // 主要文字颜色
+$fontColor: #FFFFFF; // 常规文字颜色
+$secondFontColor: #96A4AA; // 次要文字颜色
+$thirdFontColor: #96A4AA; // 占位文字颜色
+$backgroundFontColor: #FFFFFF; // 主题色背景的文字颜色
+$aFontColor: #55B7FF; // 链接文字颜色
+$aHoverFontColor: #777777; // 链接文字悬浮颜色
+// 边框
+$borderColor: #415764; // 常规边框颜色
+// 辅助按钮
+$aidBackgroundColor: #303F47; // 辅助按钮背景颜色
+$aidHoverBackgroundColor: #FFFFFF; // 辅助按钮悬浮背景颜色
+$aidActiveBackgroundColor: #FFFFFF; // 辅助按钮点击背景颜色
+$aidBorderColor: #415764; // 辅助按钮边框颜色
+$aidFontColor: #415764; // 辅助按钮文字颜色
+$aidHoverFontColor: #3EC5FA; // 辅助按钮悬浮文字颜色
+$aidActiveFontColor: #55B7FF; // 辅助按钮点击文字颜色
+// 禁用按钮-没改呢
+$disabledBackgroundColor: #F5F5F5; // 禁用按钮背景颜色
+$disabledBorderColor: #A6A6A6; // 禁用按钮边框颜色
+$disabledFontColor: #A6A6A6; // 禁用按钮文字颜色
+// 输入框
+$inputBackgroundColor: #303F47; // 输入框背景色
+$inputBorderColor: #415764; // 输入框边框颜色
+$inputBorderHoverColor: #55B7FF; // 输入框悬浮边框颜色
+$inputBorderFocusColor: #55B7FF; // 输入框焦点边框颜色
+$inputFontColor: #FFFFFF; // 输入框文字颜色
+$selectHoverColor: #E6F7FF; // Select 选择框下拉悬浮和选中颜色
+$selectBackground: #EEEEEE; // 下拉框的背景颜色
+$checkboxInitBackground: #96A4AA;
+; // checkbox、单选框未选中的颜色
+// 表格
+$tableBorderColor: #415764; // 表格边框颜色
+$tableBackgroundColor: #303F47; // 表格背景颜色、TAB选中背景颜色
+$tableThColor: #263841; // 表格中表头的背景颜色、TAB未选中背景颜色
+$tableThFontColor: #96A4AA; // 表格中表头的文字颜色
+$tableTrColor: #354750; // 表格中隔行显示的背景颜色
+$tableHoverColor: #55B7FF; // 表格中行选中时的背景颜色
+// 进度条
+$progressNotDone: #E2E2E2; // 进度条未进行时的颜色
+// 日期与时间选择
+$timeNow: #FDE19A; // 鼠标选择其他时间时，当前时间的颜色
+// 弹层
+$layerTitleBackgroundColor: #ECF9FF; // 弹层标题背景颜色
+$maskBackgroundColor: rgba(0, 0, 0, 0.22); // 遮罩层颜色
+/*
+ * 富文本编辑器
+ *
+ * 编辑器图标ICON（通过替换文件改变图标）
+ * 默认蓝色主题
+ * 绿色主题； icon: green.png, hover: green_hover.png, active: green_active.png
+ * 暗色主题： icon: black.png, hover: default_hover.png, active: default_active.png
+*/
+
+$editIcon: url('black.png');
+$editHover: url('black_hover.png');
+$editActive: url('black_active.png');
