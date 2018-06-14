@@ -18,7 +18,7 @@ h3,h4{color:$fontColor;}
 h5,h6{color:$secondFontColor}
 
 // 基础标签
-.body-container{padding: $bodyPadding;background-color: $backgroundColor;}
+.body-container{padding: $bodyPadding;background-color: $backgroundColor;box-sizing:border-box;}
 .layui-container-field{padding: $containerPadding;background-color: $containerBackgroundColor;position: relative;}
 
 /** 初始化全局标签 **/
