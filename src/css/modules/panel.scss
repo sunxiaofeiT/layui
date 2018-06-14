@@ -147,13 +147,6 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 /*
 主体颜色
 */
-.container{
-    /*整体的背景颜色*/
-    background-color:$containerBackgroundColor;
-    /*字的颜色*/
-    color:$firstFontColor;
-}
-
 /*卡片面板底色*/
 .layui-card{
     background-color:$containerBackgroundColor;
