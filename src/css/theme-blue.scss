@@ -1,13 +1,8 @@
-@charset "utf-8";
-/*
- * 蓝色主题：配色
-*/
-
 $baseColor: #188FFF; // 主题色
 $hoverColor: #40A9FF; // 主题色悬浮色
 $activeColor: #096DD9; // 主题色点击色
 $backgroundColor: #F2F6F8; // 页面背景色
-$containerBackgroundColor: #FFFFFF; // 容器背景颜色
+$containerBackgroundColor: #FFFFFF; // 容器背景颜色
 // 按钮如果没有悬浮和点击效果，悬浮时将透明度设置为 0.8，点击时将透明度设置为1.0
 $successColor: #4AA45D; // 成功色
 $warningColor: #F6C042; // 警告色
@@ -50,37 +45,31 @@ $inputBorderHoverColor: #40A9FF; // 输入框悬浮边框颜色
 $inputBorderFocusColor: #188FFF; // 输入框焦点边框颜色
 $inputFontColor: #4E4E4E; // 输入框文字颜色
 $selectHoverColor: #E6F7FF; // Select 选择框下拉选中颜色
-$selectBackground:#FFFFFF; // Select 选中后颜色
+$selectBackground: #FFFFFF; // Select 选中后颜色
 $selectInitBackground: #D2D2D2; // Select 未选中的颜色
 // 表格
-$tableBorderColor: #D3D3D3; // 表格边框颜色 //同分割线颜色 暗色#415764
+$tableBorderColor: #D3D3D3; // 表格边框颜色
 $tableBackgroundColor: #FFFFFF; // 表格背景颜色
 $tableThColor: #ECF9FF; // 表格中表头的背景颜色
 $tableThFontColor: #226596; // 表格中表头的文字颜色
 $tableTrColor: #F9F9F9; // 表格中隔行显示的背景颜色
 $tableHoverColor: #E6F7FF; // 表格中行选中时的背景颜色
 // 进度条
-$progressNotDone:#E2E2E2; // 进度条未进行时的颜色 //绿色暗色一样
+$progressNotDone: #E2E2E2; // 进度条未进行时的颜色
 // 日期与时间选择
-$timeNow:#FDE19A; // 鼠标选择其他时间时，当前时间的颜色 //绿色一样，暗色#263841
+$timeNow: #FDE19A; // 鼠标选择其他时间时，当前时间的颜色
 // 弹层
 $layerTitleBackgroundColor: #ECF9FF; // 弹层标题背景颜色
 $maskBackgroundColor: rgba(0, 0, 0, 0.22); // 遮罩层颜色
 /*
- * 尺寸
+ * 富文本编辑器
+ *
+ * 编辑器图标ICON（通过替换文件改变图标）
+ * 默认蓝色主题
+ * 绿色主题； icon: green.png, hover: green_hover.png, active: green_active.png
+ * 暗色主题： icon: black.png, hover: default_hover.png, active: default_active.png
 */
 
-// 页面
-$bodyPadding: 20px; // body 的内边距
-$containerPadding: 20px; // 容器内边距
-// 表单
-$inputHeight:38px; //input的高度
-$inputWidth: 300px; //非自适应input宽度
-$adapInputRight: 15px; // 自适应input距离右侧距离
-/*
- * 主题文件
-*/
-
-@import './theme-blue.scss';
-// @import './theme-green.scss';
-// @import './theme-dark.scss';
+$editIcon: url('default.png');
+$editHover: url('default_hover.png');
+$editActive: url('default_active.png');

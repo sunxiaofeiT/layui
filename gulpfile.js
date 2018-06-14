@@ -127,6 +127,7 @@ var argv = require('minimist')(process.argv.slice(2), {
 
                 var src = [
                         '!./src/css/**/style.scss',
+                        '!./src/css/**/theme-*.scss',
                         './src/**/*.scss'
                     ],
                     dir = destDir(ver),
