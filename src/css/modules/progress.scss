@@ -2,9 +2,146 @@
 @import '../style.scss';
 
 /* 进度条 */
-.layui-progress{position: relative; height: 6px; border-radius: 20px; background-color: #e2e2e2;}
-.layui-progress-bar{position: absolute; left: 0; top: 0; width: 0; max-width: 100%; height: 6px; border-radius: 20px; text-align: right; background-color: #5FB878; transition: all .3s; -webkit-transition: all .3s;}
-.layui-progress-big,
-.layui-progress-big .layui-progress-bar{height: 18px; line-height: 18px;}
-.layui-progress-text{position: relative; top: -20px; line-height: 18px; font-size: 12px; color: #666}
-.layui-progress-big .layui-progress-text{position: static; padding: 0 10px; color: #fff;}
+
+/*原始layui.css中progress样式提取*/
+.layui-progress {
+    position: relative;
+    height: 6px;
+    border-radius: 20px;
+    background-color: #e2e2e2;
+}
+
+.layui-progress-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    max-width: 100%;
+    height: 6px;
+    border-radius: 20px;
+    text-align: right;
+    background-color: #5FB878;
+    transition: all .3s;
+    -webkit-transition: all .3s
+}
+
+.layui-progress-big, .layui-progress-big .layui-progress-bar {
+    height: 18px;
+    line-height: 18px
+}
+
+.layui-progress-text {
+    position: relative;
+    top: -20px;
+    line-height: 18px;
+    font-size: 12px;
+    color: #666
+}
+
+.layui-progress-big .layui-progress-text {
+    position: static;
+    padding: 0 10px;
+    color: #fff
+}
+
+.layui-bg-red {
+    background-color: $redColor !important
+}
+
+.layui-bg-orange {
+    background-color: $orangeColor !important
+}
+
+.layui-bg-green {
+    background-color: $greenColor !important
+}
+
+.layui-bg-cyan {
+    background-color: $cyanColor !important
+}
+
+.layui-bg-blue {
+    background-color: $blueColor !important
+}
+
+.layui-bg-black {
+    background-color: $blackColor !important
+}
+
+.layui-bg-gray {
+    background-color: $grayColor !important;
+    color: #666 !important
+}
+
+
+/*部分样式覆盖*/
+.progress{
+    width: 400px;
+}
+
+/*进度条样式及未进行时的颜色*/
+.layui-progress {
+    position: relative;
+    border-radius: 999px;
+    background-color: $progressNotDone;
+}
+/*进度条进行了的颜色*/
+.layui-progress-bar {
+    border-radius: 999px;
+    background-color: #5FB878;
+}
+/*显示进度的文字信息*/
+.layui-progress-text {
+    line-height: 18px;
+    font-size: 12px;
+    color: $secondFontColor;
+}
+/*大号进度条的文字信息*/
+.layui-progress-big .layui-progress-text {
+    color: #fff;
+    display: block;
+    height: 18px;
+    line-height: 18px;;
+}
+
+/*气泡*/
+.bubbleProgress{
+    position: relative;
+}
+/*气泡的位置移动速度*/
+.bubbleImg{
+    position: absolute;
+    bottom: 10px;
+    display: none;
+    /*left: -8px;*/
+    transition: 0.3s;
+}
+/*气泡里文字*/
+.bubbleProgress .layui-progress .layui-progress-bar span{
+    display: none;
+    top:-34px;
+    left: 14px;
+    color: #fff;
+}
+/*主题色颜色调整*/
+.layui-bg-blue {
+    background-color: #188FFF !important
+}
+.layui-bg-green {
+    background-color: #1ab394 !important
+}
+.layui-bg-dark {
+    background-color: #55B7FF !important
+}
+/*成功色*/
+.layui-bg-success{
+    background-color: $successColor;
+}
+/*警告色*/
+.layui-bg-danger{
+    background-color: $warningColor;
+}
+/*失败色*/
+.layui-bg-fail{
+    background-color: $failedColor;
+}

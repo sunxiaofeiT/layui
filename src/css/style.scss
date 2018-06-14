@@ -27,15 +27,15 @@ $fontColor: #4E4E4E; // 常规文字颜色
 $secondFontColor: #6C6C6C; // 次要文字颜色
 $thirdFontColor: #A6A6A6; // 占位文字颜色
 $backgroundFontColor: #FFFFFF; // 主题色背景的文字颜色
-$aFontColor: #333333; // 链接文字颜色
-$aHoverFontColor: #777777; // 链接文字悬浮颜色
+$aFontColor: #188FFF; // 链接文字颜色
+$aHoverFontColor: #40A9FF; // 链接文字悬浮颜色
 // 边框
 $borderColor: #D3D3D3; // 常规边框颜色
 // 辅助按钮
 $aidBackgroundColor: #FFFFFF; // 辅助按钮背景颜色
 $aidHoverBackgroundColor: #FFFFFF; // 辅助按钮悬浮背景颜色
 $aidActiveBackgroundColor: #FFFFFF; // 辅助按钮点击背景颜色
-$aidBorderColor: #D3D3D3; // 辅助按钮边框颜色
+$aidBorderColor: #A6A6A6; // 辅助按钮边框颜色
 $aidFontColor: #6C6C6C; // 辅助按钮文字颜色
 $aidHoverFontColor: #40A9FF; // 辅助按钮悬浮文字颜色
 $aidActiveFontColor: #096DD9; // 辅助按钮点击文字颜色
@@ -56,12 +56,19 @@ $adapInputRight: 15px; // 自适应input距离右侧距离
 $selectBackground:#F3F8FC; //下拉框的背景颜色
 $checkboxInitBackground: #d2d2d2; //checkbox、单选框未选中的颜色
 // 表格
-$tableBorderColor: #D3D3D3; // 表格边框颜色
+$tableBorderColor: #D3D3D3; // 表格边框颜色 //同分割线颜色 暗色#415764
 $tableBackgroundColor: #FFFFFF; // 表格背景颜色
 $tableThColor: #ECF9FF; // 表格中表头的背景颜色
 $tableThFontColor: #226596; // 表格中表头的文字颜色
 $tableTrColor: #F9F9F9; // 表格中隔行显示的背景颜色
 $tableHoverColor: #E6F7FF; // 表格中行选中时的背景颜色
+// 进度条
+$progressNotDone:#E2E2E2; // 进度条未进行时的颜色 //绿色暗色一样
+// 日期与时间选择
+$timeNow:#FDE19A; // 鼠标选择其他时间时，当前时间的颜色 //绿色一样，暗色#263841
+// 弹层
+$layerTitleBackgroundColor: #ECF9FF; // 弹层标题背景颜色
+$maskBackgroundColor: rgba(0, 0, 0, 0.22); // 遮罩层颜色
 /*
  * 尺寸
 */
@@ -69,3 +76,14 @@ $tableHoverColor: #E6F7FF; // 表格中行选中时的背景颜色
 // 页面
 $bodyPadding: 20px; // body 的内边距
 $containerPadding: 20px; // 容器内边距
+// 表单
+$inputHeight:38px; //input的高度
+$inputWidth: 300px; //非自适应input宽度
+$adapInputRight: 15px; // 自适应input距离右侧距离
+/*
+ * 主题文件
+*/
+
+@import './theme-blue.scss';
+// @import './theme-green.scss';
+// @import './theme-dark.scss';

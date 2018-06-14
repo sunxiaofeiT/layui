@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>蓝色主题button</title>
+    <link href="../dist/css/modules/font-layui.css" rel="stylesheet">
+    <!--包括layui中原始样式提取+部分通用样式覆盖-->
+    <link rel="stylesheet" href="../dist/css/modules/button.css">
+</head>
+<body>
+<div class="btnBigDiv">
+    <div class="btnDiv">
+        <span>主题</span>
+        <button class="layui-btn layui-btn-primary">原始按钮</button>
+        <button class="layui-btn layui-btn-normal">默认按钮</button>
+        <button class="layui-btn layui-btn-success">成功按钮</button>
+        <button class="layui-btn layui-btn-danger">警告按钮</button>
+        <button class="layui-btn layui-btn-fail">失败按钮</button>
+        <button class="layui-btn layui-btn-disabled">禁用按钮</button>
+    </div>
+    <div class="btnDiv">
+        <span>尺寸</span>
+        <button class="layui-btn layui-btn-lg layui-btn-primary">大型按钮</button>
+        <button class="layui-btn layui-btn-primary">原始按钮</button>
+        <button class="layui-btn layui-btn-xs layui-btn-primary">迷你按钮</button>
+    </div>
+    <div class="btnDiv">
+        <span>圆角</span>
+        <button class="layui-btn layui-btn-radius layui-btn-lg layui-btn-primary">大型按钮</button>
+        <button class="layui-btn layui-btn-radius layui-btn-primary">原始按钮</button>
+        <button class="layui-btn layui-btn-radius layui-btn-xs layui-btn-primary">迷你按钮</button>
+    </div>
+    <div class="btnDiv">
+        <span>图标</span>
+        <button class="layui-btn layui-btn-normal layui-icon-button">
+            <i class="layui-icon">&#xe608;</i> 带图标的按钮
+        </button>
+    </div>
+    <div class="btnDiv">
+        <span>按钮组</span>
+        <div class="layui-btn-group">
+            <button class="layui-btn layui-btn-normal" id="add">
+                <i class="layui-icon">&#xe654;</i>
+                新增</button>
+            <button class="layui-btn layui-btn-normal" id="edit">
+                <i class="layui-icon">&#xe642;</i>
+                编辑</button>
+            <button class="layui-btn layui-btn-normal" id="del">
+                <i class="layui-icon">&#xe640;</i>
+                删除</button>
+            <button class="layui-btn layui-btn-normal" id="view">
+                <i class="layui-icon">&#xe615;</i>
+                查看</button>
+        </div>
+    </div>
+</div>
+<script src="../src/lay/modules/button/jquery.min.js"></script>
+<script src="../src/lay/modules/button/button.js"></script>
+</body>
+</html>

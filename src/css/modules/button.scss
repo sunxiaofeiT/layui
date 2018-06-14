@@ -2,11 +2,10 @@
 @import '../style.scss';
 
 /*
- 
   按钮 
-
 */
 
+//基本樣式
 .layui-btn{display: inline-block; vertical-align: middle; height: 38px; line-height: 38px; padding: 0 18px; background-color: $baseColor; color: $backgroundFontColor; white-space: nowrap; text-align: center; font-size: 14px; border: none; border-radius: 2px; cursor: pointer; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none;}
 .layui-btn:hover{opacity: 0.8; filter:alpha(opacity=80); color: #fff;}
 .layui-btn:active{opacity: 1; filter:alpha(opacity=100);}
@@ -44,3 +43,114 @@
 .layui-btn-group .layui-btn+.layui-btn{margin-left: 0;}
 .layui-btn-group+.layui-btn-group{margin-left: 10px;}
 /* 流体 */.layui-btn-fluid{width: 100%;}
+
+
+
+/*该页面样式*/
+.btnBigDiv{
+    margin: 100px 200px;
+}
+.btnDiv{
+    height: 60px;
+}
+.btnDiv span{
+    display: block;
+    float: left;
+    vertical-align: middle;
+    font-size: 16px;
+    text-align: right;
+    height: 40px;
+    line-height: 40px;
+    width: 70px;
+    margin-right: 32px;
+}
+/*部分样式覆盖*/
+/*各主题通用样式*/
+/*关于按钮*/
+.layui-btn{
+    border-radius: 2px;
+    outline: none;
+}
+
+/*默认样式*/
+.layui-btn-primary,.layui-btn-normal,.layui-btn-success,.layui-btn-danger,.layui-btn-fail{
+    width: auto;
+    height: 40px;
+    font-size: 14px;
+    padding: 0 16px;
+}
+
+/*成功按钮*/
+.layui-btn-success{
+    background-color: $successColor;
+}
+/*警告按钮*/
+.layui-btn-danger{
+    background-color: $warningColor;
+}
+/*失败按钮*/
+.layui-btn-fail{
+    background-color: $failedColor;
+}
+/*禁用按钮*/
+.layui-btn-disabled{
+    background-color: $disabledColor;
+    color:$disabledFontColor;
+}
+
+/*大型按钮*/
+.layui-btn-lg {
+    width: auto;
+    height: 46px;
+    font-size: 16px;
+    padding: 0 25px;
+}
+/*迷你按钮*/
+.layui-btn-xs {
+    width: auto;
+    height: 30px;
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+/*圆角*/
+.layui-btn-radius {
+    border-radius: 100px
+}
+
+/*图标按钮*/
+.layui-icon-button{
+    width: 142px;
+    height: 40px;
+}
+.layui-btn .layui-icon {
+    margin-right: 3px;
+    font-size: 18px;
+    vertical-align: bottom;
+    vertical-align: middle;
+    color: $backgroundFontColor;
+}
+
+/*主题颜色*/
+/*原始按钮*/
+.layui-btn-primary:hover{
+    border-color: $hoverColor;
+    color: $aFontColor;
+}
+/*默认按钮*/
+.layui-btn-normal {
+    background-color: $baseColor;
+}
+/*默认按钮鼠标悬停*/
+.layui-btn-normal:hover{
+    background-color: $hoverColor;
+}
+/*默认按钮点击*/
+.layui-btn-normal:active{
+    background-color: $activeColor;
+}
+
+/*鼠标点击按钮边框*/
+.layui-btn:active{
+    box-shadow:  0px 0px 1px 0.2px $activeColor;
+}
