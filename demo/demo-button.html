@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>蓝色主题button</title>
+    <link rel="stylesheet" href="../dist/css/modules/base.css">
     <link href="../dist/css/modules/font-layui.css" rel="stylesheet">
     <!--包括layui中原始样式提取+部分通用样式覆盖-->
     <link rel="stylesheet" href="../dist/css/modules/button.css">
 </head>
-<body>
+<body class="body-container">
 <div class="btnBigDiv">
     <div class="btnDiv">
         <span>主题</span>
@@ -23,13 +24,13 @@
         <span>尺寸</span>
         <button class="layui-btn layui-btn-lg layui-btn-primary">大型按钮</button>
         <button class="layui-btn layui-btn-primary">原始按钮</button>
-        <button class="layui-btn layui-btn-xs layui-btn-primary">迷你按钮</button>
+        <button class="layui-btn layui-btn-sm layui-btn-primary">小型按钮</button>
     </div>
     <div class="btnDiv">
         <span>圆角</span>
         <button class="layui-btn layui-btn-radius layui-btn-lg layui-btn-primary">大型按钮</button>
         <button class="layui-btn layui-btn-radius layui-btn-primary">原始按钮</button>
-        <button class="layui-btn layui-btn-radius layui-btn-xs layui-btn-primary">迷你按钮</button>
+        <button class="layui-btn layui-btn-radius layui-btn-sm layui-btn-primary">小型按钮</button>
     </div>
     <div class="btnDiv">
         <span>图标</span>
@@ -52,6 +53,20 @@
             <button class="layui-btn layui-btn-normal" id="view">
                 <i class="layui-icon">&#xe615;</i>
                 查看</button>
+        </div>
+        <div class="layui-btn-group">
+            <button class="layui-btn layui-btn-primary layui-btn-sm">
+                <i class="layui-icon">&#xe654;</i>
+                新增
+            </button>
+            <button class="layui-btn layui-btn-primary layui-btn-sm">
+                <i class="layui-icon">&#xe642;</i>
+                编辑
+            </button>
+            <button class="layui-btn layui-btn-primary layui-btn-sm">
+                <i class="layui-icon">&#xe640;</i>
+                删除
+            </button>
         </div>
     </div>
 </div>
