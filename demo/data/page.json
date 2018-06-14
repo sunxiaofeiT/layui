@@ -31,18 +31,6 @@
         "path": "tab"
     },
     {
-        "name": "数据表格——后台分页",
-        "path": "table-page"
-    },
-    {
-        "name": "数据表格——后台搜索与排序",
-        "path": "table-sort&search"
-    },
-    {
-        "name": "数据表格——树",
-        "path": "table-tree"
-    },
-    {
         "name": "数据表格",
         "path": "table"
     }
