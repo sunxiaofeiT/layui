@@ -63,6 +63,7 @@
     line-height: 40px;
     width: 70px;
     margin-right: 32px;
+    color:$fontColor;
 }
 /*部分样式覆盖*/
 /*各主题通用样式*/
@@ -98,7 +99,7 @@
 /*原始按钮*/
 .layui-btn-primary:hover{
     border-color: $hoverColor;
-    color: $aFontColor;
+    color:  $hoverColor;
 }
 /*默认按钮*/
 .layui-btn-normal {

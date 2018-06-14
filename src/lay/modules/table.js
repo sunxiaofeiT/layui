@@ -1098,7 +1098,8 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function (exports) {
 
             layui.event.call(this, MOD_NAME, 'click(' + filter + ')', {
                 data: data,
-                index: index
+                index: index,
+                checked: checked
             });
         });
 
