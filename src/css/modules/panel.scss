@@ -147,11 +147,17 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 /*
 主体颜色
 */
+
+// 辅助文字颜色
+.body-container h3{
+    color:$fontColor;
+}
 /*卡片面板底色*/
 .layui-card{
     background-color:$containerBackgroundColor;
 }
 
+// 卡片面板标题
 .layui-card-header {
     /*卡片面板标题颜色*/
     color: $firstFontColor;
@@ -159,6 +165,10 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
     border-bottom: 1px solid $borderColor;
 }
 
+// 卡片面板内容颜色
+.layui-card-body{
+     color: $secondFontColor;
+}
 /*折叠面板分割线颜色*/
 .layui-badge-rim, .layui-colla-content, .layui-colla-item, .layui-collapse, .layui-elem-field, .layui-form-pane .layui-form-item[pane], .layui-form-pane .layui-form-label, .layui-input, .layui-layedit, .layui-layedit-tool, .layui-quote-nm, .layui-select, .layui-tab-bar, .layui-tab-card, .layui-tab-title, .layui-tab-title .layui-this:after, .layui-textarea {
     border-color: $borderColor;
@@ -174,6 +184,6 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 
 /*面板内容区域*/
 .layui-colla-content {
-    background-color: $containerBackgroundColor;
     color: $secondFontColor;
+    background-color: $containerBackgroundColor;
 }
