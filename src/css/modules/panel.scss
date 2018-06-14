@@ -174,5 +174,6 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 
 /*面板内容区域*/
 .layui-colla-content {
+    background-color: $containerBackgroundColor;
     color: $secondFontColor;
 }
