@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DEMO</title>
+
+    <link rel="stylesheet" href="../dist/css/modules/base.css">
+    <link rel="stylesheet" href="../dist/css/modules/layout.css">
+    <link rel="stylesheet" href="../dist/css/modules/button.css">
 </head>
-<body>
-    
+
+<body class="body-container">
+
+    <div class="layui-container-field">
+
+        <div class="layui-row layui-col-space30" id="content">
+            <h1>Layui Demo</h1>
+        </div>
+        <div class="layui-row layui-col-space30" id="content">
+            <!-- <div class="layui-col-md4">
+                <a class="layui-btn layui-btn-fluid" href="">ok</a>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="../dist/plugins/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script>
+        $.get('./data/page.json', function (obj) {
+            for (var i = 0; i < obj.length; i++) {
+                $("#content").append(
+                    '<div class="layui-col-md4"><a target="_blank" href="./demo-' + obj[i].path +
+                    '.html" class="layui-btn layui-btn-fluid">' + obj[i].name +
+                    '</a></div>'
+                );
+            }
+        });
+    </script>
 </body>
+
 </html>

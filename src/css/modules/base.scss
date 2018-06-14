@@ -13,6 +13,10 @@ button,input,select,textarea{font-size: 100%; }
 input,button,textarea,select,optgroup,option{font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; outline: 0;}
 pre{white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;}
 
+h1,h2{color:$firstFontColor;}
+h3,h4{color:$fontColor;}
+h5,h6{color:$secondFontColor}
+
 // 基础标签
 .body-container{padding: $bodyPadding;background-color: $backgroundColor;}
 .layui-container-field{padding: $containerPadding;background-color: $containerBackgroundColor;position: relative;}
