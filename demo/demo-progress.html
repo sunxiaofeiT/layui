@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>进度条</title>
+    <link rel="stylesheet" href="../dist/css/modules/base.css">
     <!--button按钮样式引用-->
     <link rel="stylesheet" href="../dist/css/modules/button.css">
     <!--progress样式，包括layui中原始样式提取+部分样式覆盖-->
     <link rel="stylesheet" href="../dist/css/modules/progress.css">
 </head>
-<body>
+<body class="body-container">
 <div class="progress">
     <h3>两种大小多种颜色默认六个颜色</h3>
     <h3>主题色（蓝色、绿色、暗色）</h3>
@@ -35,7 +36,7 @@
     <div class="layui-progress">
         <div class="layui-progress-bar layui-bg-fail" lay-percent="50%"></div>
     </div>
-    <h4>显示进度比文本</h4>
+    <h3>显示进度比文本</h3>
     <div class="layui-progress" lay-showPercent="true">
         <div class="layui-progress-bar layui-bg-success" lay-percent="1/3"></div>
     </div>
