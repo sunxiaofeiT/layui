@@ -15,9 +15,18 @@
 </head>
 
 <body class="body-container">
-    <div style="width: 80%; margin-left: 10%;margin-top: 50px;">
-        <h2>富文本编辑器</h2>
-        <textarea id="editor-demo" style="height:100%"></textarea>
+
+    <div class="layui-container-field">
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <h2 class="edit-title">富文本编辑器</h2>
+            </div>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <textarea id="editor-demo" style="height:100%"></textarea>
+            </div>
+        </div>
     </div>
 </body>
 
@@ -29,7 +38,7 @@
 <!-- custom script -->
 <script>
     /* 使用 editor 必要步骤 */
-    var editor = Editor({   // 第一步
+    var editor = Editor({ // 第一步
         editorType: 'all',
         // width: '100%',
         // height: '500px',
