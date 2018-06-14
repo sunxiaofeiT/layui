@@ -199,7 +199,34 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 /*滚动条*/
 .tab-nor-scr > .layui-tab > .layui-tab-content{
     height:100px;
-    overflow: scroll;
+    overflow-y: scroll;
+    SCROLLBAR-FACE-COLOR: #CCFFFF; 
+SCROLLBAR-HIGHLIGHT-COLOR: white; 
+SCROLLBAR-SHADOW-COLOR: #813533; 
+SCROLLBAR-3DLIGHT-COLOR: #813533; 
+SCROLLBAR-ARROW-COLOR: #813533; 
+SCROLLBAR-TRACK-COLOR: white; 
+SCROLLBAR-DARKSHADOW-COLOR: #813533; 
+}
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+ 
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:horizontal {
+    background: #BDBDBD;
+}
+ 
+::-webkit-scrollbar-button {
+    display: none;
+}
+ 
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+    background: -webkit-gradient(linear,left);
+}
+ 
+::-webkit-scrollbar-track-piece {
+    background: #FFF;
 }
 /*选项卡标题*/
 .layui-tab-title li {
@@ -207,6 +234,7 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
     min-width: 65px;
 }
 
+// 自适应高度
 /*Tab简洁风格选中字颜色*/
 .layui-tab-brief > .layui-tab-title .layui-this {
     color: $baseColor;

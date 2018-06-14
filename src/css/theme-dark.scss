@@ -44,18 +44,21 @@ $inputBorderColor: #415764; // 输入框边框颜色
 $inputBorderHoverColor: #55B7FF; // 输入框悬浮边框颜色
 $inputBorderFocusColor: #55B7FF; // 输入框焦点边框颜色
 $inputFontColor: #FFFFFF; // 输入框文字颜色
-$selectHoverBackground: #55B7FF; // Select 选择框下拉悬浮和选中背景颜色
-$selectBackground: #303F47; // 下拉框的背景颜色
-$checkboxInitBackground: #96A4AA; // checkbox、单选框未选中的背景颜色
+$selectHoverColor: #E6F7FF; // Select 选择框下拉悬浮和选中颜色
+$selectBackground: #EEEEEE; // 下拉框的背景颜色
+$checkboxInitBackground: #96A4AA; // checkbox、单选框未选中的颜色
 // 表格
 $tableBorderColor: #415764; // 表格边框颜色
 $tableBackgroundColor: #303F47; // 表格背景颜色、TAB选中背景颜色
 $tableThColor: #263841; // 表格中表头的背景颜色、TAB未选中背景颜色
 $tableThFontColor: #96A4AA; // 表格中表头的文字颜色
 $tableTrColor: #354750; // 表格中隔行显示的背景颜色
-$tableHoverColor: rgba(85, 183, 255, 0.7); // 表格中行选中时的背景颜色
+$tableHoverColor: #55B7FF; // 表格中行选中时的背景颜色
 // 进度条
 $progressNotDone: #E2E2E2; // 进度条未进行时的颜色
+$scrollbarThumb:#525050;//滚动条滚轮颜色
+$scrollbarTrack:#797777;//滚动条轴颜色
+
 // 日期与时间选择
 $timeNow: #263841; // 鼠标选择其他时间时，当前时间的颜色
 // 弹层
