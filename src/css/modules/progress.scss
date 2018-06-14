@@ -116,13 +116,15 @@
     display: none;
     /*left: -8px;*/
     transition: 0.3s;
+    width:47px;
+    height:28px;
+    text-align:center;
 }
 /*气泡里文字*/
-.bubbleProgress .layui-progress .layui-progress-bar span{
-    display: none;
-    top:-30px;
-    left: 14px;
+#processText {
     color: #fff;
+    font-size: 12px;
+    line-height: 20px;
 }
 /*主题色颜色调整*/
 .layui-bg-blue {

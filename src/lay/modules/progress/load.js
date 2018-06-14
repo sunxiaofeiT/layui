@@ -23,13 +23,14 @@ layui.use('element', function(){
                     //进度条加载完毕，按钮状态恢复
                     othis.removeClass(DISABLED);
                 }
-                element.progress('demo', 0+'%');
-                var per = $(".bubbleProgress .layui-progress .layui-progress-bar span").html();
+                element.progress('demo', n+'%');
                 console.log((n-20)+"%");
                 $(".bubbleImg").css("display","block");
                 $(".bubbleProgress .layui-progress .layui-progress-bar span").css("display","block");
-                $(".bubbleImg").css("margin-left",(0-6)+"%");
-            }, 300+Math.random()*1000);
+                $(".bubbleImg").css("margin-left",(n-6)+"%");
+                var progressText = $(".bubbleProgress .layui-progress .layui-progress-bar span").html()
+                $('#processText').html(progressText);
+        }, 300+Math.random()*1000);
 
             othis.addClass(DISABLED);
         }
