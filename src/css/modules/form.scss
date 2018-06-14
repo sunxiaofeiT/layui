@@ -95,7 +95,11 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
     background-color: $baseColor;
     border-radius: 2px;
     box-sizing: border-box;
-    color:$inputFontColor;
+    color:$thirdFontColor;
+}
+
+.layui-input:hover{
+    border-color: $inputBorderHoverColor;
 }
 
 .layui-input, .layui-textarea {
@@ -115,7 +119,12 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
     width: 80px;
     font-weight: 400;
     text-align: right;
-    color:$fontColor;
+    color:$inputFontColor;
+}
+
+.layui-form-label2{
+	height: 48px;
+	line-height: 48px;
 }
 
 .layui-form-item2 .layui-form-label {
@@ -247,11 +256,11 @@ button, input, optgroup, option, select, textarea {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: $fontColor;
+    color: $inputFontColor;
 }
 
 .layui-form-select dl dd.layui-this {
-    background-color: $selectHoverColor;
+    background-color: $selectHoverBackground;
     color: $fontColor;
 }
 
@@ -279,7 +288,7 @@ button, input, optgroup, option, select, textarea {
     font-size: 14px;
     border-radius: 2px 0 0 2px;
     background-color: $checkboxInitBackground;
-    color: $secondFontColor;
+    color: $inputFontColor;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -490,7 +499,7 @@ button, input, optgroup, option, select, textarea {
 .layui-form-onswitch {
     border-color: $baseColor;
     background-color: $inputBorderHoverColor;
-    border: 1px solid $selectHoverColor;
+    border: 1px solid $inputBorderHoverColor;
 }
 
 .layui-form-onswitch i {
@@ -640,7 +649,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-anim-upbit dd:hover{
-    background-color: $selectHoverColor;
+    background-color: $selectHoverBackground;
     color: $fontColor; 
 }
 
