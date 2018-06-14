@@ -1,7 +1,7 @@
 $baseColor: #55B7FF; // 主题色
 $hoverColor: #3EC5FA; // 主题色悬浮色
 $activeColor: #55B7FF; // 主题色点击色
-$backgroundColor: #303F47; // 页面背景色
+$backgroundColor: #425661; // 页面背景色
 $containerBackgroundColor: #303F47; // 容器背景颜色
 // 按钮如果没有悬浮和点击效果，悬浮时将透明度设置为 0.8，点击时将透明度设置为1.0
 $successColor: #4AA45D; // 成功色
@@ -27,7 +27,7 @@ $aHoverFontColor: #777777; // 链接文字悬浮颜色
 // 边框
 $borderColor: #415764; // 常规边框颜色
 // 辅助按钮
-$aidBackgroundColor: #303F47; // 辅助按钮背景颜色
+$aidBackgroundColor: #425661; // 辅助按钮背景颜色
 $aidHoverBackgroundColor: #FFFFFF; // 辅助按钮悬浮背景颜色
 $aidActiveBackgroundColor: #FFFFFF; // 辅助按钮点击背景颜色
 $aidBorderColor: #415764; // 辅助按钮边框颜色
@@ -39,7 +39,7 @@ $disabledBackgroundColor: #F5F5F5; // 禁用按钮背景颜色
 $disabledBorderColor: #A6A6A6; // 禁用按钮边框颜色
 $disabledFontColor: #A6A6A6; // 禁用按钮文字颜色
 // 输入框
-$inputBackgroundColor: #303F47; // 输入框背景色
+$inputBackgroundColor: #425661; // 输入框背景色
 $inputBorderColor: #415764; // 输入框边框颜色
 $inputBorderHoverColor: #55B7FF; // 输入框悬浮边框颜色
 $inputBorderFocusColor: #55B7FF; // 输入框焦点边框颜色
@@ -55,14 +55,14 @@ $tableThFontColor: #96A4AA; // 表格中表头的文字颜色
 $tableTrColor: #354750; // 表格中隔行显示的背景颜色
 $tableHoverColor: #55B7FF; // 表格中行选中时的背景颜色
 // 进度条
-$progressNotDone: #E2E2E2; // 进度条未进行时的颜色
+$progressNotDone: #707070; // 进度条未进行时的颜色
 $scrollbarThumb:#525050;//滚动条滚轮颜色
 $scrollbarTrack:#797777;//滚动条轴颜色
 
 // 日期与时间选择
 $timeNow: #263841; // 鼠标选择其他时间时，当前时间的颜色
 // 弹层
-$layerTitleBackgroundColor: #ECF9FF; // 弹层标题背景颜色
+$layerTitleBackgroundColor: #263841; // 弹层标题背景颜色
 $maskBackgroundColor: rgba(0, 0, 0, 0.22); // 遮罩层颜色
 /*
  * 富文本编辑器
