@@ -45,6 +45,10 @@
     background-color: $tableHoverColor;
 }
 
+.layui-table-header {
+    background-color: $tableBackgroundColor;
+}
+
 /* 在表格最外层加边框 */
 
 .layui-table-box {
@@ -553,6 +557,7 @@ body .layui-table-tips .layui-layer-content {
 
 .table-input-control .layui-input {
     height: 30px;
+    line-height: 30px;
 }
 
 .table-input-control .layui-input-inline {
@@ -585,4 +590,9 @@ body .layui-table-tips .layui-layer-content {
     .table-form-control {
         text-align: right;
     }
+}
+
+// 表格上分左面搜索和重置按钮的内边距
+.table-form-control-l button {
+    padding: 0 20px;
 }
