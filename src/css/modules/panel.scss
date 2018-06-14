@@ -104,7 +104,7 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 
 // 卡片面板边框
 .layui-card{
-    border: 1px solid #D3D3D3;
+    border: 1px solid $borderColor;
 }
 /*调整图标*/
 .layui-icon {
@@ -174,5 +174,6 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 
 /*面板内容区域*/
 .layui-colla-content {
+    background-color: $containerBackgroundColor;
     color: $secondFontColor;
 }
