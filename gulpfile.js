@@ -16,6 +16,7 @@ var gulpif = require('gulp-if');
 var minimist = require('minimist');
 var zip = require('gulp-zip');
 var scss = require('gulp-scss');
+var connect = require('gulp-connect');
 
 //获取参数
 var argv = require('minimist')(process.argv.slice(2), {
