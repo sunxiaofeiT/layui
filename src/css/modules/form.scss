@@ -278,7 +278,7 @@ button, input, optgroup, option, select, textarea {
     height: 100%;
     font-size: 14px;
     border-radius: 2px 0 0 2px;
-    background-color: $selectInitBackground;
+    background-color: $checkboxInitBackground;
     color: $secondFontColor;
     overflow: hidden;
     white-space: nowrap;
@@ -308,7 +308,7 @@ button, input, optgroup, option, select, textarea {
     top: 0;
     width: 30px;
     height: 28px;
-    border: 1px solid $selectInitBackground;
+    border: 1px solid $checkboxInitBackground;
     border-left: none;
     border-radius: 0 2px 2px 0;
     color: transparent;
@@ -326,7 +326,7 @@ button, input, optgroup, option, select, textarea {
 }
 .layui-form-checkbox, .layui-form-select dl dd.layui-disabled {
     background-color: transparent;
-    color: $selectInitBackground;
+    color: $checkboxInitBackground;
 }
 
 .layui-form-checked span,.layui-form-checked:hover span{
@@ -334,7 +334,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-form-checkbox:hover i{
-    color:$selectInitBackground;
+    color:$checkboxInitBackground;
 }
 
 .layui-form-checked span:hover~i{
@@ -460,7 +460,7 @@ button, input, optgroup, option, select, textarea {
     width: 16px;
     height: 16px;
     border-radius: 20px;
-    background-color: $selectInitBackground;
+    background-color: $checkboxInitBackground;
     -webkit-transition: .1s linear;
     transition: .1s linear;
 }
@@ -540,7 +540,7 @@ button, input, optgroup, option, select, textarea {
 .layui-form-radio>i {
     margin-right: 8px;
     font-size: 22px;
-    color: $selectInitBackground;
+    color: $checkboxInitBackground;
 }
 
 .layui-form-radio>div {
@@ -640,7 +640,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-anim-upbit dd:hover{
-    background-color: $inputBackgroundColor;
+    background-color: $selectHoverColor;
     color: $fontColor; 
 }
 
