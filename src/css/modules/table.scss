@@ -391,6 +391,12 @@ td[align="left"] .layui-table-cell {
     padding: 0 12px;
 }
 
+.layui-table-page .layui-laypage span.layui-laypage-curr {
+    padding: 0;
+    width: 36px;
+    text-align: center;
+}
+
 .layui-table-page .layui-laypage span {
     margin-left: 0;
     padding: 0;
@@ -419,7 +425,7 @@ td[align="left"] .layui-table-cell {
 
 .layui-table-page .layui-laypage button {
     margin-right: 0;
-    color: #333;
+    color: $fontColor;
     padding: 0 10px;
 }
 
