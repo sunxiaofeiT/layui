@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>no2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS 文件：基础样式、字体和布局 -->
+    <link rel="stylesheet" href="../dist/css/modules/base.css">
+    <link rel="stylesheet" href="../dist/css/modules/layout.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/modules/form.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/modules/button.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/modules/table.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/modules/tree.css">
+</head>
+
+<body class="body-container">
+
+    <!-- 使用 layui 栅格系统布局，容器为 100% 宽度 -->
+    <div class="layui-container-field">
+        <div class="layui-row">
+            <!-- 具体列宽由输入框数量和按钮数量自行决定 -->
+
+            <div class="layui-col-md3">
+                <fieldset class="layui-elem-field">
+                    <legend>树</legend>
+                    <div class="layui-field-box">
+
+                        <div class="layui-col-md8">
+                            <input type="text" name="title" lay-verify="title" placeholder="搜索..." class="layui-input searchTree">
+                        </div>
+                        <div class="layui-col-md4">
+                            <button class="layui-btn layui-btn-normal getCheckedNodes">搜索</button>
+                        </div>
+                        <div class="layui-col-md12">
+
+                            <div class="clear-fix"></div>
+                            <div class="treediv">
+                                <!-- 不能用id="tree"，与layui冲突 -->
+                                <ul id="tree1" class="ztree"></ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+            <div class="layui-col-md9">
+                <fieldset id="menu_func_div" class="layui-elem-field">
+                    <legend>查询表格</legend>
+                    <div class="layui-field-box">
+                        <form class="layui-form">
+                            <div class="layui-input-inline">
+                                <select name="interest" lay-filter="aihao">
+                                    <option value=""></option>
+                                    <option value="0">写作</option>
+                                    <option value="1" selected="">阅读</option>
+                                    <option value="2">游戏</option>
+                                    <option value="3">音乐</option>
+                                    <option value="4">旅行</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline search2">
+                                <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-input-inline">
+                                <input type="checkbox" name="remain" lay-skin="primary" title="在结果中查询">
+                            </div>
+                            <div class="layui-input-inline search2-button">
+                                <button class="layui-btn layui-btn-normal">搜索</button>
+                                <button class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                            <div class="clear-fix"></div>
+                        </form>
+
+                        <div class="content-table">
+                            <table class="layui-table" id="right-table" lay-filter="right-table"></table>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/html" id="do">
+    <a href="#" lay-event="edit">编辑</a>
+    <a href="#" class="layui-btn-xs" lay-event="del">预览</a>
+</script>
+    <script type="text/javascript" src="../dist/plugins/tree/jquery-3.3.1.min.js"></script>
+    <script src="../dist/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../dist/plugins/tree/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="../dist/plugins/tree/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript">
+        layui.use(['form', 'table'], function () {
+            var form = layui.form;
+            var table = layui.table;
+
+            datas = [
+                {
+                    'name': '1', 'id': '1', 'time': '1', 'recode': '1', 'state': '1', 'create_time': '1', 'intro': '1', 'other_name': '1',
+                }
+            ];
+
+            data = {
+                "code": "0",
+                "message": "OK",
+                "data": {
+                    "list": datas,
+                    "count": datas.length
+                }
+            }
+
+
+            table_init(data);
+
+            function table_init(da) {
+                console.log(da);
+                table.render({
+                    elem: '#right-table'
+                    , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                    , id: 'right-reload'
+                    , cols: [[
+                        { type: 'checkbox', }
+                        , { type: 'numbers', title: '序号', align: 'center' }
+                        , { field: 'name', title: '文件名称', align: 'center' }
+                        , { field: 'id', title: '文件编号', align: 'center' }
+                        , { field: 'time', title: '批准日期', align: 'center' }
+                        , { field: 'recode', title: '文件记录表单', align: 'center' }
+                        , { field: 'state', title: '文件受控状态', align: 'center' }
+                        , { field: 'create_time', title: '创建时间', align: 'center', }
+                        , { field: 'intro', title: '说明', align: 'center', }
+                        , { field: 'other_name', title: '扩展名', align: 'center', }
+                        , { field: 'do', title: '操作', align: 'center', templet: '#do', }
+                    ]]
+                    , data: da
+                });
+            }
+
+            $(".content-table").resize(function () {
+                table_init(data);
+                tree_height();
+            })
+
+
+            var setting = {
+                check: {
+                    enable: true
+                },
+                data: {
+                    simpleData: {
+                        enable: true
+                    }
+                },
+            };
+
+            var zNodes = [
+                {
+                    id: 1, name: "[core] 基本功能 演示", open: true, children: [
+                        { id: 101, name: "最简单的树 --  标准 JSON 数据" },
+                        { id: 102, name: "最简单的树 --  简单 JSON 数据" },
+                        { id: 103, name: "不显示 连接线" },
+                        { id: 104, name: "不显示 节点 图标" },
+                        { id: 108, name: "异步加载 节点数据" },
+                        { id: 109, name: "用 zTree 方法 异步加载 节点数据" },
+                        { id: 110, name: "用 zTree 方法 更新 节点数据" },
+                        { id: 111, name: "单击 节点 控制" },
+                        { id: 112, name: "展开 / 折叠 父节点 控制" },
+                        { id: 113, name: "根据 参数 查找 节点" },
+                        { id: 114, name: "其他 鼠标 事件监听" },
+                    ]
+                },
+
+                {
+                    id: 2, name: "[excheck] 复/单选框功能 演示", open: false, children: [
+                        { id: 201, name: "Checkbox 勾选操作" },
+                        { id: 206, name: "Checkbox nocheck 演示" },
+                        { id: 207, name: "Checkbox chkDisabled 演示" },
+                        { id: 208, name: "Checkbox halfCheck 演示" },
+                        { id: 202, name: "Checkbox 勾选统计" },
+                        { id: 203, name: "用 zTree 方法 勾选 Checkbox" },
+                        { id: 204, name: "Radio 勾选操作" },
+                        { id: 209, name: "Radio nocheck 演示" },
+                        { id: 210, name: "Radio chkDisabled 演示" },
+                        { id: 211, name: "Radio halfCheck 演示" },
+                        { id: 205, name: "用 zTree 方法 勾选 Radio" },
+
+                    ]
+                },
+
+                {
+                    id: 3, name: "[exedit] 编辑功能 演示", open: false, children: [
+                        { id: 301, name: "拖拽 节点 基本控制" },
+                        { id: 302, name: "拖拽 节点 高级控制" },
+                        { id: 303, name: "用 zTree 方法 移动 / 复制 节点" },
+                        { id: 304, name: "基本 增 / 删 / 改 节点" },
+                        { id: 305, name: "高级 增 / 删 / 改 节点" },
+                        { id: 306, name: "用 zTree 方法 增 / 删 / 改 节点" },
+                        { id: 307, name: "异步加载 & 编辑功能 共存" },
+                        { id: 308, name: "多棵树之间 的 数据交互" },
+                    ]
+                },
+
+                {
+                    id: 4, pId: 0, name: "大数据量 演示", open: false, children: [
+                        { id: 401, name: "一次性加载大数据量" },
+                        { id: 402, name: "分批异步加载大数据量" },
+                        { id: 403, name: "分批异步加载大数据量" },
+                    ]
+                },
+            ];
+
+            $.fn.zTree.init($("#tree1"), setting, zNodes);
+            //获取checked的值
+            $(".getCheckedNodes").click(function () {
+                var id = $(".searchTree").val();
+                var treeObj = $.fn.zTree.getZTreeObj("tree1");
+                var nodes = treeObj.getNodes();
+                if (nodes.length > 0) {
+                    var node = treeObj.getNodeByParam("id", id);
+                    if (node) {
+                        treeObj.selectNode(node);
+                        table_search(id);
+                    }
+                }
+                // var treeObj = $.fn.zTree.getZTreeObj("tree1");
+                // var nodes = treeObj.getCheckedNodes(true);
+                // var msg = "";
+                // for (var i = 0; i < nodes.length; i++) {
+                //     msg += nodes[i].id + ",";
+                // }
+                // console.log(msg);
+            })
+
+            tree_height();
+            function tree_height() {
+                var height = $("body").height();
+                $(".treediv").height(function () {
+                    return height - 38;
+                })
+            }
+
+            //点击右侧table联动
+            $("#tree1").on("click", ".level-item", function () {
+                var nodeId = $(this).attr("nodeId");
+                alert(nodeId);
+                table_search(nodeId);
+            })
+
+            function table_search(da) {
+                data = [
+                    {
+                        'name': da, 'id': da, 'time': '1', 'recode': '1', 'state': '1', 'create_time': '1', 'intro': '1', 'other_name': '1',
+                    }
+                ];
+                table_init(data);
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
