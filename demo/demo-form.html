@@ -10,8 +10,9 @@
 	<!-- CSS 文件：基础样式、字体和布局 -->
 	<link rel="stylesheet" href="../dist/css/modules/base.css">
 	<link rel="stylesheet" href="../dist/css/modules/layout.css">
-    <link rel="stylesheet" type="text/css" href="../dist/css/modules/button.css">
+	<link rel="stylesheet" type="text/css" href="../dist/css/modules/button.css">
 	<!-- <link rel="stylesheet" href="./layui/css/layui.css"  media="all"> -->
+	<link rel="stylesheet" type="text/css" href="../dist/css/modules/font-layui.css	">
 	<link rel="stylesheet" type="text/css" href="../dist/css/modules/form.css">
 	<!-- 注意：如果你直接复制所有代码到本地，上述css路径需要改成你本地的 -->
 </head>
@@ -299,11 +300,15 @@
 				layer = layui.layer,
 				$ = layui.jquery,
 				tree = layui.tree;
+
+			//渲染form
+			form.render();
 			//表单初始赋值
 			form.val("layui-form", {
-				"title": "我是输入的文字", // "name": "value"
-				"classtree": "我的邮箱"
-			})
+				title: "贤心", // "name": "value"
+				sex: "男",
+				interest: 3,
+			});
 			//select获取值
 			form.on('select(interest)', function (data) {
 				alert(data.value);
@@ -323,9 +328,14 @@
 			form.on('checkbox(checkbox)', function (data) {
 				console.log(data.value); //复选框value值，也可以通过data.elem.value得到
 			});
+
+			form.on('select(interest2)', function (data) {
+				console.log(data.value);
+			});
+
+			//下拉树
 			tree({
-				elem: "#classtree"
-				,
+				elem: "#classtree",
 				nodes: [{
 					name: '常用文件夹',
 					id: 1,
@@ -356,16 +366,22 @@
 				,
 				click: function (node) {
 					var $select = $($(this)[0].elem).parents(".layui-form-select");
-					$select.removeClass("layui-form-selected").find(".layui-select-title span").html(node.name).end().find("input:hidden[name='selectID']").val(node.id);
+					$select.removeClass("layui-form-selected").find(".layui-select-title input[name='selectTree']").val(node.name).end().find("input:hidden[name='selectID']").val(node.id);
 				}
+			});
+			$(document).bind("click", function () {
+				$(".layui-form-select").not($(this).parents(".layui-form-select")).removeClass("layui-form-selected");
 			});
 			$(".downpanel").on("click", ".layui-select-title", function (e) {
 				$(".layui-form-select").not($(this).parents(".layui-form-select")).removeClass("layui-form-selected");
 				$(this).parents(".downpanel").toggleClass("layui-form-selected");
 				layui.stope(e);
-			}).on("click", "dl i", function (e) {
-				layui.stope(e);
-			});
+			}).on("click", "dl *", function (e) {
+				e.stopPropagation();
+			})
+				.on("click", "dl i", function (e) {
+					layui.stope(e);
+				});
 
 			//验证
 			form.verify({

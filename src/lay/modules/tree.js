@@ -22,7 +22,8 @@ layui.define('jquery', function(exports){
     arrow: ['&#xe623;', '&#xe625;'] //箭头
     ,checkbox: ['&#xe626;', '&#xe627;'] //复选框
     ,radio: ['&#xe62b;', '&#xe62a;'] //单选框
-    ,branch: ['&#xe622;', '&#xe624;'] //父节点
+    // ,branch: ['&#xe622;', '&#xe624;'] //父节点
+    ,branch: ['&#xe621;', '&#xe621;'] //父节点
     ,leaf: '&#xe621;' //叶节点
   };
   
@@ -69,7 +70,8 @@ layui.define('jquery', function(exports){
           return '<a href="'+ (item.href || 'javascript:;') +'" '+ (
             options.target && item.href ? 'target=\"'+ options.target +'\"' : ''
           ) +'>'
-          + ('<i class="layui-icon layui-tree-'+ (hasChild ? "branch" : "leaf") +'">'+ (
+          + ('<i class="layui-icon layui-tree-'+"leaf"+'">'+ (
+          // + ('<i class="layui-icon layui-tree-'+ (hasChild ? "branch" : "leaf") +'">'+ (
             hasChild ? (
               item.spread ? icon.branch[1] : icon.branch[0]
             ) : icon.leaf
