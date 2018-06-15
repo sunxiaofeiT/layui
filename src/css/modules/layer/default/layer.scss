@@ -543,6 +543,9 @@ html #layuicss-layer {
 .layui-layer-dialog {
   min-width: 260px;
 }
+.layui-layer-msg .layui-layer-content {
+  color: #FFFFFF !important;
+}
 
 .layui-layer-dialog .layui-layer-content {
   position: relative;
