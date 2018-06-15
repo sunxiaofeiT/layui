@@ -60,21 +60,19 @@ $scrollbarThumb:#c1c1c1;//滚动条滚轮颜色
 $scrollbarTrack:#f1f1f1;//滚动条轴颜色
 // 日期与时间选择
 $timeNow: #FDE19A; // 鼠标选择其他时间时，当前时间的颜色
-// 弹层
-$layerTitleBackgroundColor: #ECF9FF; // 弹层标题背景颜色
-$maskBackgroundColor: rgba(0, 0, 0, 0.22); // 遮罩层颜色
 
-//富文本编辑器
-$editToolBarBackgroundColor:#FFFFFF;//富文本编辑器工具栏背景颜色
+
 /*
- * 富文本编辑器
- *
- * 编辑器图标ICON（通过替换文件改变图标）
- * 默认蓝色主题
- * 绿色主题； icon: green.png, hover: green_hover.png, active: green_active.png
- * 暗色主题： icon: black.png, hover: default_hover.png, active: default_active.png
+* 富文本编辑器
+*
+* 编辑器图标ICON（通过替换文件改变图标）
+* 默认蓝色主题
+* 绿色主题； icon: green.png, hover: green_hover.png, active: green_active.png
+* 暗色主题： icon: black.png, hover: default_hover.png, active: default_active.png
 */
 
+$editToolBarBackgroundColor:#FFFFFF;//富文本编辑器工具栏背景颜色
+$editToolBarFontColor: #2A2A2A; //富文本编辑器工具栏字体颜色
 $editIcon: url('default.png');
 $editHover: url('default_hover.png');
 $editActive: url('default_active.png');
@@ -83,3 +81,5 @@ $editActive: url('default_active.png');
  * 弹层
  */
 $layuiLayerContentFontColor: #2A2A2A; //弹层内容字体颜色
+$layerTitleBackgroundColor: #ECF9FF; // 弹层标题背景颜色
+$maskBackgroundColor: rgba(0, 0, 0, 0.22); // 遮罩层颜色
