@@ -60,17 +60,18 @@ $scrollbarThumb:#525050; //滚动条滚轮颜色
 $scrollbarTrack:#797777; //滚动条轴颜色
 // 日期与时间选择
 $timeNow: #263841; // 鼠标选择其他时间时，当前时间的颜色
-//富文本编辑器
-$editToolBarBackgroundColor:#263841; //富文本编辑器工具栏背景颜色
+
 /*
- * 富文本编辑器
- *
- * 编辑器图标ICON（通过替换文件改变图标）
- * 默认蓝色主题
- * 绿色主题； icon: green.png, hover: green_hover.png, active: green_active.png
- * 暗色主题： icon: black.png, hover: default_hover.png, active: default_active.png
+* 富文本编辑器
+*
+* 编辑器图标ICON（通过替换文件改变图标）
+* 默认蓝色主题
+* 绿色主题； icon: green.png, hover: green_hover.png, active: green_active.png
+* 暗色主题： icon: black.png, hover: default_hover.png, active: default_active.png
 */
 
+$editToolBarBackgroundColor:#263841; //富文本编辑器工具栏背景颜色
+$editToolBarFontColor: #FFFFFF; //富文本编辑器工具栏字体颜色
 $editIcon: url('black.png');
 $editHover: url('default_hover.png');
 $editActive: url('default_active.png');
