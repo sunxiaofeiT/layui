@@ -37,5 +37,9 @@
     {
         "name": "树与表格联动",
         "path": "tree"
+    },
+    {
+        "name": "树与表格联动-bootstrap",
+        "path": "tree-bootstrap"
     }
 ]
