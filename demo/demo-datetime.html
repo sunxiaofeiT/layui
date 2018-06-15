@@ -1,116 +1,128 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <meta charset="utf-8">
     <title>基于datetime的日期与时间选择</title>
     <!--<link href="../dist/plugins/bootstrap-2.3.2/css/bootstrap.min.css" rel="stylesheet" media="screen">-->
     <link rel="stylesheet" href="../dist/css/modules/base.css">
+    <link rel="stylesheet" href="../dist/css/modules/form.css">
     <link href="../dist/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="../dist/css/modules/datetimepicker.css">
 </head>
-<body>
-<div class="body-container">
-    <form action="" class="form-horizontal">
-        <fieldset>
-            <legend>基于datetimepicker的日期与时间选择</legend>
-            <div class="datetime">
-                <div class="layui-form-item">
-                        <label class="layui-form-label">年月日</label>
-                        <div class="layui-input-block">
-                            <div class="input-group date form_datetime">
-                                <input  name="setTime"  id="datetimeStart" class="layui-input" style="width:188px;" size="16" type="text" readonly>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">年月日时分</label>
-                        <div class="layui-input-block">
-                            <div class="input-group date form_datetime">
-                                <input  name="setTime"  id="datetimeStart-ymdhi" class="layui-input" style="width:188px;" size="16" type="text" readonly>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">时分</label>
-                        <div class="layui-input-block">
-                            <div class="input-group date form_datetime">
-                                <input  name="setTime"  id="datetimeStart-hi" class="layui-input" style="width:188px;" size="16" type="text" readonly>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="datetime-icon">
-                <label class="control-label">带icon的日期与时间选择</label>
-                <div class="input-group date form_datetime" style="width:300px;" >
-                    <input class="form-control" size="16" type="text" value="" readonly>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
-                </div>
-                <input type="hidden" id="dtp_input1" value="" /><br/>
-            </div>
-        </fieldset>
-    </form>
-</div>
 
-<script type="text/javascript" src="../dist/plugins/jquery-3.3.1/jquery-3.3.1.min.js" charset="UTF-8"></script>
-<script type="text/javascript" src="../dist/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../dist/lay/modules/datetimepickerjs/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script type="text/javascript" src="../dist/lay/modules/datetimepickerjs/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
-<script type="text/javascript" src="../dist/lay/modules/datetimepickerjs/datetime.js" charset="UTF-8"></script>
-<!--<script type="text/javascript" src="datetime.js"></script>-->
-<script>
-    //日期控件
-    $.fn.datetimepicker.dates['zh'] = {
-        days:       ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六","星期日"],
-        daysShort:  ["日", "一", "二", "三", "四", "五", "六","日"],
-        daysMin:    ["日", "一", "二", "三", "四", "五", "六","日"],
-        months:     ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月","十二月"],
-        monthsShort:  ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"],
-        meridiem:    ["上午", "下午"],
-        //suffix:      ["st", "nd", "rd", "th"],
-        today:       "今天"
-    };
-    $('#datetimeStart').datetimepicker({
-        format: 'yyyy-mm-dd',  //显示格式可为yyyymm/yyyy-mm-dd/yyyy.mm.dd/dd MM yyyy(可随意组合)
-        weekStart: 1,  //0-周日,6-周六 。默认为0
-        autoclose: true,
-        startView: 2,  //打开时显示的视图。0-'hour' 1-'day' 2-'month' 3-'year' 4-'decade'
-        minView: 3, //最小时间视图。默认0-'hour'
-        maxView: 4, //最大时间视图。默认4-'decade'
-        todayBtn:true, //true时"今天"按钮仅仅将视图转到当天的日期。如果是'linked'，当天日期将会被选中。
-       todayHighlight:true,//默认值: false,如果为true, 高亮当前日期。
-       initialDate: new Date(),//初始化日期.默认new Date()当前日期
-       forceParse: true,  //当输入非格式化日期时，强制格式化。默认true
-        bootcssVer:3,//显示向左向右的箭头
-        language:"zh"  //语言选择中文
-    });
-    $('#datetimeStart-ymdhi').datetimepicker({
-        format: "yyyy-mm-dd - hh:ii",
-        autoclose: true,
-        weekStart: 1,  //0-周日,6-周六 。默认为0
-        startView: 2,  //打开时显示的视图。0-'hour' 1-'day' 2-'month' 3-'year' 4-'decade'
-        minView: 1, //最小时间视图。默认0-'hour'
-        maxView: 4, //最大时间视图。默认4-'decade'
-        todayBtn:true, //true时"今天"按钮仅仅将视图转到当天的日期。如果是'linked'，当天日期将会被选中。
-        todayHighlight:true,//默认值: false,如果为true, 高亮当前日期。
-        initialDate: new Date(),//初始化日期.默认new Date()当前日期
-        forceParse: true,  //当输入非格式化日期时，强制格式化。默认true
-        bootcssVer:3,//显示向左向右的箭头
-        language:"zh"  //语言选择中文
-    });
-    $('#datetimeStart-hi').datetimepicker({
-        format: 'hh:ii',  //显示格式可为yyyymm/yyyy-mm-dd/yyyy.mm.dd
-        weekStart: 1,  //0-周日,6-周六 。默认为0
-        autoclose: true,
-        startView: 1,  //打开时显示的视图。0-'hour' 1-'day' 2-'month' 3-'year' 4-'decade'
-        minView: 0, //最小时间视图。默认0-'hour'
-        maxView: 4, //最大时间视图。默认4-'decade'
-        todayBtn:true, //true时"今天"按钮仅仅将视图转到当天的日期。如果是'linked'，当天日期将会被选中。
-        todayHighlight:true,//默认值: false,如果为true, 高亮当前日期。
-        initialDate: new Date(),//初始化日期.默认new Date()当前日期
-        forceParse: true,  //当输入非格式化日期时，强制格式化。默认true
-        bootcssVer:3,//显示向左向右的箭头
-        language:"zh"  //语言选择中文
-    });
-</script>
+<body class="body-container">
+    <div>
+        <div class="layui-container-field">
+            <div class="layui-row">
+                <div class="layui-col-md6 layui-col-md-offset3">
+                    <form action="" class="form-horizontal">
+                        <fieldset>
+                            <legend>基于datetimepicker的日期与时间选择</legend>
+                            <div class="datetime">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">年月日</label>
+                                    <div class="layui-input-block">
+                                        <div class="input-group date form_datetime">
+                                            <input name="setTime" id="datetimeStart" class="layui-input"  style="width:300px;" size="16" type="text" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">年月日时分</label>
+                                    <div class="layui-input-block">
+                                        <div class="input-group date form_datetime">
+                                            <input name="setTime" id="datetimeStart-ymdhi" class="layui-input"  style="width:300px;" size="16" type="text" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label">时分</label>
+                                    <div class="layui-input-block">
+                                        <div class="input-group date form_datetime">
+                                            <input name="setTime" id="datetimeStart-hi" class="layui-input" style="width:300px;" size="16" type="text" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">带icon</label>
+                                <div class="input-group date form_datetime" style="width:300px;">
+                                    <input class="form-control" size="16" type="text" value="" disabled="disabled">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                                <input type="hidden" id="dtp_input1" value="" /><br/>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../dist/plugins/jquery-3.3.1/jquery-3.3.1.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../dist/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../dist/lay/modules/datetimepickerjs/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../dist/lay/modules/datetimepickerjs/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="../dist/lay/modules/datetimepickerjs/datetime.js" charset="UTF-8"></script>
+    <!--<script type="text/javascript" src="datetime.js"></script>-->
+    <script>
+        //日期控件
+        $.fn.datetimepicker.dates['zh'] = {
+            days: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"],
+            daysShort: ["日", "一", "二", "三", "四", "五", "六", "日"],
+            daysMin: ["日", "一", "二", "三", "四", "五", "六", "日"],
+            months: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+            monthsShort: ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"],
+            meridiem: ["上午", "下午"],
+            //suffix:      ["st", "nd", "rd", "th"],
+            today: "今天"
+        };
+        $('#datetimeStart').datetimepicker({
+            format: 'yyyy-mm-dd',  //显示格式可为yyyymm/yyyy-mm-dd/yyyy.mm.dd/dd MM yyyy(可随意组合)
+            weekStart: 1,  //0-周日,6-周六 。默认为0
+            autoclose: true,
+            startView: 2,  //打开时显示的视图。0-'hour' 1-'day' 2-'month' 3-'year' 4-'decade'
+            minView: 3, //最小时间视图。默认0-'hour'
+            maxView: 4, //最大时间视图。默认4-'decade'
+            todayBtn: true, //true时"今天"按钮仅仅将视图转到当天的日期。如果是'linked'，当天日期将会被选中。
+            todayHighlight: true,//默认值: false,如果为true, 高亮当前日期。
+            initialDate: new Date(),//初始化日期.默认new Date()当前日期
+            forceParse: true,  //当输入非格式化日期时，强制格式化。默认true
+            bootcssVer: 3,//显示向左向右的箭头
+            language: "zh"  //语言选择中文
+        });
+        $('#datetimeStart-ymdhi').datetimepicker({
+            format: "yyyy-mm-dd - hh:ii",
+            autoclose: true,
+            weekStart: 1,  //0-周日,6-周六 。默认为0
+            startView: 2,  //打开时显示的视图。0-'hour' 1-'day' 2-'month' 3-'year' 4-'decade'
+            minView: 1, //最小时间视图。默认0-'hour'
+            maxView: 4, //最大时间视图。默认4-'decade'
+            todayBtn: true, //true时"今天"按钮仅仅将视图转到当天的日期。如果是'linked'，当天日期将会被选中。
+            todayHighlight: true,//默认值: false,如果为true, 高亮当前日期。
+            initialDate: new Date(),//初始化日期.默认new Date()当前日期
+            forceParse: true,  //当输入非格式化日期时，强制格式化。默认true
+            bootcssVer: 3,//显示向左向右的箭头
+            language: "zh"  //语言选择中文
+        });
+        $('#datetimeStart-hi').datetimepicker({
+            format: 'hh:ii',  //显示格式可为yyyymm/yyyy-mm-dd/yyyy.mm.dd
+            weekStart: 1,  //0-周日,6-周六 。默认为0
+            autoclose: true,
+            startView: 1,  //打开时显示的视图。0-'hour' 1-'day' 2-'month' 3-'year' 4-'decade'
+            minView: 0, //最小时间视图。默认0-'hour'
+            maxView: 4, //最大时间视图。默认4-'decade'
+            todayBtn: true, //true时"今天"按钮仅仅将视图转到当天的日期。如果是'linked'，当天日期将会被选中。
+            todayHighlight: true,//默认值: false,如果为true, 高亮当前日期。
+            initialDate: new Date(),//初始化日期.默认new Date()当前日期
+            forceParse: true,  //当输入非格式化日期时，强制格式化。默认true
+            bootcssVer: 3,//显示向左向右的箭头
+            language: "zh"  //语言选择中文
+        });
+
+    </script>
 </body>
+
 </html>

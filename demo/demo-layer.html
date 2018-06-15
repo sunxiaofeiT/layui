@@ -19,46 +19,52 @@
 </head>
 
 <body class="body-container">
-    <div style="width:60%; margin-left: 20%">
-        <hr>
-        <p>说明:弹层中的button从右侧顺序排列.</p>
-        <p>点击每个按钮可查看每个按钮对应的弹层样式</p>
-        <hr>
-        <div>
-            <button id="remind" class="layui-btn layui-btn-normal">提示弹层</button>
-        </div>
-        <hr>
-        <div>
-            <button id="tipsButton" class="layui-btn layui-btn-normal ">Tips层</button>
-            <p>多用悬停提示,可改变方向,改变颜色</p>
-        </div>
-        <hr>
-        <div>
-            <button id="remindButton" class="layui-btn layui-btn-normal">普通弹层</button>
-            <p>一行文字的提示弹层,带有下方的按钮</p>
-        </div>
-        <hr>
-        <div>
-            <button id="oneInput" class="layui-btn layui-btn-normal">输入弹层</button>
-        </div>
-        <hr>
-        <div>
-            <button id="twoInput" class="layui-btn layui-btn-normal">两个input</button>
-        </div>
-        <hr>
-        <div>
-            <button id="sevenInput" class="layui-btn layui-btn-normal">多个input</button>
-        </div>
-        <!-- <hr>
-        <div>
-            <button id="moreInput" class="layui-btn layui-btn-normal">两列input</button>
-            <p>每列 Input 宽 260px, 两列之间间距为 20px.</p>
-        </div> -->
-        <hr>
-        <div>
-            <button id="dropdownInput" class="layui-btn layui-btn-normal">复杂表单弹层</button>
-            <p>其余与其它弹层类似</p>
-            <p>每个表单项的上下间距为20px</p>
+    <div class="layui-container-field">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-md-offset4">
+                <div class="layer-demo-content">
+                    <hr>
+                    <p>说明:弹层中的button从右侧顺序排列.</p>
+                    <p>点击每个按钮可查看每个按钮对应的弹层样式</p>
+                    <hr>
+                    <div>
+                        <button id="remind" class="layui-btn layui-btn-normal">提示弹层</button>
+                    </div>
+                    <hr>
+                    <div>
+                        <button id="tipsButton" class="layui-btn layui-btn-normal ">Tips层</button>
+                        <p>多用悬停提示,可改变方向,改变颜色</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <button id="remindButton" class="layui-btn layui-btn-normal">普通弹层</button>
+                        <p>一行文字的提示弹层,带有下方的按钮</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <button id="oneInput" class="layui-btn layui-btn-normal">输入弹层</button>
+                    </div>
+                    <hr>
+                    <div>
+                        <button id="twoInput" class="layui-btn layui-btn-normal">两个input</button>
+                    </div>
+                    <hr>
+                    <div>
+                        <button id="sevenInput" class="layui-btn layui-btn-normal">多个input</button>
+                    </div>
+                    <!-- <hr>
+                    <div>
+                        <button id="moreInput" class="layui-btn layui-btn-normal">两列input</button>
+                        <p>每列 Input 宽 260px, 两列之间间距为 20px.</p>
+                    </div> -->
+                    <hr>
+                    <div>
+                        <button id="dropdownInput" class="layui-btn layui-btn-normal">复杂表单弹层</button>
+                        <p>其余与其它弹层类似</p>
+                        <p>每个表单项的上下间距为20px</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -199,7 +205,7 @@
         // 提示
         $('#remind').on('click', function () {
             layer.msg('提示内容', {
-                time: '1000', //停留时间，0为不自动关闭
+                time: '100000', //停留时间，0为不自动关闭
                 // btn: ['a','b','c'], // 添加按钮
             })
         })
@@ -315,7 +321,8 @@
             layer.open({
                 type: 1,
                 shade: false,
-                title: '下拉框的弹出层',
+                title: '辅助弹出',
+                // shade: true,
                 area: ['600px'],
                 content: $('#dropdownLayer'),
                 btn: ['确认', '重置', '取消'],

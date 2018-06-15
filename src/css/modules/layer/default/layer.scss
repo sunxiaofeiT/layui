@@ -5,16 +5,16 @@
 // $layerTitleBackgroundColor: #ECF9FF; // 由 style.scss 文件引入
 
 $layuiLayerTitleHeight: 42px;//弹层标题高度（行高随之变化）
-$layuiLayerTitleBorderBottom: 1px solid #eee;//弹层标题下边框
+$layuiLayerTitleBorderBottom: 1px solid $borderColor;//弹层标题下边框
 $layuiLayerTitleFontSize: 14px; //标题栏字号
-$layuiLayerTitleBorderRadius: 4px; //标题栏圆角
+$layerBorderRadius: 2px; //弹层圆角
 $layuilayerContentPadding: 20px;  //弹层内容四周距外层距离
 $layuiLayerContentPaddingBottom: 20px; //弹层内容按钮距下边距
-$layuiLayerButtonBorderRadius: 4px; //弹层按钮圆角
+$layuiLayerButtonBorderRadius: 2px; //弹层按钮圆角
 
 /*------------以下参数的值引自 style.scss 文件，禁止修改---------------------- */
 $layerContentPadding: $containerPadding;  //弹层内容与外边框边距
-$layuiLayerTitleFontColor: $fontColor; //标题栏字体颜色
+$layuiLayerTitleFontColor: $firstFontColor; //标题栏字体颜色
 $layuiLayerTitleBackgroundColor: $layerTitleBackgroundColor; //标题栏背景颜色
 $layuiLayerFirstButtonBorderColor: $baseColor; //第一个按钮的边框颜色
 $layuiLayerFirstButtonBackgroundColor: $baseColor; //第一个按钮的背景色
@@ -28,6 +28,14 @@ html #layuicss-layer {
   position: absolute;
   width: 1989px;
 }
+.layer-demo-content {
+  color: $firstFontColor;
+}
+
+// .layui-layer-btn,
+// .layui-layer-content{
+//   color: $backgroundFontColor;
+// }
 
 /* custom */
 .layer-box {
@@ -62,9 +70,10 @@ html #layuicss-layer {
   left: 0;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  // background-color: #fff;
+  background-color: $containerBackgroundColor;
   -webkit-background-clip: content;
-  border-radius: 2px;
+  border-radius: $layerBorderRadius;
   box-shadow: 1px 1px 50px rgba(0, 0, 0, .3);
 }
 
@@ -403,7 +412,7 @@ html #layuicss-layer {
   text-overflow: ellipsis;
   white-space: nowrap;
   background-color: $layuiLayerTitleBackgroundColor;
-  border-radius: $layuiLayerTitleBorderRadius $layuiLayerTitleBorderRadius 0 0;
+  border-radius: $layerBorderRadius $layerBorderRadius 0 0;
 }
 
 .layui-layer-setwin {

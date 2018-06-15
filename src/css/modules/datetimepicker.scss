@@ -187,17 +187,17 @@ tfoot{
 }
 
 .datetimepicker table tr td.minute:hover {
-    background: $baseColor;
+    background: $hoverColor;
     cursor: pointer;
 }
 
 .datetimepicker table tr td.hour:hover {
-    background: $baseColor;
+    background: $hoverColor;
     cursor: pointer;
 }
 
 .datetimepicker table tr td.day:hover {
-    background: $baseColor;
+    background: $hoverColor;
     cursor: pointer;
 }
 
@@ -269,16 +269,16 @@ tfoot{
 .datetimepicker table tr td.active:hover,
 .datetimepicker table tr td.active.disabled,
 .datetimepicker table tr td.active.disabled:hover {
-    background-color: $baseColor!important;
-    background-image: -moz-linear-gradient(top, $baseColor, $baseColor);
-    background-image: -ms-linear-gradient(top, $baseColor, $baseColor);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($baseColor), to($baseColor));
-    background-image: -webkit-linear-gradient(top, $baseColor, $baseColor);
-    background-image: -o-linear-gradient(top, $baseColor, $baseColor);
-    background-image: linear-gradient(to bottom, $baseColor, $baseColor);
+    background-color: $hoverColor!important;
+    background-image: -moz-linear-gradient(top, $hoverColor, $hoverColor);
+    background-image: -ms-linear-gradient(top, $hoverColor, $hoverColor);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($hoverColor), to($hoverColor));
+    background-image: -webkit-linear-gradient(top, $hoverColor, $hoverColor);
+    background-image: -o-linear-gradient(top, $hoverColor, $hoverColor);
+    background-image: linear-gradient(to bottom, $hoverColor, $hoverColor);
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$baseColor', endColorstr='$baseColor', GradientType=0);
-    border-color: $baseColor $baseColor #002a80;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$hoverColor', endColorstr='$hoverColor', GradientType=0);
+    border-color: $hoverColor $hoverColor #002a80;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
     color: #ffffff;
@@ -305,7 +305,7 @@ tfoot{
 .datetimepicker table tr td.active:hover[disabled],
 .datetimepicker table tr td.active.disabled[disabled],
 .datetimepicker table tr td.active.disabled:hover[disabled] {
-    background-color: $baseColor;
+    background-color: $hoverColor;
 }
 
 .datetimepicker table tr td.active:active,
@@ -354,7 +354,7 @@ tfoot{
 }
 
 .datetimepicker table tr td span:hover {
-    background: $baseColor;
+    background: $hoverColor;
 }
 
 .datetimepicker table tr td span.disabled,
@@ -369,15 +369,15 @@ tfoot{
 .datetimepicker table tr td span.active.disabled,
 .datetimepicker table tr td span.active.disabled:hover {
     background-color: #006dcc;
-    background-image: -moz-linear-gradient(top, $baseColor, $baseColor);
-    background-image: -ms-linear-gradient(top, $baseColor, $baseColor);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($baseColor), to($baseColor));
-    background-image: -webkit-linear-gradient(top, $baseColor, $baseColor);
-    background-image: -o-linear-gradient(top, $baseColor, $baseColor);
-    background-image: linear-gradient(to bottom, $baseColor, $baseColor);
+    background-image: -moz-linear-gradient(top, $hoverColor, $hoverColor);
+    background-image: -ms-linear-gradient(top, $hoverColor, $hoverColor);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($hoverColor), to($hoverColor));
+    background-image: -webkit-linear-gradient(top, $hoverColor, $hoverColor);
+    background-image: -o-linear-gradient(top, $hoverColor, $hoverColor);
+    background-image: linear-gradient(to bottom, $hoverColor, $hoverColor);
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$baseColor', endColorstr='$baseColor', GradientType=0);
-    border-color: $baseColor $baseColor #002a80;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$hoverColor', endColorstr='$hoverColor', GradientType=0);
+    border-color: $hoverColor $hoverColor #002a80;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
     color: #ffffff;
@@ -404,7 +404,7 @@ tfoot{
 .datetimepicker table tr td span.active:hover[disabled],
 .datetimepicker table tr td span.active.disabled[disabled],
 .datetimepicker table tr td span.active.disabled:hover[disabled] {
-    background-color: $baseColor;
+    background-color: $hoverColor;
 }
 
 .datetimepicker table tr td span.active:active,
@@ -445,15 +445,15 @@ tfoot{
     cursor: pointer;
 }
 .datetimepicker tfoot th {
-    color: $baseColor;
+    color: $hoverColor;
 }
 
 .datetimepicker thead tr:first-child th:hover,
 .datetimepicker tfoot th:hover {
-    color: $baseColor;
+    color: $hoverColor;
 }
 .today:hover{
-    color: $baseColor!important;
+    color: $hoverColor!important;
 }
 .input-append.date .add-on i,
 .input-prepend.date .add-on i,
@@ -481,5 +481,9 @@ tfoot{
     color:$fontColor;
 }
 .datetimepicker table tr td span:hover{
-    background-color: $baseColor;
+    background-color: $hoverColor;
+}
+// 边框样式覆盖
+.layui-form-label{
+    width:110px;
 }

@@ -192,29 +192,32 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 
 
 /*部分样式覆盖*/
+
+// 辅助文字颜色
+.body-container h3{
+    color:$fontColor;
+}
 .tab-nor-scr,.tab-nor-auto,.tab2,.tab3{
     background-color:$containerBackgroundColor;
     color: $firstFontColor;
+}
+
+// 鼠标hover降低透明度
+.tab-nor-scr .layui-tab-title :hover, .tab-nor-auto .layui-tab-title :hover{
+    opacity: 0.8;
 }
 /*滚动条*/
 .tab-nor-scr > .layui-tab > .layui-tab-content{
     height:100px;
     overflow-y: scroll;
-    SCROLLBAR-FACE-COLOR: #CCFFFF; 
-SCROLLBAR-HIGHLIGHT-COLOR: white; 
-SCROLLBAR-SHADOW-COLOR: #813533; 
-SCROLLBAR-3DLIGHT-COLOR: #813533; 
-SCROLLBAR-ARROW-COLOR: #813533; 
-SCROLLBAR-TRACK-COLOR: white; 
-SCROLLBAR-DARKSHADOW-COLOR: #813533; 
 }
 ::-webkit-scrollbar {
     width: 12px;
-    height: 12px;
+    height: 2px;
 }
  
 ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:horizontal {
-    background: #BDBDBD;
+    background: $scrollbarThumb;
 }
  
 ::-webkit-scrollbar-button {
@@ -226,7 +229,7 @@ SCROLLBAR-DARKSHADOW-COLOR: #813533;
 }
  
 ::-webkit-scrollbar-track-piece {
-    background: #FFF;
+    background: $scrollbarTrack;
 }
 /*选项卡标题*/
 .layui-tab-title li {
@@ -236,6 +239,10 @@ SCROLLBAR-DARKSHADOW-COLOR: #813533;
 
 // 自适应高度
 /*Tab简洁风格选中字颜色*/
+ .tab2 .layui-tab-title :hover{
+    color: $baseColor;
+ }
+
 .layui-tab-brief > .layui-tab-title .layui-this {
     color: $baseColor;
 }

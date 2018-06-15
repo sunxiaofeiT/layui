@@ -9,39 +9,42 @@
  */
 
 @import '../../../../css/style.scss';
+$iconZoom: 1; //  icon 缩放大小
+$title-background-color: $tableThColor; // 图标栏整体背景颜色(弹出层标题同样的颜色）
+$title-color: $backgroundFontColor; //标题字体颜色
+$edit-content-background-color: $inputBackgroundColor; // 编辑区颜色
+$title-border-bottom: 1px solid $inputBorderColor; // 图标栏下边框
+$bar-background-color: $inputBackgroundColor; // 下拉栏的背景颜色
+$content-border: 1px solid $tableBorderColor; // 整体的边框
+$layer-hover-border: 1px solid $hoverColor;
+$layer-hover-background: $hoverColor;
+$layer-hover-color: $backgroundFontColor;
+$layer-hover-border: 1px solid $baseColor;
+$layer-active-border: 1px solid $activeColor;
+/* 背景图 */
 
-//  icon 缩放大小
-$iconZoom: 1;
-// 图标栏整体背景颜色(弹出层同样的颜色）
-$title-background-color: $containerBackgroundColor;
-// 编辑区颜色
-$edit-content-background-color: $inputBackgroundColor;
-// 图标栏下边框
-$title-border-bottom: 1px solid $inputBorderColor;
-// 下拉栏的背景颜色
-$bar-background-color: $inputBackgroundColor;
-// 整体的边框
-$content-border: 1px solid $borderColor;
-// 背景图
-// $default-icon: url('default.png');
-// $icon-hover: url('default_hover.png');
-// $icon-active: url('default_active.png');
 $default-icon: $editIcon;
 $icon-hover: $editHover;
 $icon-active: $editActive;
-// 按钮颜色
+/* 按钮颜色 */
+
 $button-bgcolor: $baseColor;
-$button-color: $firstFontColor;
-// 弹出层的样式
+$button-color: $backgroundFontColor;
+/* 弹出层的样式 */
+
 $input-border: 1px solid $inputBorderColor;
-// 弹出层字体颜色
-$ke-menu-item-color: $firstFontColor;
-// 图标icon选中边框样式
+$ke-menu-item-color: $firstFontColor; // 弹出层字体颜色
+/* 图标icon选中边框样式 */
+
 $icon-selected-border: 1px solid transparent; //边框
 $icon-selected-background-color: transparent; //背景
 $icon-border: 1px solid transparent; // 图标icon边框样式
 $bar-boder-top: 1px solid transparent; // 下拉栏的上边框颜色
 $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
+.edit-title {
+	color: $title-color;
+}
+
 .ke-inline-block {
 	display: -moz-inline-stack;
 	display: inline-block;
@@ -712,8 +715,9 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 }
 
 .ke-menu-item-on {
-	border: 1px solid #5690D2;
-	background-color: #E9EFF6;
+	border: $layer-hover-border;
+	background-color: $layer-hover-background;
+	color: $layer-hover-color;
 }
 
 .ke-menu-item-left {
@@ -757,9 +761,9 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 /* colorpicker */
 
 .ke-colorpicker {
-	border: 1px solid #A0A0A0;
-	background-color: #F1F1F1;
-	color: #222222;
+	border: $content-border;
+	background-color: $title-background-color;
+	color: $title-color;
 	padding: 2px;
 }
 
@@ -772,8 +776,8 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 
 .ke-colorpicker-cell {
 	font-size: 0;
-	line-height: 0;
-	border: 1px solid #F0F0EE;
+	line-height: 0; // border: 1px solid #F0F0EE;
+	border: $content-border;
 	cursor: pointer;
 	margin: 3px;
 	padding: 0;
@@ -782,8 +786,8 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 .ke-colorpicker-cell-top {
 	font-family: "sans serif", tahoma, verdana, helvetica;
 	font-size: 12px;
-	line-height: 24px;
-	border: 1px solid #F0F0EE;
+	line-height: 24px; // border: 1px solid #F0F0EE;
+	border: $content-border;
 	cursor: pointer;
 	margin: 0;
 	padding: 0;
@@ -791,11 +795,13 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 }
 
 .ke-colorpicker-cell-on {
-	border: 1px solid #5690D2;
+	// border: 1px solid #5690D2;
+	border: $layer-hover-border;
 }
 
 .ke-colorpicker-cell-selected {
-	border: 1px solid #2446AB;
+	// border: 1px solid #2446AB;
+	border: $layer-active-border;
 }
 
 .ke-colorpicker-cell-color {
@@ -837,8 +843,7 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 
 .ke-dialog-content {
 	background-color: #FFF;
-	width: 100%;
-	height: 100%;
+	width: 100%; // height: 100%;
 	color: #333;
 	border: 1px solid #A0A0A0;
 }
@@ -866,7 +871,7 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 	height: 24px;
 	font: 12px/24px "sans serif", tahoma, verdana, helvetica;
 	text-align: left;
-	color: #222;
+	color: $title-color;
 	cursor: move;
 }
 
@@ -884,6 +889,8 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 .ke-dialog-body {
 	font: 12px/1.5 "sans serif", tahoma, verdana, helvetica;
 	text-align: left;
+	background-color: $containerBackgroundColor;
+	color: $firstFontColor;
 	overflow: hidden;
 	width: 100%;
 }
@@ -921,14 +928,23 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 
 .ke-dialog-body select {
 	display: -moz-inline-stack;
+	padding-left: 2px;
+	height: 28px;
 	display: inline-block;
 	vertical-align: middle;
+	border: $content-border;
 	zoom: 1;
 	*display: inline;
 	width: auto;
+	background-color: $inputBackgroundColor;
+	color: $firstFontColor;
 }
+// .ke-dialog-body select option:hover {
+// 	background-color: $hoverColor;
+// }
 
 .ke-dialog-body .ke-textarea {
+	// background-color: $inputBackgroundColor;
 	display: block;
 	width: 408px;
 	height: 260px;
@@ -969,8 +985,9 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 .ke-dialog-footer {
 	font: 12px/1 "sans serif", tahoma, verdana, helvetica;
 	text-align: right;
-	padding: 0 0 5px 0;
-	background-color: #FFF;
+	padding: 0 0 5px 0; // background-color: #FFF;
+	background-color: $containerBackgroundColor;
+	color: $firstFontColor;
 	width: 100%;
 }
 
@@ -993,7 +1010,7 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 	// background: url(background.png) no-repeat;
 	background-color: $button-bgcolor;
 	cursor: pointer;
-	height: 23px;
+	height: 30px;
 	line-height: 23px;
 	overflow: visible;
 	display: inline-block;
@@ -1034,15 +1051,16 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 /* inputbox */
 
 .ke-input-text {
-	background-color: #FFFFFF;
+	padding-left: 10px;
+	background-color: $inputBackgroundColor;
+	color: $inputFontColor;
 	font-family: "sans serif", tahoma, verdana, helvetica;
 	font-size: 12px;
-	line-height: 17px;
-	height: 17px;
-	padding: 2px 4px;
-	border-color: #848484 #E0E0E0 #E0E0E0 #848484;
-	border-style: solid;
-	border-width: 1px;
+	line-height: 28px;
+	height: 28px;
+	// padding: 2px 4px;
+	// border-color: #848484 #E0E0E0 #E0E0E0 #848484;
+	border: 1px solid $borderColor;
 	display: -moz-inline-stack;
 	display: inline-block;
 	vertical-align: middle;
@@ -1293,7 +1311,8 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 .ke-plugin-emoticons .ke-cell {
 	margin: 0;
 	padding: 1px;
-	border: 1px solid #F0F0EE;
+	// border: 1px solid #F0F0EE;
+	border: $content-border;
 	cursor: pointer;
 }
 
@@ -1320,7 +1339,8 @@ $icon-hover-boder: 1px solid transparent; // 图标icon悬浮样式,边框样式
 	padding: 0;
 	border: 0;
 	font: 12px/1 "sans serif", tahoma, verdana, helvetica;
-	color: #333;
+	// color: #333;
+	color: $firstFontColor;
 	text-decoration: none;
 }
 
