@@ -487,3 +487,17 @@ tfoot{
 .layui-form-label{
     width:110px;
 }
+
+.form-control {
+    //带icon的日期与时间选择输入框高度
+    height: 38px;
+    //带icon的日期与时间选择左圆角
+    border-radius: 1px
+}
+
+//带icon的日期与时间选择右圆角
+.input-group-addon{
+    border-radius: 1px;
+}
+
+//placeholder样式
