@@ -30,19 +30,16 @@
     background-color: $tableTrColor;
 }
 
-.layui-table-header,
 .layui-table-tool,
 .layui-table-patch,
 .layui-table-mend,
-/* 取消默认设置的隔行背景颜色 */
-
-/* .layui-table[lay-even] tr:nth-child(even), */
-
 .layui-table tbody tr:hover,
-.layui-table-hover,
 .layui-table-click {
-    /* 隔行显示背景色 */
     background-color: $tableHoverColor;
+}
+
+.layui-table-hover {
+    background-color: $tableHoverColor !important;
 }
 
 .layui-table-header {
@@ -457,7 +454,8 @@ td[align="left"] .layui-table-cell {
     height: 100%;
     padding: 0 14px 1px;
     border-radius: 0;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, .15)
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, .15);
+    color: $fontColor;
 }
 
 .layui-table-edit:focus {

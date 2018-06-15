@@ -89,6 +89,20 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
     background-color: $baseColor;
     border-radius: 2px;
     box-sizing: border-box;
+    color:$fontColor;
+}
+
+.layui-input::-webkit-input-placeholder{
+    color:$thirdFontColor;
+}
+
+.layui-input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:$thirdFontColor;
+}
+.layui-input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:$thirdFontColor;
+}
+.layui-input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
     color:$thirdFontColor;
 }
 
@@ -282,7 +296,7 @@ button, input, optgroup, option, select, textarea {
     font-size: 14px;
     border-radius: 2px 0 0 2px;
     background-color: $checkboxInitBackground;
-    color: $inputFontColor;
+    color: $secondFontColor;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

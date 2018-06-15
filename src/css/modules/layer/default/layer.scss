@@ -15,6 +15,7 @@ $layuiLayerButtonBorderRadius: 2px; //弹层按钮圆角
 /*------------以下参数的值引自 style.scss 文件，禁止修改---------------------- */
 $layerContentPadding: $containerPadding;  //弹层内容与外边框边距
 $layuiLayerTitleFontColor: $firstFontColor; //标题栏字体颜色
+$layuiLayerContentColor: $layuiLayerContentFontColor; //弹层内容字体颜色
 $layuiLayerTitleBackgroundColor: $layerTitleBackgroundColor; //标题栏背景颜色
 $layuiLayerFirstButtonBorderColor: $baseColor; //第一个按钮的边框颜色
 $layuiLayerFirstButtonBackgroundColor: $baseColor; //第一个按钮的背景色
@@ -32,10 +33,10 @@ html #layuicss-layer {
   color: $firstFontColor;
 }
 
-// .layui-layer-btn,
-// .layui-layer-content{
-//   color: $backgroundFontColor;
-// }
+.layui-layer-btn,
+.layui-layer-page .layui-layer-content{
+  color: $layuiLayerContentColor;
+}
 
 /* custom */
 .layer-box {
@@ -552,6 +553,7 @@ html #layuicss-layer {
   font-size: 14px;
   overflow-x: hidden;
   overflow-y: auto;
+  color: $layuiLayerContentFontColor;
 }
 
 .layui-layer-dialog .layui-layer-content .layui-layer-ico {

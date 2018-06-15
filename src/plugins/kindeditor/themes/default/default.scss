@@ -10,8 +10,8 @@
 
 @import '../../../../css/style.scss';
 $iconZoom: 1; //  icon 缩放大小
-$title-background-color: $tableThColor; // 图标栏整体背景颜色(弹出层标题同样的颜色）
-$title-color: $backgroundFontColor; //标题字体颜色
+$title-background-color: $editToolBarBackgroundColor; // 图标栏整体背景颜色(弹出层标题同样的颜色）
+$title-color: $editToolBarFontColor; //标题字体颜色
 $edit-content-background-color: $inputBackgroundColor; // 编辑区颜色
 $title-border-bottom: 1px solid $inputBorderColor; // 图标栏下边框
 $bar-background-color: $inputBackgroundColor; // 下拉栏的背景颜色

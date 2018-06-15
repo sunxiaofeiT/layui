@@ -12,8 +12,7 @@
 
     <link rel="stylesheet" href="../dist/css/modules/form.css">
     <link rel="stylesheet" href="../dist/css/modules/button.css">
-    <!-- <link rel="stylesheet" href="../dist/css/modules/input.css"> -->
-
+    <link rel="stylesheet" href="../dist/css/modules/layer/default/layer.css">
 
     <title>弹层DEMO</title>
 </head>
@@ -37,7 +36,8 @@
                     </div>
                     <hr>
                     <div>
-                        <button id="remindButton" class="layui-btn layui-btn-normal">普通弹层</button>
+                        <button id="remindButton" class="layui-btn layui-btn-normal">复杂参数普通弹层</button>
+                        <button id="easyRemind" class="layui-btn layui-btn-normal">简单参数弹层</button>
                         <p>一行文字的提示弹层,带有下方的按钮</p>
                     </div>
                     <hr>
@@ -205,7 +205,7 @@
         // 提示
         $('#remind').on('click', function () {
             layer.msg('提示内容', {
-                time: '100000', //停留时间，0为不自动关闭
+                time: '1000', //停留时间，0为不自动关闭
                 // btn: ['a','b','c'], // 添加按钮
             })
         })
@@ -236,6 +236,13 @@
                 btn1: function (index) { // 每个按钮触发的事件
                     layer.close(index); // 关闭当前弹层,index是传入的参数
                 }
+            })
+        })
+
+        $('#easyRemind').on('click', function() {
+            layer.open({
+                title: '简单提示弹层',
+                content: '简单提示弹层，只有titel、content参数',
             })
         })
 
