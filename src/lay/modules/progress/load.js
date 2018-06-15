@@ -26,7 +26,7 @@ layui.use('element', function(){
                 element.progress('demo', n+'%');
                 console.log((n-20)+"%");
                 $(".bubbleImg").css("display","block");
-                $(".bubbleProgress .layui-progress .layui-progress-bar span").css("display","block");
+                $(".bubbleProgress .layui-progress .layui-progress-bar span").css("display","none");
                 $(".bubbleImg").css("margin-left",(n-6)+"%");
                 var progressText = $(".bubbleProgress .layui-progress .layui-progress-bar span").html()
                 $('#processText').html(progressText);

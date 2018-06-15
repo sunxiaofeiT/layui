@@ -128,6 +128,9 @@
     font-size: 12px;
     line-height: 20px;
 }
+.bubbleProgress .layui-progress .layui-progress-bar span{
+    display: none;
+}
 /*主题色颜色调整*/
 .layui-bg-blue {
     background-color: #188FFF !important
