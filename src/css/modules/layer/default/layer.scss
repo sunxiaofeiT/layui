@@ -553,6 +553,7 @@ html #layuicss-layer {
   font-size: 14px;
   overflow-x: hidden;
   overflow-y: auto;
+  color: $layuiLayerContentFontColor;
 }
 
 .layui-layer-dialog .layui-layer-content .layui-layer-ico {
