@@ -23,6 +23,7 @@ $layuiLayerFirstButtonColor: $backgroundFontColor; //第一个按钮的字颜色
 $layuiLayerOtherButtonBorderColor: $aidBorderColor; //其他按钮的边框颜色
 $layuiLayerOtherButtonBackgroundColor: $aidBackgroundColor; //其他按钮的背景颜色
 $layuiLayerOtherButtonColor: $aidFontColor; //其他按钮的内容色
+$layuiLayerIcon: $layuiLayerIconPng; // 弹层中的 ICON
 
 html #layuicss-layer {
   display: none;
@@ -97,7 +98,7 @@ html #layuicss-layer {
 }
 
 .layui-layer-ico {
-  background: url(icon.png) no-repeat;
+  background: url($layuiLayerIcon) no-repeat;
 }
 
 .layui-layer-dialog .layui-layer-ico,
