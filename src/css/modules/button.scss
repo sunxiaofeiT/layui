@@ -26,7 +26,7 @@
 /* 百搭 */.layui-btn-normal{background-color: $baseColor;}
 /* 暖色 */.layui-btn-warm{background-color: $warningColor;}
 /* 警告 */.layui-btn-danger{background-color: $failedColor;}
-/* 禁用 */.layui-btn-disabled,.layui-btn-disabled:hover,.layui-btn-disabled:active{border: 1px solid $disabledBorderColor; background-color: $disabledBackgroundColor; color: $disabledFontColor; cursor: not-allowed; opacity: 1;}
+/* 禁用 */.layui-btn-disabled,.layui-btn-disabled:hover,.layui-btn-disabled:active{border: 1px solid $disabledBorderColor;box-shadow: none; background-color: $disabledBackgroundColor; color: $disabledFontColor; cursor: not-allowed; opacity: 1;}
 
 /* 大型 */.layui-btn-lg{height: 46px; line-height: 44px; padding: 0 25px; font-size: 16px;}
 /* 小型 */.layui-btn-sm{height: 30px; line-height: 30px; padding: 0 10px; font-size: 12px;}
@@ -34,7 +34,8 @@
 /* 超小 */.layui-btn-xs{height: 22px; line-height: 22px; padding: 0 5px; font-size: 12px;}
 .layui-btn-xs i{font-size: 14px !important;}
 /* 按钮组 */.layui-btn-group{display: inline-block; vertical-align: middle; font-size: 0;}
-.layui-btn-group .layui-btn{margin-left: 0!important; margin-right: 0!important; border-left: 1px solid rgba(255,255,255,.5); border-radius: 0;}
+// .layui-btn-group .layui-btn{margin-left: 0px!important; border-left: 1px solid rgba(255, 255, 255, .5);margin-right: 0!important; border-radius: 0;}
+.layui-btn-group .layui-btn{margin-left: 1px!important;margin-right: 0!important; border-radius: 0;}
 .layui-btn-group .layui-btn-primary{border-left: none;}
 .layui-btn-group .layui-btn-primary:hover{border-color: $borderColor; color: $fontColor;}
 .layui-btn-group .layui-btn:first-child{border-left: none; border-radius: 2px 0 0 2px;}
@@ -117,4 +118,9 @@
 /*鼠标点击按钮边框*/
 .layui-btn:active{
     box-shadow:  0px 0px 1px 0.2px $activeColor;
+}
+// 小型按钮组样式
+.layui-btn-group .layui-btn-primary:hover {
+    border-color: $hoverColor;
+    color:  $hoverColor;
 }
