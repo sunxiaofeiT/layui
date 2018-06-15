@@ -56,16 +56,12 @@ $tableTrColor: #F9F9F9; // 表格中隔行显示的背景颜色
 $tableHoverColor: #89D9C1; // 表格中行选中时的背景颜色
 //进度条
 $progressNotDone: #E2E2E2; // 进度条未进行时的颜色
-$scrollbarThumb:#c1c1c1;//滚动条滚轮颜色
-$scrollbarTrack:#f1f1f1;//滚动条轴颜色
+$scrollbarThumb:#c1c1c1; //滚动条滚轮颜色
+$scrollbarTrack:#f1f1f1; //滚动条轴颜色
 //日期与时间选择
 $timeNow: #FDE19A; // 鼠标选择其他时间是，当前时间的颜色
-// 弹层
-$layerTitleBackgroundColor:#F5F5F5; // 弹层标题背景颜色
-$maskBackgroundColor: rgba(0, 0, 0, 0.22); // 遮罩层颜色
-
 //富文本编辑器
-$editToolBarBackgroundColor:#F5F5F5;//富文本编辑器工具栏背景颜色
+$editToolBarBackgroundColor:#F5F5F5; //富文本编辑器工具栏背景颜色
 /*
  * 富文本编辑器
  *
@@ -78,8 +74,10 @@ $editToolBarBackgroundColor:#F5F5F5;//富文本编辑器工具栏背景颜色
 $editIcon: url('green.png');
 $editHover: url('green_hover.png');
 $editActive: url('green_active.png');
-
 /*
  * 弹层
  */
- $layuiLayerContentFontColor: #2A2A2A; //弹层内容字体颜色
+
+$layuiLayerContentFontColor: #2A2A2A; //弹层内容字体颜色
+$layerTitleBackgroundColor:#F5F5F5; // 弹层标题背景颜色
+$maskBackgroundColor: rgba(0,0,0,0.22); // 遮罩层颜色
