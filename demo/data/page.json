@@ -33,5 +33,9 @@
     {
         "name": "数据表格",
         "path": "table"
+    },
+    {
+        "name": "树与表格联动",
+        "path": "tree"
     }
 ]
