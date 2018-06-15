@@ -2,7 +2,7 @@
 @import '../../../style.scss';
 /* *html{background-image: url(about:blank); background-attachment: fixed;} */
 
-// $layerTitleBackgroundColor: #ECF9FF; // 由 style.scss 文件引入
+$layerTitleBackgroundColor: #ECF9FF; // 由 style.scss 文件引入
 
 $layuiLayerTitleHeight: 42px;//弹层标题高度（行高随之变化）
 $layuiLayerTitleBorderBottom: 1px solid $borderColor;//弹层标题下边框

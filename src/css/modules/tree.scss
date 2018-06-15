@@ -90,10 +90,29 @@ ul.ztree.zTreeDragUL {margin:0; padding:0; position:absolute; width:auto; height
 .ztreeMask {z-index:10000; background-color:#cfcfcf; opacity:0.0; filter:alpha(opacity=0); position:absolute}
 
 
+.ztree{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
 html,body{
-	height: 100%;
+    height: 100%;
+    background-color: $backgroundColor;
 }
 
 .layui-btn{
     height: $inputHeight;
+}
+
+legend{
+    color: $fontColor;
+}
+
+.layui-container-field{
+    margin: 15px;
+}
+
+.all-height{
+    height: 100%;
 }

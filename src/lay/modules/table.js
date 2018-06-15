@@ -451,8 +451,8 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function (exports) {
             var res = {},
                 startLimit = curr * options.limit - options.limit;
 
-            that.setObjData(res, response.dataName, options.data.concat().splice(startLimit, options.limit));
-            that.setObjData(res, response.countName, options.data.length);
+            res = that.setObjData(res, response.dataName, options.data.concat().splice(startLimit, options.limit));
+            res = that.setObjData(res, response.countName, options.data.length);
 
             // res[response.dataName] = options.data.concat().splice(startLimit, options.limit);
             // res[response.countName] = options.data.length;

@@ -14,69 +14,66 @@
     <link rel="stylesheet" type="text/css" href="../dist/css/modules/tree.css">
 </head>
 
-<body class="body-container">
-
-    <!-- 使用 layui 栅格系统布局，容器为 100% 宽度 -->
-    <div class="layui-container-field">
-        <div class="layui-row">
-            <!-- 具体列宽由输入框数量和按钮数量自行决定 -->
-
-            <div class="layui-col-md3">
-                <fieldset class="layui-elem-field">
-                    <legend>树</legend>
-                    <div class="layui-field-box">
-
-                        <div class="layui-col-md8">
-                            <input type="text" name="title" lay-verify="title" placeholder="搜索..." class="layui-input searchTree">
-                        </div>
-                        <div class="layui-col-md4">
-                            <button class="layui-btn layui-btn-normal getCheckedNodes">搜索</button>
-                        </div>
-                        <div class="layui-col-md12">
-
-                            <div class="clear-fix"></div>
-                            <div class="treediv">
-                                <!-- 不能用id="tree"，与layui冲突 -->
-                                <ul id="tree1" class="ztree"></ul>
-                            </div>
-                        </div>
-
+<body>
+    <div class="layui-row all-height">
+        <!-- 具体列宽由输入框数量和按钮数量自行决定 -->
+        <div class="layui-col-sm3 all-height">
+            <!-- 使用 layui 栅格系统布局，容器为 100% 宽度 -->
+            <div class="layui-container-field left-tree">
+                <div class="layui-row">
+                    <!-- <legend>树</legend> -->
+                    <div class="layui-col-sm8">
+                        <input type="text" name="title" lay-verify="title" placeholder="检索..." class="layui-input searchTree">
                     </div>
-                </fieldset>
-            </div>
-            <div class="layui-col-md9">
-                <fieldset id="menu_func_div" class="layui-elem-field">
-                    <legend>查询表格</legend>
-                    <div class="layui-field-box">
-                        <form class="layui-form">
-                            <div class="layui-input-inline">
-                                <select name="interest" lay-filter="aihao">
-                                    <option value=""></option>
-                                    <option value="0">写作</option>
-                                    <option value="1" selected="">阅读</option>
-                                    <option value="2">游戏</option>
-                                    <option value="3">音乐</option>
-                                    <option value="4">旅行</option>
-                                </select>
-                            </div>
-                            <div class="layui-input-inline search2">
-                                <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
-                            </div>
-                            <div class="layui-input-inline">
-                                <input type="checkbox" name="remain" lay-skin="primary" title="在结果中查询">
-                            </div>
-                            <div class="layui-input-inline search2-button">
-                                <button class="layui-btn layui-btn-normal">搜索</button>
-                                <button class="layui-btn layui-btn-primary">重置</button>
-                            </div>
-                            <div class="clear-fix"></div>
-                        </form>
+                    <div class="layui-col-sm4">
+                        <button class="layui-btn layui-btn-normal getCheckedNodes">检索</button>
+                    </div>
+                    <div class="layui-col-sm12">
 
+                        <div class="clear-fix"></div>
+                        <div class="treediv">
+                            <!-- 不能用id="tree"，与layui冲突 -->
+                            <ul id="tree1" class="ztree"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-sm9">
+            <!-- 使用 layui 栅格系统布局，容器为 100% 宽度 -->
+            <div class="layui-container-field" style="margin-left: 0;">
+                <div class="layui-row">
+                    <!-- <legend>查询表格</legend> -->
+                    <form class="layui-form">
+                        <div class="layui-input-inline">
+                            <select name="interest" lay-filter="aihao">
+                                <option value=""></option>
+                                <option value="0">写作</option>
+                                <option value="1" selected="">阅读</option>
+                                <option value="2">游戏</option>
+                                <option value="3">音乐</option>
+                                <option value="4">旅行</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline search2">
+                            <input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="checkbox" name="remain" lay-skin="primary" title="在结果中查询">
+                        </div>
+                        <div class="layui-input-inline search2-button">
+                            <button class="layui-btn layui-btn-normal">检索</button>
+                            <button class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                        <div class="clear-fix"></div>
+                    </form>
+
+                    <div class="layui-row">
                         <div class="content-table">
                             <table class="layui-table" id="right-table" lay-filter="right-table"></table>
                         </div>
                     </div>
-                </fieldset>
+                </div>
             </div>
         </div>
     </div>
@@ -96,20 +93,20 @@
             var form = layui.form;
             var table = layui.table;
 
-            datas = [
+            data = [
                 {
                     'name': '1', 'id': '1', 'time': '1', 'recode': '1', 'state': '1', 'create_time': '1', 'intro': '1', 'other_name': '1',
                 }
             ];
 
-            data = {
-                "code": "0",
-                "message": "OK",
-                "data": {
-                    "list": datas,
-                    "count": datas.length
-                }
-            }
+            // data = {
+            //     "code": "0",
+            //     "message": "OK",
+            //     "data": {
+            //         "list": datas,
+            //         "count": datas.length
+            //     }
+            // }
 
 
             table_init(data);
@@ -118,7 +115,6 @@
                 console.log(da);
                 table.render({
                     elem: '#right-table'
-                    , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
                     , id: 'right-reload'
                     , cols: [[
                         { type: 'checkbox', }
@@ -137,7 +133,7 @@
                 });
             }
 
-            $(".content-table").resize(function () {
+            $(window).resize(function () {
                 table_init(data);
                 tree_height();
             })
@@ -235,15 +231,15 @@
             tree_height();
             function tree_height() {
                 var height = $("body").height();
-                $(".treediv").height(function () {
-                    return height - 38;
+                $(".left-tree").height(function () {
+                    return height - 70;
                 })
             }
+
 
             //点击右侧table联动
             $("#tree1").on("click", ".level-item", function () {
                 var nodeId = $(this).attr("nodeId");
-                alert(nodeId);
                 table_search(nodeId);
             })
 
