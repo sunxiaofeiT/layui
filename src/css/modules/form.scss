@@ -296,7 +296,7 @@ button, input, optgroup, option, select, textarea {
     font-size: 14px;
     border-radius: 2px 0 0 2px;
     background-color: $checkboxInitBackground;
-    color: $secondFontColor;
+    color: $backgroundFontColor;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -550,6 +550,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-form-radio, .layui-form-radio * {
+    color: $fontColor;
     display: inline-block;
     vertical-align: middle;
 }
@@ -663,4 +664,9 @@ button, input, optgroup, option, select, textarea {
 
 .layui-select-tree dd:hover{
   background-color: $selectBackground;
+}
+
+.multiSelect{
+    height: 0;
+    border: none;
 }
