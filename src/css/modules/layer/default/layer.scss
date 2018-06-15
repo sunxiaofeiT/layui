@@ -951,7 +951,7 @@ html #layuicss-layer {
   height: 32px;
   line-height: 32px;
   background-color: rgba(0, 0, 0, .8);
-  background-color: #000\9;
+  // background-color: #000\9;
   filter: Alpha(opacity=80);
   color: #fff;
   text-overflow: ellipsis;
@@ -960,9 +960,9 @@ html #layuicss-layer {
   font-size: 0;
 }
 
-.layui-layer-imgtit {
-  /*position:absolute; left:20px;*/
-}
+// .layui-layer-imgtit {
+//   /*position:absolute; left:20px;*/
+// }
 
 .layui-layer-imgtit * {
   display: inline-block;
