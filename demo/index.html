@@ -10,14 +10,69 @@
     <link rel="stylesheet" href="../dist/css/modules/base.css">
     <link rel="stylesheet" href="../dist/css/modules/layout.css">
     <link rel="stylesheet" href="../dist/css/modules/button.css">
+
+    <style>
+        .theme-change {
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            float: right;
+        }
+
+        .theme-change div a {
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-radius: 36px;
+            margin: 0 auto;
+        }
+
+        .theme-change div a:hover {
+            border: 2px solid transparent;
+        }
+
+        .theme-change div {
+            width: 40px;
+        }
+
+        .theme-blue {
+            background-color: #188FFF;
+        }
+
+        .theme-green {
+            background-color: #1AB394;
+
+        }
+
+        .theme-dark {
+            background-color: #253238;
+        }
+    </style>
 </head>
 
 <body class="body-container">
 
     <div class="layui-container-field">
 
-        <div class="layui-row layui-col-space30" id="content">
-            <h1>ADC-DA前端样式Demo</h1>
+        <div class="layui-row layui-col-space30">
+            <div class="layui-col-md4">
+                <h1>ADC-DA前端样式Demo</h1>
+            </div>
+            <div class="layui-col-md8 theme">
+                <div class="theme-change">
+                    <div>
+                        <a class="theme-change-btn theme-blue" href="../../Theme-Blue/demo/"></a>
+                    </div>
+                    <div>
+                        <a class="theme-change-btn theme-green" href="../../Theme-Green/demo/"></a>
+                    </div>
+                    <div>
+                        <a class="theme-change-btn theme-dark" href="../../Theme-Dark/demo/"></a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="layui-row layui-col-space30" id="content">
             <!-- <div class="layui-col-md4">
