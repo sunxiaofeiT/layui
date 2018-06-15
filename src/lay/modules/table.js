@@ -449,10 +449,13 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function (exports) {
             });
         } else if (options.data && options.data.constructor === Array) { //已知数据
             var res = {},
-                startLimit = curr * options.limit - options.limit
+                startLimit = curr * options.limit - options.limit;
 
-            res[response.dataName] = options.data.concat().splice(startLimit, options.limit);
-            res[response.countName] = options.data.length;
+            that.setObjData(res, response.dataName, options.data.concat().splice(startLimit, options.limit));
+            that.setObjData(res, response.countName, options.data.length);
+
+            // res[response.dataName] = options.data.concat().splice(startLimit, options.limit);
+            // res[response.countName] = options.data.length;
 
             that.renderData(res, curr, options.data.length, apiSort), sort();
             typeof options.done === 'function' && options.done(res, curr, that.objData(res, response.countName));
