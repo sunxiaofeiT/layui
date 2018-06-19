@@ -52,6 +52,7 @@ var Editor = (function (window) {
           width: this.options.width ? this.options.width : '100%',
           height: this.options.height ? this.options.height : '300px',
           themeType: this.options.themeType ? this.options.themeType : 'default',
+          contentFontColor: this.options.contentFontColor ? this.options.contentFontColor : 'black',
         });
         this.editorIns = editor;
         return editor;

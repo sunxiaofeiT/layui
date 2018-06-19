@@ -7,6 +7,11 @@
  * 工具 [lessc] 
  * 根据需求修改参数，编译输出到对应主题颜色样式文件即可。
  */
+
+.ke-content {
+  color: red;
+}
+
 .ke-inline-block {
   display: -moz-inline-stack;
   display: inline-block;

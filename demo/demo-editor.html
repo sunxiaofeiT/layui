@@ -32,8 +32,11 @@
 
 <script src="../dist/plugins/jquery-3.3.1/jquery-3.3.1.min.js"></script>
 <!-- editor必需文件 -->
-<script src="../dist/plugins/kindeditor/kindeditor-all-min.js"></script>
+<script src="../dist/plugins/kindeditor/kindeditor-all.js"></script>
 <script src="../dist/plugins/kindeditor/adc_da_editor.js"></script>
+
+<!-- <script src="../src/plugins/kindeditor/kindeditor-all.js"></script> -->
+<!-- <script src="../src/plugins/kindeditor/adc_da_editor.js"></script> -->
 
 <!-- custom script -->
 <script>
@@ -43,6 +46,7 @@
         // width: '100%',
         // height: '500px',
         // themeType: 'blue',
+        // contentFontColor: '#ffffff', //编辑器内容颜色，主要用于暗色主题的字体颜色改为白色，默认黑色
     })
     var editorIns = editor.createEditor(); //第二步
 </script>
