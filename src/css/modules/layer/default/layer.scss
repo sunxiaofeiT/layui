@@ -549,10 +549,6 @@ html #layuicss-layer {
   color: #FFFFFF !important;
 }
 
-.layui-layer-msg .layui-layer-content {
-    color: #FFFFFF !important;
-}
-
 .layui-layer-dialog .layui-layer-content {
   position: relative;
   padding: 20px;
@@ -572,6 +568,10 @@ html #layuicss-layer {
   _left: -40px;
   width: 30px;
   height: 30px;
+}
+
+.layui-layer-msg .layui-layer-content {
+    color: $layuiLayerContentColor;
 }
 
 .layui-layer-ico1 {
@@ -616,13 +616,14 @@ html #layuicss-layer {
   background-color: #000;
   filter: alpha(opacity=60);
   background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  color: #fff !important;
   border: none;
 }
 
 .layui-layer-hui .layui-layer-content {
   padding: 12px 25px;
   text-align: center;
+  color: #fff !important;
 }
 
 .layui-layer-red {
