@@ -28,30 +28,33 @@ var Editor = (function (window) {
         ];
         var simpleItems = [
           'bold', 'italic', '|', 'formatblock', '|', 'insertorderedlist', 'insertunorderedlist', '|', 'justifyleft', 'justifycenter',
-          'justifyright', 'justifyfull', '|', 'paste', 'plainpaste', 'wordpaste','|', 'quickformat', 'hr', 'image',
+          'justifyright', 'justifyfull', '|', 'paste', 'plainpaste', 'wordpaste', '|', 'quickformat', 'hr', 'image',
         ];
         var complexItems = [
-          'source', '|', 'undo', 'redo', '|', 'preview', 'template', 'code', 'cut', 'copy', 'paste',
+          'undo', 'redo', '|', 'code', 'cut', 'copy', 'paste',
           'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
           'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
           'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
           'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
           'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|',
-          'table', 'hr', 'pagebreak',
-          'link', 'unlink', 'insertfile'
+          'table', 'hr', 'pagebreak','link', 'unlink', 'insertfile'
         ]
         var items;
         if (this.options.editorType == 'simple') items = simpleItems;
         else if (this.options.editorType == 'complex') items = complexItems;
         else if (this.options.editorType == 'all') items = allItems;
-        else items = complexItems;
-        editor = KindEditor.create("#editor-demo", {
-          items: items,
-          width: this.options.width ? this.options.width : '100%',
-          height: this.options.height ? this.options.height : '300px',
-          themeType: this.options.themeType ? this.options.themeType : 'default',
-          contentFontColor: this.options.contentFontColor ? this.options.contentFontColor : 'black',
-        });
+        else {
+          items = this.options.items ? this.options.items : complexItems;
+        }
+        //warning: this.options has more no used value, but haven't remvoe
+        var kindEditorOptions = this.options;
+        kindEditorOptions.items = items;
+        kindEditorOptions.width =  this.options.width ? this.options.width : '100%';
+        kindEditorOptions.height = this.options.height ? this.options.height : '300px';
+        kindEditorOptions.themeType = this.options.themeType ? this.options.themeType : 'default';
+        kindEditorOptions.contentFontColor = this.options.contentFontColor ? this.options.contentFontColor : 'black';
+        console.log(kindEditorOptions);
+        editor = KindEditor.create("#editor-demo", kindEditorOptions);
         this.editorIns = editor;
         return editor;
       }
