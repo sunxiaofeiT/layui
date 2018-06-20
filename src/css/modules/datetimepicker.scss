@@ -198,6 +198,7 @@ tfoot{
 
 .datetimepicker table tr td.day:hover {
     background: $hoverColor;
+    opacity: 0.8;
     cursor: pointer;
 }
 
