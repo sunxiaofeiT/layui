@@ -27,10 +27,8 @@ var Editor = (function (window) {
           'link', 'unlink', 'insertfile'
         ];
         var simpleItems = [
-          'justifyleft', 'justifycenter', 'justifyright',
-          'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
-          'superscript', 'clearhtml', 'quickformat', 'selectall', '/',
-          'undo', 'redo', '|', 'paste', 'plainpaste', 'wordpaste',
+          'bold', 'italic', '|', 'formatblock', '|', 'insertorderedlist', 'insertunorderedlist', '|', 'justifyleft', 'justifycenter',
+          'justifyright', 'justifyfull', '|', 'paste', 'plainpaste', 'wordpaste','|', 'quickformat', 'hr', 'image',
         ];
         var complexItems = [
           'source', '|', 'undo', 'redo', '|', 'preview', 'template', 'code', 'cut', 'copy', 'paste',

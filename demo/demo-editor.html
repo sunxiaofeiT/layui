@@ -32,17 +32,23 @@
 
 <script src="../dist/plugins/jquery-3.3.1/jquery-3.3.1.min.js"></script>
 <!-- editor必需文件 -->
-<script src="../dist/plugins/kindeditor/kindeditor-all.js"></script>
-<script src="../dist/plugins/kindeditor/adc_da_editor.js"></script>
+<!-- <script src="../dist/plugins/kindeditor/kindeditor-all.js"></script> -->
+<!-- <script src="../dist/plugins/kindeditor/adc_da_editor.js"></script> -->
 
-<!-- <script src="../src/plugins/kindeditor/kindeditor-all.js"></script> -->
-<!-- <script src="../src/plugins/kindeditor/adc_da_editor.js"></script> -->
+<script src="../src/plugins/kindeditor/kindeditor-all.js"></script>
+<script src="../src/plugins/kindeditor/adc_da_editor.js"></script>
 
 <!-- custom script -->
 <script>
     /* 使用 editor 必要步骤 */
     var editor = Editor({ // 第一步
-        editorType: 'all',
+        /**
+         * 编辑器预设模式： simple， complex，  
+         * simple -> 简单模式（包括粗体，斜体，标题，序号，无序序号，四种对齐方式，三种粘贴选项，自动排版，插入分割线，插入图片）
+         * complex -> 复杂模式（包括）
+         * all -> 所有的功能，功能详情见  http://kindeditor.net/docs/option.html
+        **/
+        editorType: 'simple', 
         // width: '100%',
         // height: '500px',
         // themeType: 'blue',
