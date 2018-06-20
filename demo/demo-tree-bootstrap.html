@@ -76,17 +76,22 @@
             </div>
         </div>
     </div>
+    <div class="removeSelect" treeId="" treeNode="">
+        <div class="removeOnly">不删除子节点</div>
+        <div class="removeAll">删除子节点</div>
+    </div>
 
 
 
     <script type="text/html" id="do">
-    <a href="#" lay-event="edit">编辑</a>
-    <a href="#" lay-event="del">预览</a>
-</script>
+        <a href="#" lay-event="edit">编辑</a>
+        <a href="#" lay-event="del">预览</a>
+    </script>
     <script type="text/javascript" src="../dist/plugins/tree/jquery-3.3.1.min.js"></script>
     <script src="../dist/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="../dist/plugins/tree/jquery.ztree.core.js"></script>
     <script type="text/javascript" src="../dist/plugins/tree/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="../dist/plugins/tree/jquery.ztree.exedit.js"></script>
     <script type="text/javascript">
         layui.use(['form', 'table'], function () {
             var form = layui.form;
@@ -139,6 +144,11 @@
 
 
             var setting = {
+                view: {
+                    addHoverDom: addHoverDom,
+                    removeHoverDom: removeHoverDom,
+                    selectedMulti: false
+                },
                 check: {
                     enable: true
                 },
@@ -147,6 +157,15 @@
                         enable: true
                     }
                 },
+                edit: {
+                    enable: true
+                },
+                callback: {
+                    beforeRename: beforeRename,
+                    beforeRemove: beforeRemove,
+                    //onRemove: onRemove, //移除事件 
+                    onRename: onRename //修改事件  
+                }
             };
 
             var zNodes = [
@@ -204,6 +223,74 @@
                     ]
                 },
             ];
+
+            var newCount = 1;
+            function addHoverDom(treeId, treeNode) {
+                var sObj = $("#" + treeNode.tId + "_span");
+                if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+                var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+                    + "' title='add node' onfocus='this.blur();'></span>";
+                sObj.after(addStr);
+                var btn = $("#addBtn_" + treeNode.tId);
+                if (btn) btn.bind("click", function () {
+                    var zTree = $.fn.zTree.getZTreeObj("tree1");
+                    zTree.addNodes(treeNode, { id: (100 + newCount), pId: treeNode.id, name: "new node" + (newCount++) });
+                    return false;
+                });
+            };
+
+            function beforeRename(treeId, treeNode) {
+                //这里是上传操作;
+            }
+
+            function onRename(treeId, treeNode) {
+                //这里是上传操作;
+            }
+
+            function beforeRemove(treeId, treeNode) {
+                var ev = window.event;
+                var x = ev.clientX - 50;
+                var y = ev.clientY - 10;
+                $(".removeSelect").css({ 'top': y + 'px', 'left': x + 'px', 'display': 'block', 'position': 'absolute' });
+                $(".removeSelect").attr("treeId", treeId);
+                $(".removeSelect").data("treeNode", treeNode);
+                return false;
+            }
+
+            $(document).bind("click", function () {
+                $(".removeSelect").css("display", "none");
+            });
+
+            $(".removeOnly").click(function () {
+                var treeId = $(this).parent().attr("treeId");
+                var treeNode = $(this).parent().data("treeNode");
+                var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                var targetNode = treeNode.getParentNode();
+                console.log(targetNode);
+                var childNodes = treeObj.transformToArray(treeNode);
+                for (i = 0; i < childNodes.length; i++) {
+                    if(childNodes[i].getParentNode()==treeNode){
+                        treeObj.moveNode(targetNode, childNodes[i], "inner");
+                    }
+                }
+                treeObj.removeNode(treeNode);
+                $(".removeSelect").css("display", "none");
+                return false;
+            });
+
+            $(".removeAll").click(function () {
+                var treeId = $(this).parent().attr("treeId");
+                var treeNode = $(this).parent().data("treeNode");
+                var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                treeObj.removeNode(treeNode);
+                //alert(treeId + " " + treeNode);
+                $(".removeSelect").css("display", "none");
+            })
+
+
+            function removeHoverDom(treeId, treeNode) {
+                $("#addBtn_" + treeNode.tId).unbind().remove();
+            };
 
             $.fn.zTree.init($("#tree1"), setting, zNodes);
             //获取checked的值

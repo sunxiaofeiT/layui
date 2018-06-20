@@ -23,12 +23,12 @@ layui.define('layer', function (exports) {
             , '必填项不能为空'
           ]
           , phone: [
-            /^1\d{10}$/
-            , '请输入正确的手机号'
+            /^1[3|4|5|7|8]\d{9}$/
+            , '手机必须11位数字！'
           ]
           , email: [
-            /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
-            , '邮箱格式不正确'
+            /^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$|^1[3|4|5|7|8]\d{9}$/
+            , '邮箱格式不对'
           ]
           , url: [
             /(^#)|(^http(s*):\/\/[^\s]+\.[^\s]+)/
@@ -213,6 +213,7 @@ layui.define('layer', function (exports) {
 
               //键盘事件
               input.on('keyup', function (e) {
+                alert("1");
                 var keyCode = e.keyCode;
                 //Tab键
                 if (keyCode === 9) {
@@ -313,11 +314,11 @@ layui.define('layer', function (exports) {
                     if (omit) {
                       multiSelect.html(multiSelect.html() + "<a href='javascript:;'><span>" + othis.find("span").text() + "</span><i></i></a>");
                     } else {
-                      var content="";
-                      othis.parent().find('[type=checkbox]:checked').each(function(){
-                        content=content+$(this).attr("title")+" ";
+                      var content = "";
+                      othis.parent().find('[type=checkbox]:checked').each(function () {
+                        content = content + $(this).attr("title") + " ";
                       });
-                      content.substring(0,content.length-2)
+                      content.substring(0, content.length - 2)
                       input.eq(0).val(content);
                     }
                     valueStr.push(value);
@@ -330,10 +331,10 @@ layui.define('layer', function (exports) {
                         }
                       })
                     } else {
-                      var num=othis.parent().find('[type=checkbox]:checked').length;
-                      var content="";
-                      othis.parent().find('[type=checkbox]:checked').each(function(){
-                        content=content+$(this).attr("title")+" ";
+                      var num = othis.parent().find('[type=checkbox]:checked').length;
+                      var content = "";
+                      othis.parent().find('[type=checkbox]:checked').each(function () {
+                        content = content + $(this).attr("title") + " ";
                       });
                       if (num == 0) {
                         input.eq(0).val("");
@@ -533,28 +534,28 @@ layui.define('layer', function (exports) {
 
             //替代元素
             var hasRender = othis.next('.' + RE_CLASS[0])
-            ,reElem = $(['<div class="layui-unselect '+ RE_CLASS[0]
-              ,(check.checked ? (' '+ RE_CLASS[1]) : '') //选中状态
-              ,(disabled ? ' layui-checkbox-disbaled '+ DISABLED : '') //禁用状态
-              ,'"'
-              ,(skin ? ' lay-skin="'+ skin +'"' : '') //风格
-            ,'>'
-            ,function(){ //不同风格的内容
-              var title = check.title.replace(/\s/g, '')
-              ,type = {
-                //复选框
-                checkbox: [
-                  (title ? ('<span>'+ check.title +'</span>') : '')
-                  ,'<i class="layui-icon layui-icon-ok"></i>'
-                ].join('')
-                
-                //开关
-                ,_switch: '<em>'+ ((check.checked ? text[0] : text[1]) || '') +'</em><i></i>'
-              };
-              return type[skin] || type['checkbox'];
-            }()
-            ,'</div>'].join(''));
-  
+              , reElem = $(['<div class="layui-unselect ' + RE_CLASS[0]
+                , (check.checked ? (' ' + RE_CLASS[1]) : '') //选中状态
+                , (disabled ? ' layui-checkbox-disbaled ' + DISABLED : '') //禁用状态
+                , '"'
+                , (skin ? ' lay-skin="' + skin + '"' : '') //风格
+                , '>'
+                , function () { //不同风格的内容
+                  var title = check.title.replace(/\s/g, '')
+                    , type = {
+                      //复选框
+                      checkbox: [
+                        (title ? ('<span>' + check.title + '</span>') : '')
+                        , '<i class="layui-icon layui-icon-ok"></i>'
+                      ].join('')
+
+                      //开关
+                      , _switch: '<em>' + ((check.checked ? text[0] : text[1]) || '') + '</em><i></i>'
+                    };
+                  return type[skin] || type['checkbox'];
+                }()
+                , '</div>'].join(''));
+
             hasRender[0] && hasRender.remove(); //如果已经渲染，则Rerender
             othis.after(reElem);
             events.call(this, reElem, RE_CLASS);
@@ -635,18 +636,23 @@ layui.define('layer', function (exports) {
       othis.removeClass(DANGER);
       layui.each(ver, function (_, thisVer) {
         var isFn = typeof verify[thisVer] === 'function';
-        if (verify[thisVer] && (isFn ? tips = verify[thisVer](value, item) : (typeof (value) == "string" ? !verify[thisVer][0].test(value) : (value == null ? true : !verify[thisVer][0].test(value[0]))))) {        
-          layer.msg(tips || verify[thisVer][1], {
-            skin: 'layui-layer-red',
-            offset:'30px',
-             shift: 5
-          });
+        if (verify[thisVer] && (isFn ? tips = verify[thisVer](value, item) : (typeof (value) == "string" ? !verify[thisVer][0].test(value) : (value == null ? true : !verify[thisVer][0].test(value[0]))))) {
+          if (othis.parent().parent().find(".layui-form-error").length != 0) {
+            othis.parent().parent().find(".layui-form-error").text(tips || verify[name][1]);
+          }
+          else {
+            othis.parent().parent().append('<div class="layui-form-mid2 layui-word-aux layui-form-error">' + (tips || verify[name][1]) + '</div>');
+          }
+          return;
           //非移动设备自动定位焦点
           if (!device.android && !device.ios) {
             item.focus();
           }
           othis.addClass(DANGER);
           return stop = true;
+        }
+        else {
+          othis.parents().find(".layui-form-error").remove();
         }
       });
       if (stop) return stop;

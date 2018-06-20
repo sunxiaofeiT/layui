@@ -124,10 +124,17 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 	float: left;
     display: block;
     padding: 0 15px;
-    width: 80px;
+    width: 90px;
     font-weight: 400;
     text-align: right;
     color:$inputFontColor;
+}
+
+.label-required:before{
+    content: "*";
+    color: red;
+    margin-right: 4px;
+    font-size: 1.2em;
 }
 
 .layui-form-label2{
@@ -141,7 +148,7 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 }
 
 .layui-input-block {
-    margin-left: 110px;
+    margin-left: 120px;
     margin-right: $adapInputRight;
     min-height: $inputHeight;
 }
@@ -381,18 +388,25 @@ button, input, optgroup, option, select, textarea {
     color: $fontColor;
 }
 
-.layui-form-mid2 {
-    margin-left: 110px;
+.layui-form-item .layui-form-mid2 {
+    margin-left: 120px;
 	  display: block;
 	  margin-top: ($inputHeight - 20)/2;
     line-height: 20px;
     margin-right: 10px;
     color: $fontColor;
 }
+.layui-form-item2 .layui-form-mid2 {
+    margin-left: 15px;
+}
 
 .layui-text em, .layui-word-aux {
     color: #999!important;
     padding: 0 5px!important;
+}
+
+.layui-form-error{
+    color: $failedColor !important;
 }
 
 /*原始复选框*/
@@ -645,6 +659,7 @@ button, input, optgroup, option, select, textarea {
 
 .layui-tree li a i {
     font-size: 16px;
+    color: $fontColor;
 }
 
 .layui-tree li i {
@@ -658,7 +673,7 @@ button, input, optgroup, option, select, textarea {
 }
 
 .layui-anim-upbit dd:hover{
-    background-color: $selectHoverBackground;
+    background-color: $hoverColor;
     color: $fontColor; 
 }
 

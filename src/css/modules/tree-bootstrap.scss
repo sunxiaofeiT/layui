@@ -117,3 +117,20 @@ legend{
 .all-height{
     height: 100%;
 }
+
+.removeSelect {
+    display: none;
+    position: absolute;
+    background-color: $selectBackground;
+    color: #fff;
+    border: 1px solid #d2d2d2;
+}
+
+.removeSelect>div {
+    cursor: pointer;
+}
+
+.removeSelect>div:hover{
+    background-color: $selectHoverBackground;
+    color: $fontColor;
+}
