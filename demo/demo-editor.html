@@ -45,7 +45,7 @@
         /**
          * 1. 编辑器预设模式： simple， complex，  
          *    simple -> 简单模式（包括粗体，斜体，标题，序号，无序序号，四种对齐方式，三种粘贴选项，自动排版，插入分割线，插入图片）
-         *    complex -> 复杂模式（包括）
+         *    complex -> 复杂模式（除去几个基本用不到功能，表情）
          *    all -> 所有的功能，功能详情见  http://kindeditor.net/docs/option.html
          * 2. 支持kindeditor 所有原生参数
          * 3. 自定义功能图标，不定义 editorType 属性，定义 items 属性，如下属性值为数组，使用 '|' 表示分割，'/' 表示强制换行功能图标
@@ -56,7 +56,7 @@
         // height: '500px',
         // themeType: 'blue',
         // contentFontColor: '#ffffff', //编辑器内容颜色，主要用于暗色主题的字体颜色改为白色，默认黑色
-        // resizeType: 0, // 主要用于弹层中的禁止拉伸，不禁止拉伸编辑器在弹层中不能使用。 1-> 允许拉伸高度，2->允许拉伸宽高
+        // resizeType: 0, // 设置拉伸情况，不禁止拉伸编辑器在弹层中不能使用。 1-> 允许拉伸高度，2->允许拉伸宽高
     })
     var editorIns = editor.createEditor(); //第二步
 </script>
