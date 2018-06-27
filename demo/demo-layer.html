@@ -8,13 +8,28 @@
 
     <link rel="stylesheet" href="../dist/css/modules/base.css">
     <link rel="stylesheet" href="../dist/css/modules/font-layui.css">
-    <link rel="stylesheet" href="../dist/css/modules/layout.css">
-
+    <link rel="stylesheet" href="../dist/css/modules/page.css">
     <link rel="stylesheet" href="../dist/css/modules/form.css">
     <link rel="stylesheet" href="../dist/css/modules/button.css">
+    <link rel="stylesheet" href="../dist/css/modules/table.css">
     <link rel="stylesheet" href="../dist/css/modules/layer/default/layer.css">
+    <link rel="stylesheet" href="../dist/css/modules/layout.css">
+    <link rel="stylesheet" href="../dist/css/modules/tab.css">
 
     <title>弹层DEMO</title>
+    <style>
+        .layui-textarea {
+            padding-left: 16px;
+        }
+
+        .layui-form-select .layui-input {
+            padding-right: 0px;
+        }
+
+        .layui-form-item .layui-inline {
+            width: 325px;
+        }
+    </style>
 </head>
 
 <body class="body-container">
@@ -62,6 +77,12 @@
                         <button id="dropdownInput" class="layui-btn layui-btn-normal">复杂表单弹层</button>
                         <p>其余与其它弹层类似</p>
                         <p>每个表单项的上下间距为20px</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <button id="complexFormButton" class="layui-btn layui-btn-normal">
+                            复杂表单弹层
+                        </button>
                     </div>
                 </div>
             </div>
@@ -177,16 +198,189 @@
             </div>
         </form>
     </div>
+    <!-- 新增，仿型式验证 -->
+    <div id="complexForm" class="layer-box">
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <form class="layui-form" lay-filter="layui-form" action="">
+                    <div class="layui-tab layui-tab-card">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">参数基本信息</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <!-- 第一个表单内容 -->
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label  label-required">企业编码</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="username" placeholder="请输入" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">是否重要参数</label>
+                                        <div class="layui-input-block">
+                                            <input type="radio" name="important" placeholder="请输入" value="true" title="是" checked="" lay-filter="">
+                                            <input type="radio" name="important" value="false" title="否" lay-filter="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label  label-required">参数名称</label>
+                                        <div class="layui-input-block">
+                                            <input class="layui-input" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">是否可空</label>
+                                        <div class="layui-input-block">
+                                            <input type="radio" name="isNull" value="true" title="可空">
+                                            <input type="radio" name="isNull" value="false" title="不可空">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item layui-form-text">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">参数说明</label>
+                                        <div class="layui-input-block">
+                                            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">长度</label>
+                                        <div class="layui-input-block">
+                                            <input class="layui-input" type="text">
+                                        </div>
+                                        <label class="layui-form-label" style="margin-top: 5px">单位</label>
+                                        <div class="layui-input-block">
+                                            <input class="layui-input" style="margin-top: 5px">
+                                        </div>
+                                        <label class="layui-form-label" style="margin-top: 5px">默认值</label>
+                                        <div class="layui-input-block">
+                                            <input class="layui-input" style="margin-top: 5px">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">文件说明</label>
+                                        <!-- TODO -->
+                                        <div class="layui-input-block">
+                                            <!-- <input id="uploadFile" class="layui-input" > -->
+                                            <button type="button" class="layui-btn layui-btn-sm" id="uploadFile">
+                                                <i class="layui-icon">&#xe67c;</i>上传文件
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">验证参数</label>
+                                        <div class="layui-input-block">
+                                            <select name="validationParameters" lay-filter="validationParameters">
+                                                <option value="0">请选择</option>
+                                                <option value="1">选项一</option>
+                                                <option value="2">选项二</option>
+                                                <option value="3">选项三</option>
+                                                <option value="4">选项四</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">控件类型</label>
+                                        <div class="layui-input-block">
+                                            <select name="controlType" lay-filter="controlType">
+                                                <option value="0">请选择</option>
+                                                <option value="1">选项一</option>
+                                                <option value="2">选项二</option>
+                                                <option value="3">选项三</option>
+                                                <option value="4">选项四</option>
+                                            </select>
+                                        </div>
+                                        <label class="layui-form-label" style="margin-top: 5px">控件备选值</label>
+                                        <!--列表控件备选值-->
+                                        <div class="layui-input-block">
+                                            <input class="layui-input" placeholder="列表控件备选值" style="margin-top: 5px;margin-bottom: 5px">
+                                            <!-- textarea -->
+                                        </div>
+                                        <label class="layui-form-label">状态</label>
+                                        <div class="layui-input-block">
+                                            <select name="statement" lay-filter="statement">
+                                                <option value="0">请选择</option>
+                                                <option value="1">启用</option>
+                                                <option value="2">停用</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">认证类型</label>
+                                        <div class="layui-input-block">
+                                            <input type="checkbox" name="like[notice]" title="公告" value="1" lay-filter="checkbox" lay-skin="primary">
+                                            <input type="checkbox" name="like[test]" title="Test" value="2" checked="" lay-filter="checkbox" lay-skin="primary">
+                                        </div>
+                                        <div class="layui-input-block">
+                                            <input type="checkbox" name="like[environmental]" title="环保" value="3" lay-filter="checkbox" lay-skin="primary">
+                                            <input type="checkbox" name="like[ccc]" title="CCC" value="3" lay-filter="checkbox" lay-skin="primary">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <div class="layui-tab layui-tab-card">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">JAC</li>
+                        <li class="">公告</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <!-- 第二个面板内容一 -->
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">企业编码</label>
+                                <div class="layui-input-block">
+                                    <input class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">转换公式</label>
+                                <div class="layui-input-block">
+                                    <input class="layui-input" placeholder="#,+,-,*,/ 数值（#表示参数值）">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">备注</label>
+                                <div class="layui-input-block">
+                                    <input class="layui-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">
+                            <!-- 第二个面板内容二 -->
+                            这里是公告。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
 </body>
 
 <script src="../dist/layui.js"></script>
 
 <script>
     // 提示弹层,不带按钮
-    layui.use(['layer', 'form'], function () {
+    layui.use(['layer', 'form', 'element', 'upload'], function () {
         var layer = layui.layer;
         var form = layui.form;
-        $ = layui.jquery;
+        var $ = layui.jquery;
+        var upload = layui.upload;
         var bodyHeight = $(document.body).height();
         var bodyWidth = $(document.body).width();
         console.log(bodyHeight * 0.8);
@@ -239,7 +433,7 @@
             })
         })
 
-        $('#easyRemind').on('click', function() {
+        $('#easyRemind').on('click', function () {
             layer.open({
                 title: '简单提示弹层',
                 content: '简单提示弹层，只有titel、content参数',
@@ -275,7 +469,7 @@
                 area: ['350px'], // 宽高
                 // content => 可以为捕获的元素,例如:$('#idName'),最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响       
                 content: $('#twoInputLayer'),
-                btn: ['确认', '取消', ], // 定义按钮(可多个)
+                btn: ['确认', '取消',], // 定义按钮(可多个)
                 btnAlign: 'c', // l => 居左, c => 居中, r => 居右, 默认居右
                 cancel: function () {
                     console.log('you click close ico');
@@ -342,6 +536,43 @@
             })
         })
 
+        // 新增，仿型式验证
+        // 表单
+        form.render();
+        form.val("layui-form", {
+            title: "贤心", // "name": "value"
+            sex: "男",
+            validationParameters: 0,
+            controlType: 0,
+            statement: 0,
+        });
+        form.on('radio(important)', function (data) {
+            alert(data.value);
+        });
+
+        // 弹层
+        $('#complexFormButton').on('click', function () {
+            layer.open({
+                type: '1',
+                title: '编辑参数',
+                content: $('#complexForm'),
+                btn: ['保存', '关闭'],
+                btnAlign: 'c',
+                area: ['750px', '600px'],
+            })
+        })
+
+        // 上传文件
+        var uploadInst = upload.render({
+            elem: '#uploadFile', //绑定元素
+            url: '/upload/', //上传接口
+            done: function (res) {
+                //上传完毕回调
+            },
+            error: function () {
+                //请求异常回调
+            }
+        });
     })
 </script>
 
