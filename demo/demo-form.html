@@ -210,29 +210,18 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">联动选择框</label>
 					<div class="layui-input-inline">
-						<select name="quiz1">
+						<select name="quiz1" id="s_province" lay-filter="s_province">
 							<option value="">请选择省</option>
-							<option value="浙江" selected="">浙江省</option>
-							<option value="你的工号">江西省</option>
-							<option value="你最喜欢的老师">福建省</option>
 						</select>
 					</div>
 					<div class="layui-input-inline">
-						<select name="quiz2">
+						<select name="quiz2" id="s_city" lay-filter="s_city">
 							<option value="">请选择市</option>
-							<option value="杭州">杭州</option>
-							<option value="宁波" disabled="">宁波</option>
-							<option value="温州">温州</option>
-							<option value="温州">台州</option>
-							<option value="温州">绍兴</option>
 						</select>
 					</div>
 					<div class="layui-input-inline">
-						<select name="quiz3">
+						<select name="quiz3" id="s_county" lay-filter="s_county">
 							<option value="">请选择县/区</option>
-							<option value="西湖区">西湖区</option>
-							<option value="余杭区">余杭区</option>
-							<option value="拱墅区">临安市</option>
 						</select>
 					</div>
 					<div class="layui-form-mid layui-word-aux">此处只是演示联动排版，并未做联动交互</div>
@@ -291,8 +280,10 @@
 	<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-6111334333458862" data-ad-slot="3820120620"></ins>
 
 	<script src="../dist/layui.js" charset="utf-8"></script>
+	<script src="../src/plugins/city/area.js"></script>
 	<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 	<script>
+		_init_area();
 		layui.use(['element', 'tree', 'layer', 'form'], function () {
 			var form = layui.form,
 				layer = layui.layer,
@@ -309,16 +300,17 @@
 			});
 			//select获取值
 			form.on('select(interest)', function (data) {
-				alert(data.value);
+				layer.msg(data.value);
 			});
+
 			//radio获取植
 			form.on('radio(sex)', function (data) {
-				alert(data.value);
+				layer.msg(data.value);
 			});
 			//开关获取植
 			form.on('switch(switchTest)', function (data) {
 				var alert_value = this.checked ? '1' : '0';
-				alert(alert_value);//获取1/0
+				layer.msg(alert_value);//获取1/0
 				console.log(data.othis.text());//获取ON/OFF
 			});
 

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>树</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS 文件：基础样式、字体和布局 -->
+    <link rel="stylesheet" type="text/css" href="../dist/css/layui.css">
+    <link rel="stylesheet" href="../dist/css/modules/base.css">
+    <link rel="stylesheet" href="../dist/css/modules/tab.css">
+    <link rel="stylesheet" href="../dist/css/modules/layout.css">
+    <link rel="stylesheet" href="../dist/css/modules/page.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/modules/form.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/modules/button.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/modules/table.css">
+    <link rel="stylesheet" type="text/css" href="../dist/css/modules/tree-bootstrap.css">
+</head>
+<style>
+    .layui-input-none {
+        border: none;
+    }
+
+    .layui-form-label {
+        width: 250px;
+        padding-right: 40px;
+        font-weight: 600;
+        box-sizing: border-box;
+    }
+
+    .layui-form-label2 {
+        padding-left: 50px;
+        font-weight: 500;
+    }
+
+    /* .layui-border-box,
+    .layui-border-box * {
+        box-sizing: border-box;
+        width: 100%;
+    } */
+
+    .layui-table {
+        width: 100% !important;
+    }
+
+    .layui-textarea {
+        min-height: 80px;
+    }
+
+    .layui-form-text {
+        float: left;
+        line-height: 38px;
+    }
+
+    .layui-form-item {
+        margin-bottom: 0;
+    }
+</style>
+
+<body>
+    <div class="layui-row all-height">
+        <!-- 具体列宽由输入框数量和按钮数量自行决定 -->
+        <div class="layui-col-sm3 all-height">
+            <!-- 使用 layui 栅格系统布局，容器为 100% 宽度 -->
+            <div class="layui-container-field left-tree layui-tree-field">
+                <div class="layui-row">
+                    <!-- <div class="layui-col-sm8">
+                        <input type="text" name="title" lay-verify="title" placeholder="检索..." class="layui-input searchTree">
+                    </div>
+                    <div class="layui-col-sm4">
+                        <button class="layui-btn layui-btn-normal getCheckedNodes layui-tree-btn">检索</button>
+                    </div> -->
+                    <div class="layui-col-sm12">
+
+                        <div class="clear-fix"></div>
+                        <div class="treediv">
+                            <!-- 不能用id="tree"，与layui冲突 -->
+                            <ul id="tree1" class="ztree"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-sm9">
+            <!-- 使用 layui 栅格系统布局，容器为 100% 宽度 -->
+            <div class="layui-container-field layui-tree-field" style="margin-left: 0;">
+                <div class="layui-row">
+                    <!-- <legend>查询表格</legend> -->
+                    <div class="layui-tab" lay-filter="demo">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">明细</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <form class="layui-form" lay-filter="layui-form" action="">
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">类型</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="type" class="layui-input layui-input-none" value="物质" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">基本物质中文名称</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="ID" class="layui-input layui-input-none" value="CA_8_12819892393" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">基本物质英文名称</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="company" class="layui-input layui-input-none" disabled value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">CAS编号</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="name" class="layui-input layui-input-none" disabled value="7428-48-0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">EU-Index</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="name-English" class="layui-input layui-input-none" disabled value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">EC编号</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="material-num" class="layui-input layui-input-none" disabled value="238-068-1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">别名1</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="goods" class="layui-input layui-input-none" disabled value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">GADSL</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="material-type" class="layui-input layui-input-none" disabled value="D/P">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">REACH-SVHC</label>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="material-mark" class="layui-input layui-input-none" disabled value="否">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">保密</label>
+                                            <div class="layui-input-inline" style="margin-left: 10px;">
+                                                <input type="checkbox" lay-skin="primary" name="material-mark2" class="layui-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">比例</label>
+                                            <div class="layui-form-text">从&nbsp;</div>
+                                            <div class="layui-input-inline" style="width: 100px;">
+                                                <input type="text" name="ratio1" class="layui-input" value="">
+                                            </div>
+                                            <div class="layui-form-text">到&nbsp;</div>
+                                            <div class="layui-input-inline" style="width: 100px;">
+                                                <input type="text" name="ratio2" class="layui-input" value="">
+                                            </div>
+                                            <div class="layui-form-text">&nbsp;平均值</div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: 250px;margin-top: 15px;">
+                                        <button class="layui-btn layui-btn-normal">审核</button>
+                                        <button class="layui-btn layui-btn-normal">下一步</button>
+                                        <button class="layui-btn layui-btn-primary">返回</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="removeSelect" treeId="" treeNode="">
+        <div class="removeOnly">不删除子节点</div>
+        <div class="removeAll">删除子节点</div>
+    </div>
+
+
+
+    <script type="text/html" id="do">
+        <a href="#" lay-event="edit">编辑</a>
+        <a href="#" lay-event="del">预览</a>
+    </script>
+    <script type="text/javascript" src="../dist/plugins/tree/jquery-3.3.1.min.js"></script>
+    <script src="../dist/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../dist/plugins/tree/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="../dist/plugins/tree/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="../dist/plugins/tree/jquery.ztree.exedit.js"></script>
+    <script type="text/javascript">
+        layui.use(['form', 'table', 'element'], function () {
+            var form = layui.form;
+            var table = layui.table;
+            var element = layui.element;
+
+            data = [
+                {
+                    'name': '1', 'EnglishName': '1', 'percent': '1', 'apply': '1',
+                }
+            ];
+
+            // data = {
+            //     "code": "0",
+            //     "message": "OK",
+            //     "data": {
+            //         "list": datas,
+            //         "count": datas.length
+            //     }
+            // }
+
+
+            table_init(data);
+
+            function table_init(da) {
+                console.log(da);
+                table.render({
+                    elem: '#right-table'
+                    , id: 'right-reload'
+                    , cols: [[
+                        { field: 'name', title: '物质中文名称', align: 'center' }
+                        , { field: 'EnglishName', title: '物质英文名称', align: 'center' }
+                        , { field: 'percent', title: '比例最大值(%)', align: 'center' }
+                        , { field: 'apply', title: '应用', align: 'center' }
+                    ]]
+                    , data: da
+                    , page: true
+                });
+            }
+
+            $(window).resize(function () {
+                table_init(data);
+                tree_height();
+            })
+
+
+            var setting = {
+                view: {
+                    addHoverDom: addHoverDom,
+                    removeHoverDom: removeHoverDom,
+                    selectedMulti: false
+                },
+                check: {
+                    enable: true
+                },
+                data: {
+                    simpleData: {
+                        enable: true
+                    }
+                },
+                edit: {
+                    enable: true
+                },
+                callback: {
+                    beforeRename: beforeRename,
+                    beforeRemove: beforeRemove,
+                    //onRemove: onRemove, //移除事件 
+                    onRename: onRename //修改事件  
+                }
+            };
+
+            var zNodes = [
+                {
+                    id: 1, name: "[core] 基本功能 演示", open: true, children: [
+                        { id: 101, name: "最简单的树 --  标准 JSON 数据" },
+                        { id: 102, name: "最简单的树 --  简单 JSON 数据" },
+                        { id: 103, name: "不显示 连接线" },
+                        { id: 104, name: "不显示 节点 图标" },
+                        { id: 108, name: "异步加载 节点数据" },
+                        { id: 109, name: "用 zTree 方法 异步加载 节点数据" },
+                        { id: 110, name: "用 zTree 方法 更新 节点数据" },
+                        { id: 111, name: "单击 节点 控制" },
+                        { id: 112, name: "展开 / 折叠 父节点 控制" },
+                        { id: 113, name: "根据 参数 查找 节点" },
+                        { id: 114, name: "其他 鼠标 事件监听" },
+                    ]
+                },
+
+                {
+                    id: 2, name: "[excheck] 复/单选框功能 演示", open: false, children: [
+                        { id: 201, name: "Checkbox 勾选操作" },
+                        { id: 206, name: "Checkbox nocheck 演示" },
+                        { id: 207, name: "Checkbox chkDisabled 演示" },
+                        { id: 208, name: "Checkbox halfCheck 演示" },
+                        { id: 202, name: "Checkbox 勾选统计" },
+                        { id: 203, name: "用 zTree 方法 勾选 Checkbox" },
+                        { id: 204, name: "Radio 勾选操作" },
+                        { id: 209, name: "Radio nocheck 演示" },
+                        { id: 210, name: "Radio chkDisabled 演示" },
+                        { id: 211, name: "Radio halfCheck 演示" },
+                        { id: 205, name: "用 zTree 方法 勾选 Radio" },
+
+                    ]
+                },
+
+                {
+                    id: 3, name: "[exedit] 编辑功能 演示", open: false, children: [
+                        { id: 301, name: "拖拽 节点 基本控制" },
+                        { id: 302, name: "拖拽 节点 高级控制" },
+                        { id: 303, name: "用 zTree 方法 移动 / 复制 节点" },
+                        { id: 304, name: "基本 增 / 删 / 改 节点" },
+                        { id: 305, name: "高级 增 / 删 / 改 节点" },
+                        { id: 306, name: "用 zTree 方法 增 / 删 / 改 节点" },
+                        { id: 307, name: "异步加载 & 编辑功能 共存" },
+                        { id: 308, name: "多棵树之间 的 数据交互" },
+                    ]
+                },
+
+                {
+                    id: 4, pId: 0, name: "大数据量 演示", open: false, children: [
+                        { id: 401, name: "一次性加载大数据量" },
+                        { id: 402, name: "分批异步加载大数据量" },
+                        { id: 403, name: "分批异步加载大数据量" },
+                    ]
+                },
+            ];
+
+            var newCount = 1;
+            function addHoverDom(treeId, treeNode) {
+                var sObj = $("#" + treeNode.tId + "_span");
+                if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+                var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+                    + "' title='add node' onfocus='this.blur();'></span>";
+                sObj.after(addStr);
+                var btn = $("#addBtn_" + treeNode.tId);
+                if (btn) btn.bind("click", function () {
+                    var zTree = $.fn.zTree.getZTreeObj("tree1");
+                    zTree.addNodes(treeNode, { id: (100 + newCount), pId: treeNode.id, name: "new node" + (newCount++) });
+                    return false;
+                });
+            };
+
+            function beforeRename(treeId, treeNode) {
+                //这里是上传操作;
+            }
+
+            function onRename(treeId, treeNode) {
+                //这里是上传操作;
+            }
+
+            function beforeRemove(treeId, treeNode) {
+                var ev = window.event;
+                var x = ev.clientX - 50;
+                var y = ev.clientY - 10;
+                $(".removeSelect").css({ 'top': y + 'px', 'left': x + 'px', 'display': 'block', 'position': 'absolute' });
+                $(".removeSelect").attr("treeId", treeId);
+                $(".removeSelect").data("treeNode", treeNode);
+                return false;
+            }
+
+            $(document).bind("click", function () {
+                $(".removeSelect").css("display", "none");
+            });
+
+            $(".removeOnly").click(function () {
+                var treeId = $(this).parent().attr("treeId");
+                var treeNode = $(this).parent().data("treeNode");
+                var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                var targetNode = treeNode.getParentNode();
+                console.log(targetNode);
+                var childNodes = treeObj.transformToArray(treeNode);
+                for (i = 0; i < childNodes.length; i++) {
+                    if (childNodes[i].getParentNode() == treeNode) {
+                        treeObj.moveNode(targetNode, childNodes[i], "inner");
+                    }
+                }
+                treeObj.removeNode(treeNode);
+                $(".removeSelect").css("display", "none");
+                return false;
+            });
+
+            $(".removeAll").click(function () {
+                var treeId = $(this).parent().attr("treeId");
+                var treeNode = $(this).parent().data("treeNode");
+                var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                treeObj.removeNode(treeNode);
+                //alert(treeId + " " + treeNode);
+                $(".removeSelect").css("display", "none");
+            })
+
+
+            function removeHoverDom(treeId, treeNode) {
+                $("#addBtn_" + treeNode.tId).unbind().remove();
+            };
+
+            $.fn.zTree.init($("#tree1"), setting, zNodes);
+            //获取checked的值
+            $(".getCheckedNodes").click(function () {
+                var id = $(".searchTree").val();
+                var treeObj = $.fn.zTree.getZTreeObj("tree1");
+                var nodes = treeObj.getNodes();
+                if (nodes.length > 0) {
+                    var node = treeObj.getNodeByParam("id", id);
+                    if (node) {
+                        treeObj.selectNode(node);
+                        table_search(id);
+                    }
+                }
+                // var treeObj = $.fn.zTree.getZTreeObj("tree1");
+                // var nodes = treeObj.getCheckedNodes(true);
+                // var msg = "";
+                // for (var i = 0; i < nodes.length; i++) {
+                //     msg += nodes[i].id + ",";
+                // }
+                // console.log(msg);
+            })
+
+            tree_height();
+            function tree_height() {
+                var height = $("body").height();
+                $(".left-tree").height(function () {
+                    return height - 70;
+                })
+            }
+
+
+            //点击右侧table联动
+            $("#tree1").on("click", ".level-item", function () {
+                var nodeId = $(this).attr("nodeId");
+                table_search(nodeId);
+            })
+
+            function table_search(da) {
+                form.val("layui-form", {
+                    type: da, // "name": "value"
+                    ID: da,
+                    company: da,
+                });
+                data = [
+                    {
+                        'name': da, 'EnglishName': da, 'percent': '1', 'apply': '1',
+                    }
+                ];
+                table_init(data);
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
