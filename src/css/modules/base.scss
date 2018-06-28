@@ -120,7 +120,7 @@ hr, .layui-timeline-item:before{background-color: $borderColor;}
 .layui-upload-file{display: none!important; opacity: .01; filter: Alpha(opacity=1);}
 .layui-upload-list{margin: 10px 0;}
 .layui-upload-choose{padding: 0 10px; color: #999;}
-.layui-upload-drag{position: relative; display: inline-block; padding: 30px; border: 1px dashed #e2e2e2; background-color: #fff; text-align: center; cursor: pointer; color: #999;}
+.layui-upload-drag{position: relative; display: inline-block; padding: 30px; border: 1px dashed $inputBorderColor; background-color: $inputBackgroundColor; text-align: center; cursor: pointer; color: #999;}
 .layui-upload-drag .layui-icon{font-size: 50px; color: #009688;}
 .layui-upload-drag[lay-over]{border-color: #009688}
 .layui-upload-form{display: inline-block;}

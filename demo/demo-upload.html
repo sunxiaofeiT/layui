@@ -9,120 +9,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- layui css -->
     <link rel="stylesheet" href="../dist/css/modules/base.css">
-    <link rel="stylesheet" href="../dist/css/modules/button.css">
     <link rel="stylesheet" href="../dist/css/modules/font-layui.css">
+    <link rel="stylesheet" href="../dist/css/modules/page.css">
+    <link rel="stylesheet" href="../dist/css/modules/form.css">
+    <link rel="stylesheet" href="../dist/css/modules/button.css">
+    <link rel="stylesheet" href="../dist/css/modules/table.css">
     <link rel="stylesheet" href="../dist/css/modules/layer/default/layer.css">
+    <link rel="stylesheet" href="../dist/css/modules/layout.css">
+    <link rel="stylesheet" href="../dist/css/modules/tab.css">
 
+    <style>
+        .layui-elem-quote {
+            margin-top: 10px;
+        }
+        .layui-row {
+            margin-top: 20px;
+        }
+        /* 图片预览 */
+        #demo2 img {
+            width: 96px;
+            height: 54px;
+            margin-left: 5px;
+        }
+    </style>
 </head>
 
 <body class="body-container">
     <div class="layui-container-field">
         <div class="layui-row">
             <div class="layui-col-xs12 layui-col-sm6 layui-col-md6">
-
-                <fieldset class="layui-elem-field layui-field-title">
-                    <legend>常规使用：普通图片上传</legend>
-                </fieldset>
-
+                <h2>1.常规使用：普通图片上传</h2>
+                <hr />
                 <div class="layui-upload">
                     <button type="button" class="layui-btn" id="test1">上传图片</button>
-                    <div class="layui-upload-list">
-                        <img class="layui-upload-img" id="demo1">
-                        <p id="demoText"></p>
-                    </div>
                 </div>
-
-                <fieldset class="layui-elem-field layui-field-title">
-                    <legend>上传多张图片</legend>
-                </fieldset>
-
-                <div class="layui-upload">
-                    <button type="button" class="layui-btn" id="test2">多图片上传</button>
-                    <blockquote class="layui-elem-quote layui-quote-nm">
-                        预览图：
-                        <div class="layui-upload-list" id="demo2"></div>
-                    </blockquote>
-                </div>
-
-                <fieldset class="layui-elem-field layui-field-title">
-                    <legend>指定允许上传的文件类型</legend>
-                </fieldset>
-
-                <button type="button" class="layui-btn" id="test3">
-                    <i class="layui-icon"></i>上传文件</button>
-                <button type="button" class="layui-btn layui-btn-primary" id="test4">
-                    <i class="layui-icon"></i>只允许压缩文件</button>
-                <button type="button" class="layui-btn" id="test5">
-                    <i class="layui-icon"></i>上传视频</button>
-                <button type="button" class="layui-btn" id="test6">
-                    <i class="layui-icon"></i>上传音频</button>
-                <div>
-                    <!-- 示例-970 -->
-                    <ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-6111334333458862" data-ad-slot="3820120620"></ins>
-                </div>
-                <fieldset class="layui-elem-field layui-field-title">
-                    <legend>设定文件大小限制</legend>
-                </fieldset>
-
-                <button type="button" class="layui-btn layui-btn-danger" id="test7">
-                    <i class="layui-icon"></i>上传图片</button>
-                <div class="layui-inline layui-word-aux">
-                    这里以限制 60KB 为例
-                </div>
-
-                <fieldset class="layui-elem-field layui-field-title">
-                    <legend>同时绑定多个元素，并将属性设定在元素上</legend>
-                </fieldset>
-
-                <button class="layui-btn demoMore" lay-data="{url: '/a/'}">上传A</button>
-                <button class="layui-btn demoMore" lay-data="{url: '/b/', size:5}">上传B</button>
-                <button class="layui-btn demoMore" lay-data="{url: '/c/', accept: 'file',size:10}">上传C</button>
-
-                <fieldset class="layui-elem-field layui-field-title">
-                    <legend>选完文件后不自动上传</legend>
-                </fieldset>
-
-                <div class="layui-upload">
-                    <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
-                    <button type="button" class="layui-btn" id="test9">开始上传</button>
-                </div>
-                <fieldset class="layui-elem-field layui-field-title">
-                    <legend>拖拽上传</legend>
-                </fieldset>
-
-                <div class="layui-upload-drag" id="test10">
-                    <i class="layui-icon"></i>
-                    <p>点击上传，或将文件拖拽到此处</p>
-                </div>
-
-                <fieldset class="layui-elem-field layui-field-title">
-                    <legend>高级应用：制作一个多文件列表</legend>
-                </fieldset>
-
-                <div class="layui-upload">
-                    <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button>
-                    <div class="layui-upload-list">
-                        <table class="layui-table">
-                            <thead>
-                                <tr>
-                                    <th>文件名</th>
-                                    <th>大小</th>
-                                    <th>状态</th>
-                                    <th>操作</th>
-                                </tr>
-                            </thead>
-                            <tbody id="demoList"></tbody>
-                        </table>
-                    </div>
-                    <button type="button" class="layui-btn" id="testListAction">开始上传</button>
-                </div>
-
-                <fieldset class="layui-elem-field layui-field-title">
-                    <legend>绑定原始文件域</legend>
-                </fieldset>
-
-                <input type="file" name="file" id="test20">
             </div>
+        </div>
+        <div class="layui-row">
+            <h2>2.上传多张图片</h2>
+            <hr>
+            <div class="layui-upload">
+                <button type="button" class="layui-btn" id="test2">多图片上传</button>
+                <blockquote class="layui-elem-quote layui-quote-nm">
+                    预览图：
+                    <div class="layui-upload-list" id="demo2"></div>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="layui-row">
+
+            <h2>3.指定允许上传的文件类型</h2>
+            <hr>
+            <button type="button" class="layui-btn" id="test3">
+                <i class="layui-icon"></i>上传文件</button>
+            <button type="button" class="layui-btn layui-btn-primary" id="test4">
+                <i class="layui-icon"></i>只允许压缩文件</button>
+            <button type="button" class="layui-btn" id="test5">
+                <i class="layui-icon"></i>上传视频</button>
+            <button type="button" class="layui-btn" id="test6">
+                <i class="layui-icon"></i>上传音频</button>
+            <div>
+                <!-- 示例-970 -->
+                <ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-6111334333458862" data-ad-slot="3820120620"></ins>
+            </div>
+        </div>
+
+        <div class="layui-row">
+            <h2>4.设定文件大小限制</h2>
+            <hr>
+            <button type="button" class="layui-btn layui-btn-danger" id="test7">
+                <i class="layui-icon"></i>上传图片</button>
+            <div class="layui-inline layui-word-aux">
+                这里以限制 60KB 为例
+            </div>
+        </div>
+
+        <div class="layui-row">
+            <h2>5.同时绑定多个元素，并将属性设定在元素上</h2>
+            <hr>
+            <button class="layui-btn demoMore" lay-data="{url: '/a/'}">上传A</button>
+            <button class="layui-btn demoMore" lay-data="{url: '/b/', size:5}">上传B</button>
+            <button class="layui-btn demoMore" lay-data="{url: '/c/', accept: 'file',size:10}">上传C</button>
+        </div>
+
+        <div class="layui-row">
+            <h2>6.选完文件后不自动上传</h2>
+            <hr>
+            <div class="layui-upload">
+                <button type="button" class="layui-btn layui-btn-normal" id="test8">选择文件</button>
+                <button type="button" class="layui-btn" id="test9">开始上传</button>
+            </div>
+        </div>
+
+        <div class="layui-row">
+            <h2>7.拖拽上传</h2>
+            <hr>
+            <div class="layui-upload-drag" id="test10">
+                <i class="layui-icon"></i>
+                <p>点击上传，或将文件拖拽到此处</p>
+            </div>
+        </div>
+
+        <div class="layui-row">
+
+            <h2>8.高级应用：制作一个多文件列表</h2>
+            <hr>
+
+            <div class="layui-upload">
+                <button type="button" class="layui-btn layui-btn-normal" id="testList">选择多文件</button>
+                <div class="layui-upload-list">
+                    <table class="layui-table">
+                        <thead>
+                            <tr>
+                                <th>文件名</th>
+                                <th>大小</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="demoList"></tbody>
+                    </table>
+                </div>
+                <button type="button" class="layui-btn" id="testListAction">开始上传</button>
+            </div>
+        </div>
+
+        <div class="layui-row">
+            <h2>9.绑定原始文件域</h2>
+            <hr>
+            <input type="file" name="file" id="test20">
         </div>
     </div>
 
@@ -132,16 +148,16 @@
             var $ = layui.jquery;
             var upload = layui.upload;
 
-            //普通图片上传
+            //1.普通图片上传
             var uploadInst = upload.render({
                 elem: '#test1',
                 url: '/upload/',
-                before: function (obj) {
-                    //预读本地文件示例，不支持ie8
-                    obj.preview(function (index, file, result) {
-                        $('#demo1').attr('src', result); //图片链接（base64）
-                    });
-                },
+                // before: function (obj) {
+                //     //预读本地文件示例，不支持ie8
+                //     obj.preview(function (index, file, result) {
+                //         $('#demo1').attr('src', result); //图片链接（base64）
+                //     });
+                // },
                 done: function (res) {
                     //如果上传失败
                     if (res.code > 0) {
@@ -150,16 +166,11 @@
                     //上传成功
                 },
                 error: function () {
-                    //演示失败状态，并实现重传
-                    var demoText = $('#demoText');
-                    demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
-                    demoText.find('.demo-reload').on('click', function () {
-                        uploadInst.upload();
-                    });
+                    //...
                 }
             });
 
-            //多图片上传
+            //2.多图片上传
             upload.render({
                 elem: '#test2'
                 , url: '/upload/'
@@ -175,7 +186,7 @@
                 }
             });
 
-            //指定允许上传的文件类型
+            //3.指定允许上传的文件类型
             upload.render({
                 elem: '#test3'
                 , url: '/upload/'
@@ -210,7 +221,7 @@
                 }
             });
 
-            //设定文件大小限制
+            //4.设定文件大小限制
             upload.render({
                 elem: '#test7'
                 , url: '/upload/'
@@ -220,7 +231,7 @@
                 }
             });
 
-            //同时绑定多个元素，并将属性设定在元素上
+            //5.同时绑定多个元素，并将属性设定在元素上
             upload.render({
                 elem: '.demoMore'
                 , before: function () {
@@ -232,7 +243,7 @@
                 }
             })
 
-            //选完文件后不自动上传
+            //6.选完文件后不自动上传
             upload.render({
                 elem: '#test8'
                 , url: '/upload/'
@@ -244,7 +255,7 @@
                 }
             });
 
-            //拖拽上传
+            //7.拖拽上传
             upload.render({
                 elem: '#test10',
                 url: '/upload/',
@@ -253,7 +264,7 @@
                 }
             });
 
-            //多文件列表示例
+            //8.多文件列表示例
             var demoListView = $('#demoList')
                 , uploadListIns = upload.render({
                     elem: '#testList'
@@ -309,7 +320,7 @@
                     }
                 });
 
-            //绑定原始文件域
+            //9.绑定原始文件域
             upload.render({
                 elem: '#test20'
                 , url: '/upload/'
