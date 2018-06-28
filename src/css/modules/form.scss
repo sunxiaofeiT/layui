@@ -60,8 +60,11 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 }
 
 .layui-form-item {
-    margin-bottom: 15px;
     clear: both;
+}
+
+.layui-form-item+.layui-form-item {
+    margin-top: 15px;
 }
 
 .layui-form-item .layui-input-inline {

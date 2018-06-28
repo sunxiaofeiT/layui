@@ -180,7 +180,7 @@ var argv = require('minimist')(process.argv.slice(2), {
         mv: function (ver) {
                 ver = ver === 'open';
 
-                var src = ['./src/**/*.{png,jpg,gif,html,mp3,json,eot,svg,ttf,woff,woff2}'],
+                var src = ['./src/**/*.{png,jpg,gif,html,mp3,json,eot,svg,ttf,woff,woff2,properties}'],
                     dir = destDir(ver);
 
                 if (ver || argv.open) {

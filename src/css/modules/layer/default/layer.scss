@@ -570,6 +570,10 @@ html #layuicss-layer {
   height: 30px;
 }
 
+.layui-layer-msg .layui-layer-content {
+    color: $layuiLayerContentColor;
+}
+
 .layui-layer-ico1 {
   background-position: -30px 0
 }
@@ -612,13 +616,14 @@ html #layuicss-layer {
   background-color: #000;
   filter: alpha(opacity=60);
   background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  color: #fff !important;
   border: none;
 }
 
 .layui-layer-hui .layui-layer-content {
   padding: 12px 25px;
   text-align: center;
+  color: #fff !important;
 }
 
 .layui-layer-red {

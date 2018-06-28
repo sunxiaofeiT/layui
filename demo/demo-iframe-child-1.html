@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iframe child1</title>
+
+    <link rel="stylesheet" href="../dist/css/modules/base.css">
+    <link rel="stylesheet" href="../dist/css/modules/button.css">
+    <link rel="stylesheet" href="../dist/css/modules/form.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .iframe {
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .iframe iframe {
+            width: 48%;
+            height: 480px;
+            box-sizing: border-box;
+            border: 1px solid #999;
+        }
+
+        .control {
+            display: flex;
+            justify-content: center;
+            margin: 50px auto;
+            width: 80%;
+            flex-direction: column;
+        }
+
+        .control .layui-btn {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body class="body-container">
+    <div class="control">
+        <a href="#" class="layui-btn layui-btn-primary layui-btn-fluid" onClick="getParentMessage();">查看父 iframe 传来的参数 parentMessage</a>
+        <a href="#" class="layui-btn layui-btn-primary layui-btn-fluid" onClick="callParentMethod();">调用父 iframe 中的方法</a>
+        <a href="#" class="layui-btn layui-btn-primary layui-btn-fluid" onClick="getParentVar();">获取父 iframe 中的变量</a>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">输入框</label>
+        <div class="layui-input-block">
+            <input type="text" value="子 iframe 的 input" id="inp" class="layui-input">
+        </div>
+    </div>
+
+    <script src="../dist/plugins/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script>
+        var content = '我在子 iframe 内';
+
+        function getParameter() {
+            alert(window.hellobaby);
+        }
+
+        function getParentMessage() {
+            alert(window.parentMessage);
+        }
+
+        function callParentMethod() {
+            parent.fn('子 iframe 调用的该方法');
+        }
+
+        function getParentVar() {
+            alert(parent.content);
+        }
+
+        function fn() {
+            alert($("#inp").val());
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iframe child1</title>
+
+    <link rel="stylesheet" href="../dist/css/modules/base.css">
+    <link rel="stylesheet" href="../dist/css/modules/button.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .iframe {
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .iframe iframe {
+            width: 48%;
+            height: 480px;
+            box-sizing: border-box;
+            border: 1px solid #999;
+        }
+
+        .control {
+            display: flex;
+            justify-content: center;
+            margin: 50px auto;
+            width: 80%;
+            flex-direction: column;
+        }
+
+        .control .layui-btn {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body class="body-container">
+    <div class="control">
+        <a href="#" class="layui-btn layui-btn-primary layui-btn-fluid" onClick="callBrotherMethod();">调用兄弟 iframe 的方法</a>
+    </div>
+
+    <script src="../dist/plugins/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script>
+        function callBrotherMethod() {
+            parent.$("#child1")[0].contentWindow.fn();
+        }
+    </script>
+
+</body>
+
+</html>

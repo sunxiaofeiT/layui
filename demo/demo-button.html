@@ -14,89 +14,104 @@
 <body class="body-container">
     <div class="layui-container-field">
         <div class="layui-row">
-            <!--<div class="layui-col-md8 layui-col-md-offset2">-->
+            <div class="layui-col-md8 layui-col-md-offset2">
+                <button class="layui-btn layui-btn-primary" id="translate_button" data-locale="switch">中英文切换</button>
                 <div class="btnBigDiv">
                     <div class="btnDiv">
-                        <span>正常尺寸</span>
-                        <button class="layui-btn layui-btn-primary">原始按钮</button>
-                        <button class="layui-btn layui-btn-normal">默认按钮</button>
-                        <button class="layui-btn layui-btn-success">成功按钮</button>
-                        <button class="layui-btn layui-btn-danger">警告按钮</button>
-                        <button class="layui-btn layui-btn-fail">失败按钮</button>
-                        <button class="layui-btn layui-btn-disabled">禁用按钮</button>
+                        <span data-locale="normalSize">一般尺寸</span>
+                        <button class="layui-btn layui-btn-primary" data-locale="primaryButton">原始按钮</button>
+                        <button class="layui-btn layui-btn-normal" data-locale="normalButton">默认按钮</button>
+                        <button class="layui-btn layui-btn-success" data-locale="successButton">成功按钮</button>
+                        <button class="layui-btn layui-btn-danger" data-locale="dangerButton">警告按钮</button>
+                        <button class="layui-btn layui-btn-fail" data-locale="failButton">失败按钮</button>
+                        <button class="layui-btn layui-btn-disabled" data-locale="disabledButton">禁用按钮</button>
                     </div>
                     <div class="btnDiv">
-                        <span>大型尺寸</span>
-                        <button class="layui-btn layui-btn-lg layui-btn-primary">大型原始按钮</button>
-                        <button class="layui-btn layui-btn-lg layui-btn-normal">大型默认按钮</button>
-                        <button class="layui-btn layui-btn-lg layui-btn-success">大型成功按钮</button>
-                        <button class="layui-btn layui-btn-lg layui-btn-danger">大型警告按钮</button>
-                        <button class="layui-btn layui-btn-lg layui-btn-fail">大型失败按钮</button>
-                        <button class="layui-btn layui-btn-lg layui-btn-disabled">大型禁用按钮</button>
+                        <span data-locale="largeSize">大型尺寸</span>
+                        <button class="layui-btn layui-btn-lg layui-btn-primary" data-locale="bigPrimaryButton">大型原始按钮</button>
+                        <button class="layui-btn layui-btn-lg layui-btn-normal" data-locale="bigNormalButton">大型默认按钮</button>
+                        <button class="layui-btn layui-btn-lg layui-btn-success" data-locale="bigSuccessButton">大型成功按钮</button>
+                        <button class="layui-btn layui-btn-lg layui-btn-danger" data-locale="bigDangerButton">大型警告按钮</button>
+                        <button class="layui-btn layui-btn-lg layui-btn-fail" data-locale="bigFailButton">大型失败按钮</button>
+                        <button class="layui-btn layui-btn-lg layui-btn-disabled" data-locale="bigDisabledButton">大型禁用按钮</button>
                     </div>
                     <div class="btnDiv">
-                        <span>小型尺寸</span>
-                        <button class="layui-btn layui-btn-sm layui-btn-primary">小型原始按钮</button>
-                        <button class="layui-btn layui-btn-sm layui-btn-normal">小型默认按钮</button>
-                        <button class="layui-btn layui-btn-sm layui-btn-success">小型成功按钮</button>
-                        <button class="layui-btn layui-btn-sm layui-btn-danger">小型警告按钮</button>
-                        <button class="layui-btn layui-btn-sm layui-btn-fail">小型失败按钮</button>
-                        <button class="layui-btn layui-btn-sm layui-btn-disabled">小型禁用按钮</button>
+                        <span data-locale="smallSize">小型尺寸</span>
+                        <button class="layui-btn layui-btn-sm layui-btn-primary" data-locale="smallPrimaryButton">小型原始按钮</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-normal" data-locale="smallNormalButton">小型默认按钮</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-success" data-locale="smallSuccessButton">小型成功按钮</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-danger" data-locale="smallDangerButton">小型警告按钮</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-fail" data-locale="smallFailButton">小型失败按钮</button>
+                        <button class="layui-btn layui-btn-sm layui-btn-disabled" data-locale="smallDisabledButton">小型禁用按钮</button>
                     </div>
                     <div class="btnDiv">
-                        <span>圆角</span>
-                        <button class="layui-btn layui-btn-radius layui-btn-lg layui-btn-primary">大型按钮</button>
-                        <button class="layui-btn layui-btn-radius layui-btn-primary">原始按钮</button>
-                        <button class="layui-btn layui-btn-radius layui-btn-sm layui-btn-primary">小型按钮</button>
+                        <span data-locale="round">圆角</span>
+                        <button class="layui-btn layui-btn-radius layui-btn-lg layui-btn-primary" data-locale="bigButton">大型按钮</button>
+                        <button class="layui-btn layui-btn-radius layui-btn-primary" data-locale="primaryButton">原始按钮</button>
+                        <button class="layui-btn layui-btn-radius layui-btn-sm layui-btn-primary" data-locale="smallButton">小型按钮</button>
                     </div>
                     <div class="btnDiv">
-                        <span>图标</span>
+                        <span data-locale="icon">图标</span>
                         <button class="layui-btn layui-btn-normal layui-icon-button">
-                            <i class="layui-icon">&#xe608;</i> 带图标的按钮
+                            <i class="layui-icon">&#xe608;</i>
+                            <i class="icon-text" data-locale="iconButton">带图标的按钮</i>
                          </button>
                     </div>
                     <div class="btnDiv">
-                        <span>按钮组</span>
+                        <span data-locale="buttonGroup">按钮组</span>
                         <div class="layui-btn-group">
                             <button class="layui-btn layui-btn-normal" id="add">
                                 <i class="layui-icon">&#xe654;</i>
-                            新增</button>
+                                <i class="icon-text" data-locale="add">新增</i>
+                            </button>
                             <button class="layui-btn layui-btn-normal" id="edit">
                                 <i class="layui-icon">&#xe642;</i>
-                            编辑</button>
+                                <i class="icon-text" data-locale="edit">编辑</i>
+                            </button>
                             <button class="layui-btn layui-btn-normal" id="del">
                                 <i class="layui-icon">&#xe640;</i>
-                            删除</button>
+                                <i class="icon-text" data-locale="del">删除</i>
+                            </button>
                             <button class="layui-btn layui-btn-normal" id="view">
                                 <i class="layui-icon">&#xe615;</i>
-                            查看</button>
+                                <i class="icon-text" data-locale="view">查看</i>
+                            </button>
                         </div>
                     </div>
                     <div class="btnDiv">
-                        <span>按钮组</span>
+                        <span data-locale="buttonGroup">按钮组</span>
                         <div class="layui-form-item">
                             <!-- 右侧功能按钮 -->
                             <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_add">
-                                <i class="layui-icon">&#xe654;</i> 新增
+                                <i class="layui-icon">&#xe654;</i>
+                                <i class="icon-text" data-locale="add">新增</i>
                              </button>
                             <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_edit">
-                                <i class="layui-icon">&#xe642;</i> 编辑
+                                <i class="layui-icon">&#xe642;</i> 
+                                <i class="icon-text" data-locale="edit">编辑</i>
                             </button>
                             <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_del">
-                                <i class="layui-icon">&#xe640;</i> 删除
+                                <i class="layui-icon">&#xe640;</i> 
+                                <i class="icon-text" data-locale="del">删除</i>
                             </button>
                             <button class="layui-btn layui-btn-sm layui-btn-primary" id="_btn_view">
-                                <i class="layui-icon">&#xe615;</i> 查看
+                                <i class="layui-icon">&#xe615;</i> 
+                                <i class="icon-text" data-locale="view">查看</i>
                             </button>
                             <!-- ... 可自行增加/删除按钮 -->
                         </div>
                     </div>
                 </div>
-            <!--</div>-->
+            </div>
         </div>
     </div>
-    <script src="../dist/lay/modules/button/jquery.min.js"></script>
-    <script src="../dist/lay/modules/button/button.js"></script>
+    <script src="../dist/plugins/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="../dist/lay/modules/button.js"></script>
+
+    <!--国际化引用-->
+    <script src="../dist/plugins/jquery-3.3.1/jquery.js"></script>
+    <script src="../dist/plugins/jquery-3.3.1/jquery.i18n.properties-1.0.9.js"></script>
+    <script src="../dist/lay/modules/national.js"></script>
 </body>
 
 </html>

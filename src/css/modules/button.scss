@@ -124,3 +124,12 @@
     border-color: $hoverColor;
     color:  $hoverColor;
 }
+
+// 带icon的图标国际化，需要给button中的文字另加i标签，下面是样式调整
+.layui-btn .icon-text{
+    font-style: normal;
+}
+.layui-btn-sm .icon-text{
+    font-style: normal;
+    font-size: 12px !important;
+}

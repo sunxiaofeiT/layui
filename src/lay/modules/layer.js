@@ -41,7 +41,7 @@ var isLayui = window.layui && layui.define, $, win, ready = {
   
   //载入CSS配件
   link: function(href, fn, cssname){
-    
+      return
     //未设置路径，则不主动加载css
     if(!layer.path) return;
     
@@ -91,9 +91,9 @@ var layer = {
     
     if(!options.extend) return this;
     
-    isLayui 
-      ? layui.addcss('modules/layer/' + options.extend)
-    : ready.link('theme/' + options.extend);
+    // isLayui 
+    //   ? layui.addcss('modules/layer/' + options.extend)
+    // : ready.link('theme/' + options.extend);
     
     return this;
   },
@@ -102,7 +102,7 @@ var layer = {
   ready: function(callback){
     var cssname = 'layer', ver = ''
     ,path = (isLayui ? 'modules/layer/' : 'theme/') + 'default/layer.css?v='+ layer.v + ver;
-    isLayui ? layui.addcss(path, callback, cssname) : ready.link(path, callback, cssname);
+    // isLayui ? layui.addcss(path, callback, cssname) : ready.link(path, callback, cssname);
     return this;
   },
   
@@ -249,7 +249,12 @@ Class.pt.vessel = function(conType, callback){
         for(var i = 0, len = config.btn.length; i < len; i++){
           button += '<a class="'+ doms[6] +''+ i +'">'+ config.btn[i] +'</a>'
         }
-        return '<div class="'+ doms[6] +' layui-layer-btn-'+ (config.btnAlign||'') +'">'+ button +'</div>'
+        // change the layer's resource
+        // return '<div class="'+ doms[6] +' layui-layer-btn-'+ (config.btnAlign||'') +'">'+ button +'</div>'
+        if( config.btnAlign == '' || config.btnAlign == null) {
+          config.btnAlign = 'c';
+        };
+        return '<div class="'+ doms[6] +' layui-layer-btn-'+ (config.btnAlign||'') +'">'+ button +'</div>'        
       }() : '')
       + (config.resize ? '<span class="layui-layer-resize"></span>' : '')
     + '</div>'

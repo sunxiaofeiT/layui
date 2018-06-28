@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iframe parent</title>
+
+    <link rel="stylesheet" href="../dist/css/modules/base.css">
+    <link rel="stylesheet" href="../dist/css/modules/button.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .iframe {
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .iframe iframe {
+            width: 48%;
+            height: 480px;
+            box-sizing: border-box;
+            border: 1px solid #999;
+        }
+
+        .control {
+            display: flex;
+            justify-content: center;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body class="body-container">
+    <div class="control">
+        <a href="#" class="layui-btn" onClick="parentToChild();">向子 iframe 传递参数 parentMessage</a>
+        <a href="#" class="layui-btn" onClick="callChildMethod();">调用子 iframe 中的方法</a>
+        <a href="#" class="layui-btn" onClick="getChildVar();">获取子 iframe 中的变量</a>
+    </div>
+
+    <div class="iframe layui-container-field">
+        <iframe id="child1" src="demo-iframe-child-1.html"></iframe>
+        <iframe id="child2" src="demo-iframe-child-2.html"></iframe>
+    </div>
+
+    <script src="../dist/plugins/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script>
+        var content = '我在父 iframe 内';
+
+        function parentToChild() {
+            $("#child1")[0].contentWindow.parentMessage = "from parent's message";
+        }
+
+        function callChildMethod() {
+            $("#child1")[0].contentWindow.fn();
+        }
+
+        function getChildVar() {
+            alert($("#child1")[0].contentWindow.content);
+        }
+
+        function fn(msg) {
+            alert(msg);
+        }
+    </script>
+</body>
+
+</html>
