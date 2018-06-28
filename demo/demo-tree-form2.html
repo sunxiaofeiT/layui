@@ -58,142 +58,146 @@
 </style>
 
 <body>
-    <div class="layui-row all-height">
+
+    <div class="layui-row">
         <!-- 具体列宽由输入框数量和按钮数量自行决定 -->
-        <div class="layui-col-sm3 all-height">
-            <!-- 使用 layui 栅格系统布局，容器为 100% 宽度 -->
-            <div class="layui-container-field left-tree layui-tree-field">
-                <div class="layui-row">
-                    <!-- <div class="layui-col-sm8">
+
+        <div class="layui-row">
+            <button id="dropdownInput" class="layui-btn layui-btn-normal">复杂表单弹层</button>
+            <p>其余与其它弹层类似</p>
+            <p>每个表单项的上下间距为20px</p>
+        </div>
+    </div>
+    <div id="dropdownLayer" class="layer-box">
+        <!-- 具体列宽由输入框数量和按钮数量自行决定 -->
+        <div class="layui-col-sm4">
+            <div class="layui-row">
+                <!-- <div class="layui-col-sm8">
                         <input type="text" name="title" lay-verify="title" placeholder="检索..." class="layui-input searchTree">
                     </div>
                     <div class="layui-col-sm4">
                         <button class="layui-btn layui-btn-normal getCheckedNodes layui-tree-btn">检索</button>
                     </div> -->
-                    <div class="layui-col-sm12">
+                <div class="layui-col-sm12">
 
-                        <div class="clear-fix"></div>
-                        <div class="treediv">
-                            <!-- 不能用id="tree"，与layui冲突 -->
-                            <ul id="tree1" class="ztree"></ul>
-                        </div>
+                    <div class="clear-fix"></div>
+                    <div class="treediv">
+                        <!-- 不能用id="tree"，与layui冲突 -->
+                        <ul id="tree1" class="ztree"></ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="layui-col-sm9">
-            <!-- 使用 layui 栅格系统布局，容器为 100% 宽度 -->
-            <div class="layui-container-field layui-tree-field" style="margin-left: 0;">
-                <div class="layui-row">
-                    <!-- <legend>查询表格</legend> -->
-                    <div class="layui-tab" lay-filter="demo">
-                        <ul class="layui-tab-title">
-                            <li class="layui-this">明细</li>
-                        </ul>
-                        <div class="layui-tab-content">
-                            <div class="layui-tab-item layui-show">
-                                <form class="layui-form" lay-filter="layui-form" action="">
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">类型</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="type" class="layui-input layui-input-none" value="物质" disabled>
-                                            </div>
+        <div class="layui-col-sm8">
+            <div class="layui-row">
+                <!-- <legend>查询表格</legend> -->
+                <div class="layui-tab" lay-filter="demo">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">明细</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <form class="layui-form" lay-filter="layui-form" action="">
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">类型</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="type" class="layui-input layui-input-none" value="物质" disabled>
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">基本物质中文名称</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="ID" class="layui-input layui-input-none" value="CA_8_12819892393" disabled>
-                                            </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">基本物质中文名称</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="ID" class="layui-input layui-input-none" value="CA_8_12819892393" disabled>
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">基本物质英文名称</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="company" class="layui-input layui-input-none" disabled value="">
-                                            </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">基本物质英文名称</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="company" class="layui-input layui-input-none" disabled value="">
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">CAS编号</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="name" class="layui-input layui-input-none" disabled value="7428-48-0">
-                                            </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">CAS编号</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="name" class="layui-input layui-input-none" disabled value="7428-48-0">
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">EU-Index</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="name-English" class="layui-input layui-input-none" disabled value="">
-                                            </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">EU-Index</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="name-English" class="layui-input layui-input-none" disabled value="">
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">EC编号</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="material-num" class="layui-input layui-input-none" disabled value="238-068-1">
-                                            </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">EC编号</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="material-num" class="layui-input layui-input-none" disabled value="238-068-1">
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">别名1</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="goods" class="layui-input layui-input-none" disabled value="">
-                                            </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">别名1</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="goods" class="layui-input layui-input-none" disabled value="">
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">GADSL</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="material-type" class="layui-input layui-input-none" disabled value="D/P">
-                                            </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">GADSL</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="material-type" class="layui-input layui-input-none" disabled value="D/P">
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">REACH-SVHC</label>
-                                            <div class="layui-input-inline">
-                                                <input type="text" name="material-mark" class="layui-input layui-input-none" disabled value="否">
-                                            </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">REACH-SVHC</label>
+                                        <div class="layui-input-inline">
+                                            <input type="text" name="material-mark" class="layui-input layui-input-none" disabled value="否">
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">保密</label>
-                                            <div class="layui-input-inline" style="margin-left: 10px;">
-                                                <input type="checkbox" lay-skin="primary" name="material-mark2" class="layui-input">
-                                            </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">保密</label>
+                                        <div class="layui-input-inline" style="margin-left: 10px;">
+                                            <input type="checkbox" lay-skin="primary" name="material-mark2" class="layui-input">
                                         </div>
                                     </div>
-                                    <div class="layui-form-item">
-                                        <div class="layui-inline">
-                                            <label class="layui-form-label">比例</label>
-                                            <div class="layui-form-text">从&nbsp;</div>
-                                            <div class="layui-input-inline" style="width: 100px;">
-                                                <input type="text" name="ratio1" class="layui-input" value="">
-                                            </div>
-                                            <div class="layui-form-text">到&nbsp;</div>
-                                            <div class="layui-input-inline" style="width: 100px;">
-                                                <input type="text" name="ratio2" class="layui-input" value="">
-                                            </div>
-                                            <div class="layui-form-text">&nbsp;平均值</div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-inline">
+                                        <label class="layui-form-label">比例</label>
+                                        <div class="layui-form-text">从&nbsp;</div>
+                                        <div class="layui-input-inline" style="width: 100px;">
+                                            <input type="text" name="ratio1" class="layui-input" value="">
                                         </div>
+                                        <div class="layui-form-text">到&nbsp;</div>
+                                        <div class="layui-input-inline" style="width: 100px;">
+                                            <input type="text" name="ratio2" class="layui-input" value="">
+                                        </div>
+                                        <div class="layui-form-text">&nbsp;平均值</div>
                                     </div>
-                                    <div style="margin-left: 250px;margin-top: 15px;">
-                                        <button class="layui-btn layui-btn-normal">审核</button>
-                                        <button class="layui-btn layui-btn-normal">下一步</button>
-                                        <button class="layui-btn layui-btn-primary">返回</button>
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div style="margin-left: 250px;margin-top: 15px;">
+                                    <button class="layui-btn layui-btn-normal">审核</button>
+                                    <button class="layui-btn layui-btn-normal">下一步</button>
+                                    <button class="layui-btn layui-btn-primary">返回</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -201,6 +205,8 @@
         </div>
     </div>
     <div class="removeSelect" treeId="" treeNode="">
+        <div class="addNode">添加节点</div>
+        <div class="modifyNode">修改节点</div>
         <div class="removeOnly">不删除子节点</div>
         <div class="removeAll">删除子节点</div>
     </div>
@@ -217,10 +223,30 @@
     <script type="text/javascript" src="../dist/plugins/tree/jquery.ztree.excheck.js"></script>
     <script type="text/javascript" src="../dist/plugins/tree/jquery.ztree.exedit.js"></script>
     <script type="text/javascript">
-        layui.use(['form', 'table', 'element'], function () {
+        layui.use(['form', 'layer', 'table', 'element'], function () {
             var form = layui.form;
             var table = layui.table;
             var element = layui.element;
+
+            $('#dropdownInput').on('click', function () {
+                layer.open({
+                    type: 1,
+                    shade: false,
+                    title: '辅助弹出',
+                    // shade: true,
+                    area: ['1000px', '800px'],
+                    content: $('#dropdownLayer'),
+                    btn: ['审核', '下一步', '返回'],
+                    btn1: function (index) {
+                        layer.close(index);
+                    },
+                    btn2: function (index) {
+                        layer.close(index);
+                    }
+                })
+
+                table_init(data);
+            })
 
             data = [
                 {
@@ -345,18 +371,25 @@
 
             var newCount = 1;
             function addHoverDom(treeId, treeNode) {
-                var sObj = $("#" + treeNode.tId + "_span");
-                if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
-                var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
-                    + "' title='add node' onfocus='this.blur();'></span>";
-                sObj.after(addStr);
-                var btn = $("#addBtn_" + treeNode.tId);
-                if (btn) btn.bind("click", function () {
-                    var zTree = $.fn.zTree.getZTreeObj("tree1");
-                    zTree.addNodes(treeNode, { id: (100 + newCount), pId: treeNode.id, name: "new node" + (newCount++) });
-                    return false;
-                });
+                $(".removeSelect").attr("treeId", treeId);
+                $(".removeSelect").data("treeNode", treeNode);
+                return true;
             };
+
+            $(".addNode").click(function () {
+                var treeId = $(this).parent().attr("treeId");
+                var treeNode = $(this).parent().data("treeNode");
+                var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                treeObj.addNodes(treeNode, { id: (100 + newCount), pId: treeNode.id, name: "new node" + (newCount++) });
+            })
+
+            $(".modifyNode").click(function () {
+                var treeId = $(this).parent().attr("treeId");
+                var treeNode = $(this).parent().data("treeNode");
+                var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                treeObj.editName(treeNode);
+                // treeObj.addNodes(treeNode, { id: (100 + newCount), pId: treeNode.id, name: "new node" + (newCount++) });
+            })
 
             function beforeRename(treeId, treeNode) {
                 //这里是上传操作;
@@ -412,6 +445,7 @@
             };
 
             $.fn.zTree.init($("#tree1"), setting, zNodes);
+
             //获取checked的值
             $(".getCheckedNodes").click(function () {
                 var id = $(".searchTree").val();
@@ -441,7 +475,21 @@
                 })
             }
 
+            $("#tree1").on("contextmenu", '.level-item', function () {
+                return false;
+            })
+            $(".removeSelect").on("contextmenu", 'div', function () {
+                return false;
+            })
 
+            $("#tree1").on("mousedown", '.level-item', function (e) {
+                if (3 == e.which) {
+                    var ev = window.event;
+                    var x = ev.clientX - 50;
+                    var y = ev.clientY - 10;
+                    $(".removeSelect").css({ 'top': y + 'px', 'left': x + 'px', 'display': 'block', 'position': 'absolute', 'z-index': '99999999' });
+                }
+            })
             //点击右侧table联动
             $("#tree1").on("click", ".level-item", function () {
                 var nodeId = $(this).attr("nodeId");

@@ -37,6 +37,10 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
     position: relative;
 }
 
+.clearboth{
+    clear: both;
+}
+
 .layui-form-item .layui-inline {
     margin-bottom: 5px;
     margin-right: 10px;
@@ -407,6 +411,14 @@ button, input, optgroup, option, select, textarea {
 
 .layui-form-error{
     color: $failedColor !important;
+}
+
+.layui-form-warning{
+    color: $warningColor !important;
+}
+
+.layui-form-success{
+    color: $successColor !important;
 }
 
 /*原始复选框*/

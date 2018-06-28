@@ -63,15 +63,9 @@
 
 				<div class="layui-form-item">
 					<div class="layui-inline">
-						<label class="layui-form-label label-required">多规则验证</label>
+						<label class="layui-form-label label-required">密码</label>
 						<div class="layui-input-inline">
-							<input type="text" name="number" autocomplete="off" class="layui-input">
-						</div>
-					</div>
-					<div class="layui-inline">
-						<label class="layui-form-label">验证链接</label>
-						<div class="layui-input-inline">
-							<input type="tel" name="url" autocomplete="off" class="layui-input">
+							<input type="password" name="number" autocomplete="off" class="layui-input" lay-verify="password">
 						</div>
 					</div>
 				</div>
@@ -294,7 +288,7 @@
 			form.render();
 			//表单初始赋值
 			form.val("layui-form", {
-				title: "贤心", // "name": "value"
+				title: "我是输入内容", // "name": "value"
 				sex: "男",
 				interest: 3,
 			});
@@ -390,7 +384,63 @@
 				}
 				, phone: [/^1[3|4|5|7|8]\d{9}$/, '手机必须11位数字！']
 				, email: [/^[a-z0-9._%-]+@([a-z0-9-]+\.)+[a-z]{2,4}$|^1[3|4|5|7|8]\d{9}$/, '邮箱格式不对']
+				, password: function (value) {
+					var lv = 1;
+					if (value.match(/^[0-9]*$/g)) { lv=1; }
+					else if (value.match(/^[0-9a-z]+$/g)) { lv=2; }
+					else if (value.match(/^[A-Za-z0-9]+$/g)) { lv=3; }
+					if (value.length < 6) { lv = 0; }
+					if (lv == 0) {
+						return '请输入至少6位的密码';
+					}
+					else {
+						return lv;
+					}
+				}
 			});
+
+			//密码强度验证
+			$("input[type='password']").keyup(function () {
+				var val = $(this).val();
+				if ($(this).attr("lay-verify") == "") {
+					return;
+				}
+				var names = $(this).attr("lay-verify").split('|');
+				for (var name of names) {
+					var verify = form.config.verify; var tips = '';
+					var isFn = typeof verify[name] === 'function';
+					if (verify[name] && (isFn ? tips = verify[name](val) : (typeof (val) == "string" ? !verify[name][0].test(val) : (val == null ? true : !verify[name][0].test(val[0]))))) {
+						var className = "";
+						var text=(tips || verify[name][1]);
+						if ((tips || verify[name][1]) == 1) {
+							className = "";
+							text="密码强度:弱";
+						}
+						else if ((tips || verify[name][1]) == 2) {
+							className = "layui-form-warning";
+							text="密码强度:中";
+						}
+						else if ((tips || verify[name][1]) == 3) {
+							className = "layui-form-success";
+							text="密码强度:强";
+						}
+						if ($(this).parent().parent().find(".layui-form-error").length != 0) {
+							$(this).parent().parent().find(".layui-form-error").attr("class", "layui-form-mid2 layui-word-aux layui-form-error " + className);
+							$(this).parent().parent().find(".layui-form-error").text(text);
+						}
+						else {
+							$(this).parent().parent().append('<div class="clearboth"></div>');
+							$(this).parent().parent().append('<div class="layui-form-mid2 layui-word-aux layui-form-error"+' + className + '>' + text + '</div>');
+						}
+						return;
+					}
+					else {
+						$(this).parents().find(".clearboth").remove();
+						$(this).parents().find(".layui-form-error").remove();
+					}
+
+				}
+			})
 
 			//失焦验证，在form.verify后
 			$("input[lay-verify]").blur(function () {
@@ -403,15 +453,31 @@
 					var verify = form.config.verify; var tips = '';
 					var isFn = typeof verify[name] === 'function';
 					if (verify[name] && (isFn ? tips = verify[name](val) : (typeof (val) == "string" ? !verify[name][0].test(val) : (val == null ? true : !verify[name][0].test(val[0]))))) {
-						if($(this).parent().parent().find(".layui-form-error").length!=0){
-          					$(this).parent().parent().find(".layui-form-error").text(tips || verify[name][1]);
+						var className = "";
+						var text=(tips || verify[name][1]);
+						if ((tips || verify[name][1]) == 1) {
+							className = "";
+							text="密码强度:弱";
 						}
-						else{		
-							$(this).parent().parent().append('<div class="layui-form-mid2 layui-word-aux layui-form-error">'+(tips || verify[name][1])+'</div>');
+						else if ((tips || verify[name][1]) == 2) {
+							className = "layui-form-warning";
+							text="密码强度:中";
+						}
+						else if ((tips || verify[name][1]) == 3) {
+							className = "layui-form-success";
+							text="密码强度:强";
+						}
+						if ($(this).parent().parent().find(".layui-form-error").length != 0) {
+							$(this).parent().parent().find(".layui-form-error").text(text);
+						}
+						else {
+							$(this).parent().parent().append('<div class="clearboth"></div>');
+							$(this).parent().parent().append('<div class="layui-form-mid2 layui-word-aux layui-form-error">' + text + '</div>');
 						}
 						return;
 					}
-					else{
+					else {
+						$(this).parents().find(".clearboth").remove();
 						$(this).parents().find(".layui-form-error").remove();
 					}
 
