@@ -151,8 +151,7 @@
 }
 
 .layui-table-view .layui-table {
-    position: relative;
-    // width: auto;
+    position: relative; // width: auto;
     margin: 0;
 }
 
@@ -599,4 +598,8 @@ body .layui-table-tips .layui-layer-content {
 // 表格上分左面搜索和重置按钮的内边距
 .table-form-control-l button {
     padding: 0 20px;
+}
+
+.lzw {
+    border: 1px solid $tableBorderColor
 }

@@ -760,15 +760,16 @@ layui.define(['laytpl', 'laypage', 'layer', 'form'], function (exports) {
         var that = this,
             options = that.config;
         if (options.loading && options.url) {
-            return layer.msg('数据请求中', {
-                icon: 16,
-                offset: [
-                    that.elem.offset().top + that.elem.height() / 2 - 35 - _WIN.scrollTop() + 'px', that.elem.offset().left + that.elem.width() / 2 - 90 - _WIN.scrollLeft() + 'px'
-                ],
-                time: -1,
-                anim: -1,
-                fixed: false
-            });
+            // return layer.msg('数据请求中', {
+            //     icon: 16,
+            //     offset: [
+            //         that.elem.offset().top + that.elem.height() / 2 - 35 - _WIN.scrollTop() + 'px', that.elem.offset().left + that.elem.width() / 2 - 90 - _WIN.scrollLeft() + 'px'
+            //     ],
+            //     time: -1,
+            //     anim: -1,
+            //     fixed: false
+            // });
+            return layer.load(1, {shade: [0.22, '#000000']});
         }
     };
 

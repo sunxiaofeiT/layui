@@ -1,7 +1,7 @@
 /* 国际化组件使用方法
      首先引用<script src="../dist/plugins/jquery-3.3.1/jquery.js"></script>
     <script src="../dist/plugins/jquery-3.3.1/jquery.i18n.properties-1.0.9.js"></script>
-    <script src="../dist/lay/modules/national.js"></script>
+    <script src="../dist/lay/modules/national.js"></script>注意修改national.js中的路径
 给要替换的文字，加属性data-locale="",在strings_zh.properties中定义中文数值，
                     在strings_en.properties中定义英文数值，注意二者之间的对应关系
 中英文切换按钮：<button class="layui-btn layui-btn-primary" id="translate_button" data-locale="switch">中英文切换</button>
