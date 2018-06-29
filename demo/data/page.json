@@ -57,6 +57,16 @@
         "demo": true
     },
     {
+        "name": "导航",
+        "path": "/unit/navigation.html",
+        "outer": true
+    },
+    {
+        "name": "时间轴",
+        "path": "/unit/timeline.html",
+        "outer": true
+    },
+    {
         "name": "动画",
         "path": "/unit/animate-10.html",
         "outer": true
