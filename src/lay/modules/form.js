@@ -213,7 +213,6 @@ layui.define('layer', function (exports) {
 
               //键盘事件
               input.on('keyup', function (e) {
-                alert("1");
                 var keyCode = e.keyCode;
                 //Tab键
                 if (keyCode === 9) {
