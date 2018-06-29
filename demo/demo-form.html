@@ -26,16 +26,16 @@
 			<form class="layui-form" lay-filter="layui-form" action="" style="margin-top: 30px;">
 				<div class="layui-form-item layui-form-item2">
 					<div class="layui-inline">
-						<label class="layui-form-label">多规则验证</label>
+						<label class="layui-form-label">验证手机</label>
 						<div class="layui-input-inline">
 							<input type="text" lay-verify="required|number|phone" name="number" autocomplete="off" class="layui-input">
 						</div>
 					</div>
 				</div>
 				<div class="layui-form-item layui-form-item2">
-					<label class="layui-form-label">单行输入框</label>
+					<label class="layui-form-label">验证邮箱</label>
 					<div class="layui-input-block">
-						<input type="text" lay-filter="title" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+						<input type="text"  lay-verify="required|email" lay-filter="title" name="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
 					</div>
 				</div>
 
@@ -48,7 +48,7 @@
 
 				<div class="layui-form-item">
 					<div class="layui-inline">
-						<label class="layui-form-label label-required">验证手机</label>
+						<label class="layui-form-label label-required">必填</label>
 						<div class="layui-input-inline">
 							<input type="tel" name="phone" autocomplete="off" class="layui-input">
 						</div>
