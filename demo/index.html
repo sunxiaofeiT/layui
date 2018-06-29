@@ -79,17 +79,38 @@
                 <a class="layui-btn layui-btn-fluid" href="">ok</a>
             </div> -->
         </div>
+        <hr style="height: 0;border-top: 2px solid #999;margin: 50px auto;" />
+        <div class="layui-row layui-col-space30">
+            <div class="layui-col-md12">
+                <h1>综合Demo</h1>
+            </div>
+        </div>
+        <div class="layui-row layui-col-space30" id="demo">
+            <!-- <div class="layui-col-md4">
+                <a class="layui-btn layui-btn-fluid" href="">ok</a>
+            </div> -->
+        </div>
     </div>
 
     <script src="../dist/plugins/jquery-3.3.1/jquery-3.3.1.min.js"></script>
     <script>
         $.get('./data/page.json', function (obj) {
             for (var i = 0; i < obj.length; i++) {
-                $("#content").append(
-                    '<div class="layui-col-md4"><a target="_blank" href="./demo-' + obj[i].path +
-                    '.html" class="layui-btn layui-btn-fluid">' + obj[i].name +
-                    '</a></div>'
-                );
+                var href;
+                obj[i].outer ? href = obj[i].path : href = './demo-' + obj[i].path + '.html'
+                if (obj[i].demo) {
+                    $("#demo").append(
+                        '<div class="layui-col-md4"><a target="_blank" href="' + href +
+                        '" class="layui-btn layui-btn-fluid">' + obj[i].name +
+                        '</a></div>'
+                    );
+                } else {
+                    $("#content").append(
+                        '<div class="layui-col-md4"><a target="_blank" href="' + href +
+                        '" class="layui-btn layui-btn-fluid">' + obj[i].name +
+                        '</a></div>'
+                    );
+                }
             }
         });
     </script>

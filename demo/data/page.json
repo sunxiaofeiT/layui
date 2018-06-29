@@ -48,10 +48,32 @@
     },
     {
         "name": "综合DEMO 1",
-        "path": "tree-form"
+        "path": "tree-form",
+        "demo": true
     },
     {
         "name": "综合DEMO 2",
-        "path": "tree-form2"
+        "path": "tree-form2",
+        "demo": true
+    },
+    {
+        "name": "动画",
+        "path": "/unit/animate-10.html",
+        "outer": true
+    },
+    {
+        "name": "走马灯",
+        "path": "/unit/layui-carousel.html",
+        "outer": true
+    },
+    {
+        "name": "拖拽",
+        "path": "/unit/drag-and-drop.html",
+        "outer": true
+    },
+    {
+        "name": "视频",
+        "path": "/unit/vedio_music/vedio.html",
+        "outer": true
     }
 ]
