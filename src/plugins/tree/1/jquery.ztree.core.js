@@ -1349,7 +1349,7 @@
                 if (!node.isAjaxing) {
                     var isParent = data.nodeIsParent(setting, node);
                     var icon = (isParent && node.iconOpen && node.iconClose) ? (node.open ? node.iconOpen : node.iconClose) : node[setting.data.key.icon];
-                    if (icon) icoStyle.push("background:url(", icon, ") 0 0 no-repeat;");
+                    if (icon) icoStyle.push("background:url(", icon, ") 0 0 no-repeat; background-size:100%;");
                     if (setting.view.showIcon == false || !tools.apply(setting.view.showIcon, [setting.treeId, node], true)) {
                         icoStyle.push("width:0px;height:0px;");
                     }

@@ -7,7 +7,7 @@
 }
 
 .layui-form-label {
-    width: 220px;
+    width: 180px;
     padding-right: 40px;
     font-weight: 600;
     box-sizing: border-box;
@@ -37,8 +37,13 @@
 }
 
 .all-height {
-    height: 80%;
+    height: 592px;
+    overflow: auto;
     background-color: $containerBackgroundColor;
+}
+
+.removeSelect>div{
+    padding: 5px;
 }
 
 .layui-layer-page .layui-layer-content {
@@ -48,4 +53,26 @@
 .layui-layer-btn-c {
     background-color: $backgroundColor;
     text-align: right;
+}
+
+.tree-top{
+    border-bottom:1px solid $borderColor;
+}
+
+.tree-top img{
+    width: 25px;
+    margin-bottom: 5px;
+}
+
+.layui-form-text {
+    float: left;
+    line-height: 38px;
+}
+
+.layui-form-item {
+    margin-bottom: 0;
+}
+
+.layui-layer-page .layui-layer-btn {
+    padding-right: 40px;
 }
