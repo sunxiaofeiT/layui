@@ -45,5 +45,13 @@
     {
         "name": "上传",
         "path": "upload"
+    },
+    {
+        "name": "综合DEMO 1",
+        "path": "tree-form"
+    },
+    {
+        "name": "综合DEMO 2",
+        "path": "tree-form2"
     }
 ]
