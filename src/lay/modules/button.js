@@ -1,16 +1,16 @@
 // add button
     $('#add').on('click', function() {
-        alert("add");
+        console.log("add");
     })
     // edit button
     $('#edit').on('click', function() {
-        alert("edit");
+        console.log("edit");
     })
     // delete button
     $('#del').on('click', function() {
-        alert("delete");
+        console.log("delete");
     })
     //view button
     $('#view').on('click', function() {
-        alert("view");
+        console.log("view");
     })
