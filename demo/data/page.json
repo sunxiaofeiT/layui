@@ -41,5 +41,9 @@
     {
         "name": "树与表格联动-bootstrap",
         "path": "tree-bootstrap"
+    },
+    {
+        "name": "上传",
+        "path": "upload"
     }
 ]
