@@ -23,12 +23,33 @@
                 <li>订单管理</li>
             </ul>
             <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show">内容1
-                    <div class="layui-tab-item">内容2</div>
-                    <div class="layui-tab-item">内容3</div>
-                    <div class="layui-tab-item">内容4</div>
-                    <div class="layui-tab-item">内容5</div>
-                </div>
+                <div class="layui-tab-item layui-show">内容1 </div>
+                <div class="layui-tab-item">内容2</div>
+                <div class="layui-tab-item">内容3</div>
+                <div class="layui-tab-item">内容4</div>
+                <div class="layui-tab-item">内容5</div>
+
+            </div>
+        </div>
+    </div>
+    <h4>自定义生成标签页</h4>
+    <!--tab-normal-auto-->
+    <div class="tab-nor-auto">
+        <div class="layui-tab">
+            <ul class="layui-tab-title" id="ul">
+                <li class="layui-this">网站设置</li>
+                <li>用户管理</li>
+                <li>权限分配</li>
+                <li>商品管理</li>
+                <li>订单管理</li>
+            </ul>
+            <div class="layui-tab-content"  id="div">
+                <div class="layui-tab-item layui-show">内容1 </div>
+                <div class="layui-tab-item">内容2</div>
+                <div class="layui-tab-item">内容3</div>
+                <div class="layui-tab-item">内容4</div>
+                <div class="layui-tab-item">内容5</div>
+
             </div>
         </div>
     </div>
@@ -45,12 +66,11 @@
                 <li>订单管理</li>
             </ul>
             <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show">内容1
-                    <div class="layui-tab-item">内容2</div>
-                    <div class="layui-tab-item">内容3</div>
-                    <div class="layui-tab-item">内容4</div>
-                    <div class="layui-tab-item">内容5</div>
-                </div>
+                <div class="layui-tab-item layui-show">内容1 </div>
+                <div class="layui-tab-item">内容2</div>
+                <div class="layui-tab-item">内容3</div>
+                <div class="layui-tab-item">内容4</div>
+                <div class="layui-tab-item">内容5</div>
             </div>
         </div>
     </div>
@@ -66,12 +86,12 @@
                 <li>订单管理</li>
             </ul>
             <div class="layui-tab-content">
-                <div class="layui-tab-item layui-show">内容1
-                    <div class="layui-tab-item">内容2</div>
-                    <div class="layui-tab-item">内容3</div>
-                    <div class="layui-tab-item">内容4</div>
-                    <div class="layui-tab-item">内容5</div>
-                </div>
+                <div class="layui-tab-item layui-show">内容1 </div>
+                <div class="layui-tab-item">内容2</div>
+                <div class="layui-tab-item">内容3</div>
+                <div class="layui-tab-item">内容4</div>
+                <div class="layui-tab-item">内容5</div>
+
             </div>
         </div>
     </div>
@@ -91,11 +111,11 @@
                     没有做官，没有发财，也没有令人羡慕的成就；有的只是长夜孤灯下的笔耕不缀， 有的只是课堂上挥汗雨下的辛劳，有的只是批不完的作文和试卷。但是我要感谢语文， 是它充实了我的生活，成就了我的梦想，纯洁了我的人生，也是它给了我衣食无忧的资本。
                     　 在纷攘嘈杂物欲横流的世界中，我固守着那一份安宁、醇厚和智慧，心态平和，怡然自乐。 不是吗？伴着语文，我收藏了春的温馨、夏的火热、秋的丰硕、冬的冷峻；伴着语文，我领略了北国的冰雪， 南疆的椰林，西域的雄鹰，东海的潮汐；伴着语文，我听懂了野柳的絮语，还有那蛙鼓虫鸣。
                     在纷攘嘈杂物欲横流的世界中，我固守着那一份安宁、醇厚和智慧，心态平和，怡然自乐。 不是吗？伴着语文，我收藏了春的温馨、夏的火热、秋的丰硕、冬的冷峻；伴着语文，我领略了北国的冰雪，南疆的椰林，西域的雄鹰，东海的潮汐；伴着语文，我听懂了野柳的絮语，还有那蛙鼓虫鸣。
-                    <div class="layui-tab-item">内容2</div>
-                    <div class="layui-tab-item">内容3</div>
-                    <div class="layui-tab-item">内容4</div>
-                    <div class="layui-tab-item">内容5</div>
-                </div>
+                    </div>
+                <div class="layui-tab-item">内容2</div>
+                <div class="layui-tab-item">内容3</div>
+                <div class="layui-tab-item">内容4</div>
+                <div class="layui-tab-item">内容5</div>
             </div>
         </div>
     </div>
@@ -140,6 +160,23 @@
 
             //…
         });
+
+        //动态生成
+
+        //添加标题
+        var para = document.createElement("li");
+        var node = document.createTextNode("js动态添加标题");
+        para.appendChild(node);
+        var element = document.getElementById("ul");
+        element.appendChild(para);
+
+        //添加内容
+        var paraText = document.createElement("div");
+        var nodeText = document.createTextNode("js动态添加tab内容");
+        paraText.appendChild(nodeText);
+        paraText.classList.add("layui-tab-item");
+        var elementText = document.getElementById("div");
+        elementText.appendChild(paraText);
     </script>
 </body>
 
